@@ -1242,7 +1242,7 @@ body {
     height: 41px;
     display: block;
     position: absolute;
-    background-image: url(images/professional/arrows.png);
+    background-image: url(img/arrows.png);
     background-repeat: no-repeat
 }
 

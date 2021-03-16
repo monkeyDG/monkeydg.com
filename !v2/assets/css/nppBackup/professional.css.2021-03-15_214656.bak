@@ -1235,17 +1235,6 @@ body {
     border-radius: 50%
 }
 
-.timeline-box-left .arrow,
-.timeline-box-right .arrow {
-    top: 60px;
-    width: 12px;
-    height: 41px;
-    display: block;
-    position: absolute;
-    background-image: url(images/professional/arrows.png);
-    background-repeat: no-repeat
-}
-
 .timeline-box-left .arrow:before,
 .timeline-box-right .arrow:before {
     width: 0;
