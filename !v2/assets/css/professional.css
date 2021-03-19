@@ -1886,12 +1886,13 @@ header nav li a {
 /* Controls ----------------------------------------------------------------------*/
 .controls {
     position: relative;
-    text-align: right;
+    text-align: center;
     z-index: 1000;
 }
 
 .controls ul {
     list-style: none;
+    margin: 0 0 0 5px
 }
 
 .controls ul li {
