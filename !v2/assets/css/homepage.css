@@ -611,6 +611,21 @@ img {
 	header .icon-nav {
 		display: none
 	}
+	.logo {
+		height: 80px;
+		width: 192px;
+		background: url(images/shared/logo-initials-black.png) no-repeat;
+		transition: .1s;
+		display: block;
+		margin-right: 0;
+		text-indent: -9999px;
+		float: left
+	}
+	
+	.logo:hover {
+		background: url(images/shared/logo-initials-blue.png) no-repeat;
+		transition: .1s
+	}
 	.content {
 		margin-top: 184px
 	}

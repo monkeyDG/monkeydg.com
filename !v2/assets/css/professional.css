@@ -1423,131 +1423,124 @@ nav {
     display: block
 }
 
-
 header {
-	background: #111;
-	height: 82px;
-	padding: 0 5%;
-	width: 90%;
-	position: absolute;
-	z-index: 1000;
-	font-family: "Open Sans Regular", "Helvetica Neue", Helvetica, Arial, Sans-serif
+    background: #111;
+    height: 62px;
+    padding: 0 5%;
+    width: 90%;
+    position: absolute;
+    z-index: 1;
+    font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, Sans-serif
 }
 
 header nav {
-	display: none;
-	background: #222;
-	position: absolute;
-	top: 82px;
-	right: 0;
-	z-index: 1000;
-	width: 100%;
-	font-size: 24px;
-	font-size: 2.4rem;
-	text-align: center
+    display: none;
+    background: #222;
+    position: absolute;
+    top: 62px;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    font-size: 24px;
+    font-size: 2.4rem;
+    text-align: center
 }
 
 header nav li {
-	height: 3em;
-	list-style: none;
-	display: block;
-	border-top: #212121 solid 1px;
-	border-bottom: #363636 solid 1px
+    height: 3em;
+    list-style: none;
+    display: block;
+    border-top: #212121 solid 1px;
+    border-bottom: #363636 solid 1px
 }
 
+footer nav li a,
 header nav li a {
-	display: block;
-	color: #fff;
-	line-height: 3em;
-	text-decoration: none;
-	text-transform: lowercase
-}
-
-mark {
-	background-color: #66d6ff
+    display: block;
+    color: #fff;
+    line-height: 3em;
+    text-decoration: none;
+    text-transform: lowercase
 }
 
 .logo {
-	height: 80px;
-	width: 192px;
-	background: url(images/shared/logo-initials-white.png) no-repeat;
-	transition: .1s;
-	display: block;
-	margin-right: 0;
-	text-indent: -9999px;
-	float: left
+    height: 80px;
+    width: 192px;
+    background: url(images/shared/logo-initials-white.png) no-repeat;
+    transition: .1s;
+    display: block;
+    margin-right: 0;
+    text-indent: -9999px;
+    float: left
 }
 
 .logo:hover {
-	background: url(images/shared/logo-initials-blue.png) no-repeat;
-	transition: .1s
+    background: url(images/shared/logo-initials-blue.png) no-repeat;
+    transition: .1s
 }
 
 .icon-nav {
-	width: 27px;
-    height: 82px;
-	margin-top: 21px;
-	float: right;
-	background: url(images/shared/nav-hamburger.png) no-repeat;
-	transition: .1s;
-	display: block;
-	text-indent: -9999px
-}
-
-.icon-nav.active {
-	opacity: .5
-}
+    width: 27px;
+    height: 62px;
+    float: right;
+    background: url(images/nav-hamburger.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+  }
+  .icon-nav.active {
+    opacity: 0.5;
+  }
 
 .social li {
-	display: inline-block;
-	border: 0;
-	margin-top: 18px;
-	margin-left: 15px;
-	height: 32px
+    display: inline-block;
+    border: 0;
+    margin-top: 18px;
+    margin-left: 15px;
+    height: 32px
 }
 
 .social li a {
-	width: 32px;
-	height: auto;
-	display: inline-block;
-	transition: .1s;
-	text-indent: -9999px;
-	cursor: pointer;
-	padding: 0
+    width: 32px;
+    height: auto;
+    display: inline-block;
+    transition: .1s;
+    text-indent: -9999px;
+    cursor: pointer;
+    padding: 0
 }
 
 .social li a:hover {
-	width: 32px;
-	height: auto;
-	display: inline-block;
-	transition: .1s;
-	text-indent: -9999px;
-	cursor: pointer;
-	padding: 0
+    width: 32px;
+    height: auto;
+    display: inline-block;
+    transition: .1s;
+    text-indent: -9999px;
+    cursor: pointer;
+    padding: 0
 }
 
 .social .github a {
-	background: url(images/shared/github-white.png);
-	background-size: 32px 32px;
-	background-repeat: no-repeat
+    background: url(images/shared/github-white.png);
+    background-size: 32px 32px;
+    background-repeat: no-repeat
 }
 
 .social .linkedin a {
-	background: url(images/shared/linkedin-white.png);
-	background-size: 32px 32px;
-	background-repeat: no-repeat
+    background: url(images/shared/linkedin-white.png);
+    background-size: 32px 32px;
+    background-repeat: no-repeat
 }
 
 .social .github:hover a {
-	background: url(images/shared/github-blue.png);
-	background-size: 32px 32px;
-	background-repeat: no-repeat
+    background: url(images/shared/github-blue.png);
+    background-size: 32px 32px;
+    background-repeat: no-repeat
 }
 
 .social .linkedin:hover a {
-	background: url(images/shared/linkedin-blue.png);
-	background-size: 32px 32px;
-	background-repeat: no-repeat
+    background: url(images/shared/linkedin-blue.png);
+    background-size: 32px 32px;
+    background-repeat: no-repeat
 }
 
 ::selection {
