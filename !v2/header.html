@@ -27,10 +27,10 @@
 				<div class="icon-nav">navigation</div>
 				<nav>
 					<ul id="nav"  >
-						<li class="page_item page-item-2"><a href="https://www.dgallo.ca/about">about</a></li>
-						<li class="page_item page-item-5"><a href="https://www.dgallo.ca/professional">professional</a></li>
-						<li class="page_item page-item-7"><a href="https://www.dgallo.ca/creative">creative</a></li>
-						<li class="page_item page-item-11"><a href="https://www.dgallo.ca/contact">contact</a></li>
+						<li><a href="https://www.dgallo.ca/about">about</a></li>
+						<li><a href="https://www.dgallo.ca/professional">professional</a></li>
+						<li><a href="https://www.dgallo.ca/creative">creative</a></li>
+						<li><a href="https://www.dgallo.ca/contact">contact</a></li>
 						<li>
 							<ul class="social">
 								<li class="github"><a href="https://www.github.com/monkeydg" title="Check out my Github" target="_blank">github</a></li>
@@ -44,13 +44,10 @@
 	</header>
 
 <script type='text/javascript' src='https://www.adhamdannaway.com/wp-includes/js/wp-embed.min.js?ver=5.6.2' id='wp-embed-js'></script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
 <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> 
 <script src="assets/js/script.js"></script>
 <script type="text/javascript">
-
-
 /*
 * Call functions when dom is ready
 */
@@ -65,18 +62,10 @@ $(document).ready(function() {
 		$(this).toggleClass('active');
 	});
 
-	// Function to scroll to top
-	$('a[href=#top]').click(function(){
-
-        $('html, body').animate({scrollTop:0}, 1000, 'easeInOutQuad');
-        return false;
-    });
 
 	// Function to fade in image sprites
   	$('.sprite').fadeSprite();
 
-	// Function to animate when leaving page
-	$('.transition, #nav .page_item a, #logo, #face a').leavePage();	
 
 	// Animate the header on first			
 	$('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
@@ -97,7 +86,6 @@ $(document).ready(function() {
 	});
 
 });
-
 </script>
 
 </body>
