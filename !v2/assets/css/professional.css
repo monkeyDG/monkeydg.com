@@ -487,6 +487,7 @@ body {
 }
 
 .wrapper {
+    padding: 0 0 0 0;
     opacity: 1;
     visibility: visible;
     position: relative;
@@ -501,6 +502,7 @@ body {
     max-width: 1000px;
     padding-left: 10px;
     padding-right: 10px;
+    overflow: visible;
     margin: 0 auto
 }
 
@@ -535,7 +537,8 @@ body {
 }
 
 .section-box {
-    padding: 40px 40px
+    padding: 40px 40px;
+    overflow: visible
 }
 
 .section-title {
@@ -862,6 +865,8 @@ body {
     .section-about .profile-title {
         font-size: 28px
     }
+
+
 }
 
 .section-skills .section-box {
@@ -1198,9 +1203,6 @@ body {
     display: inline-block;
     position: relative;
     padding: 5px 8px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px
 }
 
 .timeline-box-compact .date span:before {
@@ -1421,122 +1423,131 @@ nav {
     display: block
 }
 
+
 header {
-    background: #111;
-    height: 62px;
-    padding: 0 5%;
-    width: 90%;
-    position: absolute;
-    z-index: 1;
-    font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, Sans-serif
+	background: #111;
+	height: 82px;
+	padding: 0 5%;
+	width: 90%;
+	position: absolute;
+	z-index: 1000;
+	font-family: "Open Sans Regular", "Helvetica Neue", Helvetica, Arial, Sans-serif
 }
 
 header nav {
-    display: none;
-    background: #222;
-    position: absolute;
-    top: 62px;
-    right: 0;
-    z-index: 1000;
-    width: 100%;
-    font-size: 24px;
-    font-size: 2.4rem;
-    text-align: center
+	display: none;
+	background: #222;
+	position: absolute;
+	top: 82px;
+	right: 0;
+	z-index: 1000;
+	width: 100%;
+	font-size: 24px;
+	font-size: 2.4rem;
+	text-align: center
 }
 
 header nav li {
-    height: 3em;
-    list-style: none;
-    display: block;
-    border-top: #212121 solid 1px;
-    border-bottom: #363636 solid 1px
+	height: 3em;
+	list-style: none;
+	display: block;
+	border-top: #212121 solid 1px;
+	border-bottom: #363636 solid 1px
 }
 
-footer nav li a,
 header nav li a {
-    display: block;
-    color: #fff;
-    line-height: 3em;
-    text-decoration: none;
-    text-transform: lowercase
+	display: block;
+	color: #fff;
+	line-height: 3em;
+	text-decoration: none;
+	text-transform: lowercase
+}
+
+mark {
+	background-color: #66d6ff
 }
 
 .logo {
-    height: 80px;
-    width: 192px;
-    background: url(images/shared/logo-initials-white.png) no-repeat;
-    transition: .1s;
-    display: block;
-    margin-right: 0;
-    text-indent: -9999px;
-    float: left
+	height: 80px;
+	width: 192px;
+	background: url(images/shared/logo-initials-white.png) no-repeat;
+	transition: .1s;
+	display: block;
+	margin-right: 0;
+	text-indent: -9999px;
+	float: left
 }
 
 .logo:hover {
-    background: url(images/shared/logo-initials-blue.png) no-repeat;
-    transition: .1s
+	background: url(images/shared/logo-initials-blue.png) no-repeat;
+	transition: .1s
 }
 
 .icon-nav {
-    height: 80px;
-    width: 192px;
-    float: right;
-    background: url(images/shared/logo-initials-white.png) no-repeat;
-    transition: .1s;
-    display: block;
-    text-indent: -9999px
+	width: 27px;
+    height: 82px;
+	margin-top: 21px;
+	float: right;
+	background: url(images/shared/nav-hamburger.png) no-repeat;
+	transition: .1s;
+	display: block;
+	text-indent: -9999px
+}
+
+.icon-nav.active {
+	opacity: .5
 }
 
 .social li {
-    display: inline-block;
-    border: 0;
-    margin-top: 18px;
-    margin-left: 15px;
-    height: 32px
+	display: inline-block;
+	border: 0;
+	margin-top: 18px;
+	margin-left: 15px;
+	height: 32px
 }
 
 .social li a {
-    width: 32px;
-    height: auto;
-    display: inline-block;
-    transition: .1s;
-    text-indent: -9999px;
-    cursor: pointer;
-    padding: 0
+	width: 32px;
+	height: auto;
+	display: inline-block;
+	transition: .1s;
+	text-indent: -9999px;
+	cursor: pointer;
+	padding: 0
 }
 
 .social li a:hover {
-    width: 32px;
-    height: auto;
-    display: inline-block;
-    transition: .1s;
-    text-indent: -9999px;
-    cursor: pointer;
-    padding: 0
+	width: 32px;
+	height: auto;
+	display: inline-block;
+	transition: .1s;
+	text-indent: -9999px;
+	cursor: pointer;
+	padding: 0
 }
 
 .social .github a {
-    background: url(images/shared/github-white.png);
-    background-size: 32px 32px;
-    background-repeat: no-repeat
+	background: url(images/shared/github-white.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
 }
 
 .social .linkedin a {
-    background: url(images/shared/linkedin-white.png);
-    background-size: 32px 32px;
-    background-repeat: no-repeat
+	background: url(images/shared/linkedin-white.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
 }
 
 .social .github:hover a {
-    background: url(images/shared/github-blue.png);
-    background-size: 32px 32px;
-    background-repeat: no-repeat
+	background: url(images/shared/github-blue.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
 }
 
 .social .linkedin:hover a {
-    background: url(images/shared/linkedin-blue.png);
-    background-size: 32px 32px;
-    background-repeat: no-repeat
+	background: url(images/shared/linkedin-blue.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
 }
 
 ::selection {
@@ -1605,7 +1616,7 @@ header nav li a {
 
 @media only screen and (min-width:1024px) {
     .logo {
-        margin-right: 200px
+        margin-right: 0
     }
 
     header nav {
@@ -1687,18 +1698,9 @@ header nav li a {
     }
 }
 
-@media only screen and (min-width:1247px) {
-    .logo {
-        height: 80px;
-        width: 407px;
-        background: url(images/shared/logo-white.png) no-repeat
-    }
-
-    .logo:hover {
-        height: 80px;
-        width: 407px;
-        background: url(images/shared/logo-blue.png) no-repeat
-    }
+.logo-footer-fix {
+    position: relative;
+    left: 24%
 }
 
 @media only screen and (min-width:1247px) {
@@ -1712,6 +1714,11 @@ header nav li a {
         height: 80px;
         width: 407px;
         background: url(images/shared/logo-blue.png) no-repeat
+    }
+    
+    .logo-footer-fix {
+        position: relative;
+        left: 0
     }
 }
 
@@ -1933,7 +1940,15 @@ footer {
     background: #333;
     display: grid;
     padding: 10px;
+    text-align: center;
+    justify-content: center;
+}
 
+.center-all {
+    text-align: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    align-items: center !important;
 }
 
 
@@ -1943,17 +1958,19 @@ footer nav {
     margin: 0 0 0 0
 }
 
+footer a {
+    text-align: center;
+    justify-content: center;
+    margin: 0 0 0 0;
+}
+
 footer ul {
     margin: 0 0 0 0
 }
 
-footer .logo {
+.logo {
+    display: inline-block;
     margin: 0;
-    justify-content: center;
-    text-align: center
-}
-
-footer {
     justify-content: center;
     text-align: center
 }

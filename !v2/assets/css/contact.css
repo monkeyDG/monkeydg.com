@@ -1,87 +1,26 @@
+.bg {
+  /* The image used */
+  background-image: url(images/contact/bg-02.jpg);
+  /*03 is also good*/
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
 
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-@font-face {
-  font-family: "Open Sans Light";
-  src: url('../fonts/poppins/"Open Sans Light".ttf');
 }
 
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
-}
-
-@font-face {
-  font-family: "Open Sans Light";
-  src: url('../fonts/montserrat/"Open Sans Light".ttf'); 
-}
-
-
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
-
-* {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
-}
-
-body, html {
-	height: 100%;
-	font-family: "Open Sans Light", sans-serif;
-}
-
-/*---------------------------------------------*/
-a {
-	font-family: "Open Sans Light";
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-}
-
-a:focus {
-	outline: none !important;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-/*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
-}
-
-p {
-	font-family: "Open Sans Light";
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-}
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
+.bg::before{
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(44, 51, 64, .7)
 }
 
 
@@ -119,21 +58,6 @@ textarea::-webkit-input-placeholder { color: #adadad;}
 textarea:-moz-placeholder { color: #adadad;}
 textarea::-moz-placeholder { color: #adadad;}
 textarea:-ms-input-placeholder { color: #adadad;}
-
-/*---------------------------------------------*/
-button {
-	outline: none !important;
-	border: none;
-	background: transparent;
-}
-
-button:hover {
-	cursor: pointer;
-}
-
-iframe {
-	border: none !important;
-}
 
 /*//////////////////////////////////////////////////////////////////
 [ utility ]*/
@@ -178,7 +102,6 @@ iframe {
 
 .container-contact100 {
   width: 100%;  
-  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -187,15 +110,12 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  background: #f2f2f2;
+  background: #fff;
   
 }
 
 .wrap-contact100 {
   width: 1120px;
-  background: #fff;
-  overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -426,7 +346,6 @@ textarea.input100 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 23px;
 }
 
 .contact100-form-btn {
@@ -461,22 +380,27 @@ textarea.input100 {
 }
 
 
+.container-bottompad {
+  width: 100%;
+  max-width: 1000px;
+  overflow: visible;
+  margin: 0 auto;
+  padding: 0 0 20px 0
+}
 
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
-@media (max-width: 992px) {
-  .contact100-form {
-    width: 60%;
-    padding: 56px 30px 63px 30px;
-  }
-
-  .contact100-more {
-    width: 40%;
-  }
-}
 
 @media (max-width: 768px) {
+  .container-bottompad {
+    width: 100%;
+    max-width: 1000px;
+    overflow: visible;
+    margin: 0 auto;
+    padding: 0 0 0 0
+  }
+  
   .contact100-form {
     width: 100%;
   }
@@ -484,11 +408,9 @@ textarea.input100 {
   .contact100-more {
     width: 100%;
   }
-}
 
-@media (max-width: 576px) {
   .contact100-form {
-    padding: 56px 15px 63px 15px;
+    padding: 56px 15px 15px 15px;
   }
 
   .rs1-wrap-input100,
@@ -501,7 +423,6 @@ textarea.input100 {
     border-top: none;
   }
 }
-
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/

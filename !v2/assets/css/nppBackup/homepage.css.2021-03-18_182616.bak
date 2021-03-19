@@ -1,0 +1,756 @@
+body,
+body div,
+h1,
+header,
+html,
+li,
+mark,
+nav,
+p,
+section,
+typewriter,
+ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: bottom;
+	background: 0 0
+}
+
+header,
+typewriter,
+nav,
+section {
+	display: block
+}
+
+.clearfix:after,
+.clearfix:before,
+.row:after,
+.row:before,
+section:after,
+section:before {
+	display: table;
+	content: ""
+}
+
+.clearfix:after,
+.row:after,
+section:after {
+	clear: both
+}
+
+.nopad-t {
+	padding-top: 0!important
+}
+
+.nopad-b {
+	padding-bottom: 0!important
+}
+
+html {
+	background: #fff;
+	font-size: 60%;
+	-webkit-overflow-scrolling: touch;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	background-color: transparent;
+	font-size: 18px;
+	font-size: 1.8rem;
+	color: #111;
+	text-rendering: optimizeLegibility
+}
+
+header {
+	background: #111;
+	height: 62px;
+	padding: 0 5%;
+	width: 90%;
+	position: absolute;
+	z-index: 1000;
+	font-family: "Open Sans Regular", "Helvetica Neue", Helvetica, Arial, Sans-serif
+}
+
+header nav {
+	display: none;
+	background: #222;
+	position: absolute;
+	top: 62px;
+	right: 0;
+	z-index: 1000;
+	width: 100%;
+	font-size: 24px;
+	font-size: 2.4rem;
+	text-align: center
+}
+
+header nav li {
+	height: 3em;
+	list-style: none;
+	display: block;
+	border-top: #212121 solid 1px;
+	border-bottom: #363636 solid 1px
+}
+
+header nav li a {
+	display: block;
+	color: #fff;
+	line-height: 3em;
+	text-decoration: none;
+	text-transform: lowercase
+}
+
+mark {
+	background-color: #66d6ff
+}
+
+.logo {
+	height: 80px;
+	width: 192px;
+	background: url(images/logo-initials-sprite-light0.png) no-repeat;
+	transition: .1s;
+	display: block;
+	margin-right: 0;
+	text-indent: -9999px;
+	float: left
+}
+
+.logo:hover {
+	background: url(images/logo-initials-sprite-light2.png) no-repeat;
+	transition: .1s
+}
+
+.icon-nav {
+	width: 27px;
+    height: 62px;
+	margin-top: 10px;
+	float: right;
+	background: url(images/nav-hamburger.png) no-repeat;
+	transition: .1s;
+	display: block;
+	text-indent: -9999px
+}
+
+.icon-nav.active {
+	opacity: .5
+}
+
+.social li {
+	display: inline-block;
+	border: 0;
+	margin-top: 18px;
+	margin-left: 15px;
+	height: 32px
+}
+
+.social li a {
+	width: 32px;
+	height: auto;
+	display: inline-block;
+	transition: .1s;
+	text-indent: -9999px;
+	cursor: pointer;
+	padding: 0
+}
+
+.social li a:hover {
+	width: 32px;
+	height: auto;
+	display: inline-block;
+	transition: .1s;
+	text-indent: -9999px;
+	cursor: pointer;
+	padding: 0
+}
+
+.social .github a {
+	background: url(images/github-white.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
+}
+
+.social .linkedin a {
+	background: url(images/linkedin-white.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
+}
+
+.social .github:hover a {
+	background: url(images/github-blue.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
+}
+
+.social .linkedin:hover a {
+	background: url(images/linkedin-blue.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
+}
+
+.content {
+	margin-top: 62px
+}
+
+.h1,
+h1 {
+	margin-bottom: .1em;
+	font-size: 64px;
+	font-size: 6.4rem;
+	line-height: 1.2em;
+	font-family: "Jetbrains Mono", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	letter-spacing: -.07em;
+	color: #222
+}
+
+.typewriter h1 {
+	
+	top: 126px;
+	position: relative;
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	border-right: .15em #66d6ff; /* The typwriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	letter-spacing: .1em; /* Adjust as needed */
+	animation: 
+		typing 2.5s steps(40, end),
+		blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #66d6ff; }
+}
+
+p {
+	margin-bottom: 1.4em;
+	line-height: 1.5em
+}
+
+a {
+	text-decoration: underline;
+	cursor: pointer;
+	color: #333
+}
+
+a:active,
+a:hover {
+	color: #66d6ff
+}
+
+::selection {
+	background: #333;
+	color: #fff
+}
+
+::-moz-selection {
+	background: #333;
+	color: #fff
+}
+
+::-webkit-selection {
+	background: #333;
+	color: #fff
+}
+
+ul.ul {
+	list-style-type: disc;
+	padding-left: 2em;
+	margin-bottom: 1.4em;
+	line-height: 1.4em
+}
+
+ul.ul li {
+	margin-bottom: .7em
+}
+
+@font-face {
+	font-family: 'Open Sans Light';
+	font-style: normal;
+	font-weight: 300;
+	src: url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2')
+}
+
+@font-face {
+	font-family: 'Jetbrains Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://fonts.gstatic.com/s/jetbrainsmono/v3/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOlOV.woff2) format('woff2')
+}
+
+@font-face {
+	font-family: 'Open Sans Bold';
+	font-style: normal;
+	font-weight: 600;
+	src: url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff')
+}
+
+section.light {
+	overflow: hidden;
+	border-top: #fff solid 1px;
+	padding: 3em 1.5em
+}
+
+section.light {
+	-webkit-box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, .05);
+	-moz-box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, .05);
+	box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, .05);
+	border-bottom: #ddd solid 1px
+}
+
+.home section.light {
+	-webkit-box-shadow: inset 0 0 0 0 transparent;
+	-moz-box-shadow: inset 0 0 0 0 transparent;
+	box-shadow: inset 0 0 0 0 transparent
+}
+
+img {
+	max-width: 100%;
+	position: relative;
+	margin-bottom: 2em;
+	height: auto
+}
+
+#jpreLoader {
+	width: 100px;
+	height: 100px;
+	background: url(images/loader.png) 0 100% no-repeat;
+	position: fixed;
+	top: 43%;
+	left: 50%;
+	margin-left: -50px;
+	display: none
+}
+
+.js #coder,
+.js #coder-bg,
+.js #content,
+.js #designer,
+.js #designer-bg,
+.js #designer-img,
+.js #face-img,
+.js #img-0,
+.js #img-1,
+.js #img-2,
+.js #img-3,
+.js #img-4,
+.js #img-5,
+.js .js #coder-img {
+	opacity: 0
+}
+
+.js #header {
+	top: -92px;
+	opacity: 0
+}
+
+.face {
+	width: 100%;
+	position: relative
+}
+
+.face .face-img {
+	display: block;
+	margin: 0
+}
+
+.face a {
+	color: #666;
+	text-decoration: none
+}
+
+.face .coder,
+.face .designer {
+	position: absolute;
+	width: 40%;
+	display: block;
+	z-index: 10;
+	height: 15%;
+	margin: auto;
+	top: 0;
+	bottom: 0
+}
+
+.face .coder h1,
+.face .designer h1 {
+	font-size: 22px;
+	font-size: 2.2rem
+}
+
+.face .designer {
+	left: 0
+}
+
+.face .coder {
+	right: 0;
+	text-align: right
+}
+
+.face .coder p,
+.face .coder-bg,
+.face .coder-img,
+.face .designer p,
+.face .designer-bg,
+.face .designer-img {
+	display: none
+}
+
+@media only screen and (min-width:1px) {
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 12px;
+		font-size: 1.2rem
+	}
+}
+
+@media only screen and (min-width:310px) {
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 14px;
+		font-size: 1.4rem
+	}
+}
+
+@media only screen and (min-width:373px) {
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 16px;
+		font-size: 1.6rem
+	}
+}
+
+@media only screen and (min-width:418px) {
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 19px;
+		font-size: 1.9rem
+	}
+}
+
+@media only screen and (min-width:486px) {
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 24px;
+		font-size: 2.4rem
+	}
+}
+
+@media only screen and (min-width:600px) {
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 32px;
+		font-size: 3.2rem
+	}
+}
+
+@media only screen and (min-width:750px) {
+	.face .coder,
+	.face .designer {
+		width: 25%;
+		height: 35%
+	}
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 33px;
+		font-size: 3.3rem
+	}
+	.face .coder p,
+	.face .designer p {
+		display: block;
+		font-size: 16px;
+		font-size: 1.6rem;
+		margin: 0
+	}
+}
+
+@media only screen and (min-width:860px) {
+	.face .coder,
+	.face .designer {
+		width: 30%;
+		height: 30%
+	}
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 42px;
+		font-size: 4.2rem
+	}
+	.face .coder p,
+	.face .designer p {
+		font-size: 16px;
+		font-size: 1.6rem
+	}
+}
+
+@media only screen and (min-width:1079px) {
+	.face .coder,
+	.face .designer {
+		height: 40%
+	}
+	.face .coder h1,
+	.face .designer h1 {
+		font-size: 52px;
+		font-size: 5.2rem
+	}
+}
+
+@media only screen and (min-width:1356px) {
+	.face {
+		width: 1220px;
+		height: calc(100vh - 186px);
+		position: relative;
+	}
+	.face .coder,
+	.face .designer {
+		height: 200px;
+		position: absolute
+	}
+	.face .coder .description,
+	.face .designer .description {
+		position: absolute;
+		width: 270px
+	}
+	.face .coder p,
+	.face .designer p {
+		font-size: 18px;
+		font-size: 1.8rem;
+		line-height: 1.4em
+	}
+	.face .coder {
+		text-align: left;
+		right: 0
+	}
+	.face .coder .description {
+		right: 0
+	}
+	.face .designer {
+		left: 0
+	}
+	.face .designer .description {
+		left: 0
+	}
+	.face .coder-img {
+		width: 510px;
+		height: calc(100vh - 186px);
+		position: absolute;
+		background: url(images/sprite-coder.png) no-repeat;
+		display: block;
+		z-index: 1
+	}
+	.face .designer-img {
+		width: 510px;
+		height: 710px;
+		position: absolute;
+		background: url(images/sprite-designer.png) no-repeat;
+		display: block;
+		z-index: 1
+	}
+	.face .coder-img {
+		background-position: 100% 0%;
+	}
+	.face .coder-bg {
+		width: 420px;
+		height: 200px;
+		top: 500px;
+		right: 60%;
+		position: absolute;
+		background: url(images/sprite-background.png) no-repeat;
+		display: block;
+		background-position: 100%
+	}
+	.face .designer-bg {
+		width: 420px;
+		height: 200px;
+		top: 500px;
+		left: 60%;
+		position: absolute;
+		background: url(images/sprite-background.png) no-repeat;
+		display: block;
+	}
+	.face .face-img {
+		display: none
+	}
+}
+
+@media only screen and (min-width:428px) {
+	.h1,
+	h1 {
+		font-size: 72px;
+		font-size: 7.2rem
+	}
+}
+
+@media only screen and (min-width:830px) {
+	.social {
+		margin-left: 30px
+	}
+	.social li {
+		margin-top: 30px
+	}
+	header {
+		background: #fff;
+		height: 92px
+	}
+	header nav {
+		float: right;
+		display: block;
+		font-size: 16px;
+		font-size: 1.6rem;
+		position: static;
+		background: 0 0;
+		width: auto
+	}
+	header nav li {
+		display: inline-block;
+		float: left;
+		position: relative;
+		height: 92px;
+		border: 0
+	}
+	header nav li a {
+		display: block;
+		color: #111;
+		line-height: 92px;
+		padding: 0 1em;
+		text-decoration: none
+	}
+	header nav li:hover a {
+		transition: .1s;
+		color: #66d6ff
+	}
+	header nav .portfolio .page-item-7 a {
+		color: #666
+	}
+	header .icon-nav {
+		display: none
+	}
+	.content {
+		margin-top: 184px
+	}
+	.h1,
+	h1 {
+		font-size: 80px;
+		font-size: 8rem
+	}
+	section.light {
+		padding: 4.5em 5%
+	}
+	img {
+		margin-bottom: 4em
+	}
+
+	.social .github a {
+		background: url(images/github.png);
+		background-size: 32px 32px;
+		background-repeat: no-repeat
+	}
+	
+	.social .linkedin a {
+		background: url(images/linkedin.png);
+		background-size: 32px 32px;
+		background-repeat: no-repeat
+	}
+}
+
+@media only screen and (min-width:1024px) {
+	.logo {
+		margin-right: 200px
+	}
+	header nav {
+		font-size: 18px;
+		font-size: 1.8rem
+	}
+	p {
+		line-height: 1.4em
+	}
+	.row {
+		clear: both;
+		margin: 0 auto
+	}
+	.row.alt [class^=col-] {
+		float: right;
+		margin: 0 0 0 3.84615385%
+	}
+	[class^=col-] {
+		float: left;
+		margin: 0 3.84615385% 0 0;
+		list-style: none;
+		position: relative
+	}
+	.row.alt [class^=col-]:last-child,
+	[class^=col-]:last-child {
+		margin: 0
+	}
+	.col-1 {
+		width: 4.80769231%
+	}
+	.col-2 {
+		width: 13.46153846%
+	}
+	.col-3 {
+		width: 22.11538462%
+	}
+	.col-4 {
+		width: 30.76923077%
+	}
+	.col-5 {
+		width: 39.42307692%
+	}
+	.col-6 {
+		width: 48.07692308%
+	}
+	.col-7 {
+		width: 56.73076923%
+	}
+	.col-8 {
+		width: 65.38461538%
+	}
+	.col-9 {
+		width: 74.03846154%
+	}
+	.col-10 {
+		width: 82.69230769%
+	}
+	.col-11 {
+		width: 91.34615385%
+	}
+	.col-12 {
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center
+	}
+	section.light {
+		padding: 6em 5%
+	}
+}
+
+@media only screen and (min-width:1247px) {
+	.logo {
+		height: 80px;
+		width: 407px;
+		background: url(images/logo-sprite-light0.png) no-repeat
+	}
+	.logo:hover {
+		height: 80px;
+		width: 407px;
+		background: url(images/logo-sprite-light2.png) no-repeat
+	}
+	p {
+		line-height: 1.6em
+	}
+}
