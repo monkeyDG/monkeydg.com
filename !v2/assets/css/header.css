@@ -26,13 +26,13 @@ nav {
 	display: block
 }
 
-.row:after,
-.row:before {
+.header-row:after,
+.header-row:before {
 	display: table;
 	content: ""
 }
 
-.row:after {
+.header-row:after {
 	clear: both
 }
 
@@ -356,57 +356,9 @@ ul.ul li {
 		font-size: 18px;
 		font-size: 1.8rem
 	}
-	.row {
+	.header-row {
 		clear: both;
 		margin: 0 auto
-	}
-	[class^=col-] {
-		float: left;
-		margin: 0 3.84615385% 0 0;
-		list-style: none;
-		position: relative
-	}
-	[class^=col-]:last-child {
-		margin: 0
-	}
-	.col-1 {
-		width: 4.80769231%
-	}
-	.col-2 {
-		width: 13.46153846%
-	}
-	.col-3 {
-		width: 22.11538462%
-	}
-	.col-4 {
-		width: 30.76923077%
-	}
-	.col-5 {
-		width: 39.42307692%
-	}
-	.col-6 {
-		width: 48.07692308%
-	}
-	.col-7 {
-		width: 56.73076923%
-	}
-	.col-8 {
-		width: 65.38461538%
-	}
-	.col-9 {
-		width: 74.03846154%
-	}
-	.col-10 {
-		width: 82.69230769%
-	}
-	.col-11 {
-		width: 91.34615385%
-	}
-	.col-12 {
-		width: 100%;
-		margin: 0 auto;
-		display: flex;
-		justify-content: center
 	}
 }
 

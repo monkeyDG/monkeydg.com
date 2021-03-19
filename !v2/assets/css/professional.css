@@ -33,7 +33,23 @@ html {
     -ms-text-size-adjust: 100%
 }
 
-*,
+.content,
+.container,
+.section,
+.section-about,
+.animate-up,
+.section-box,
+.profile,
+.row,
+.col-xs-5,
+.col-xs-7,
+.profile-info,
+.profile-photo,
+.profile-preword,
+.profile-title,
+.profile-position,
+.profile-list,
+.section-txt-btn,
 :after,
 :before {
     -webkit-box-sizing: border-box;
@@ -500,8 +516,6 @@ body {
 .container {
     width: 100%;
     max-width: 1000px;
-    padding-left: 10px;
-    padding-right: 10px;
     overflow: visible;
     margin: 0 auto
 }
@@ -626,7 +640,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 0;
+    z-index: -100;
     display: none;
     position: absolute;
     background-size: cover;
@@ -820,7 +834,7 @@ body {
     padding: 15px 0
 }
 
-@media (max-width:992px) {
+@media (max-width:866) {
     .section-about .profile {
         padding: 50px 40px 15px
     }
@@ -1495,7 +1509,7 @@ header nav li a {
     display: inline-block;
     border: 0;
     margin-top: 18px;
-    margin-left: 15px;
+    margin-left: 0px !important;
     height: 32px
 }
 
@@ -1506,6 +1520,7 @@ header nav li a {
     transition: .1s;
     text-indent: -9999px;
     cursor: pointer;
+    margin: 0 8px 0 8px;
     padding: 0
 }
 
@@ -1522,7 +1537,7 @@ header nav li a {
 .social .github a {
     background: url(images/shared/github-white.png);
     background-size: 32px 32px;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
 }
 
 .social .linkedin a {
@@ -1933,7 +1948,7 @@ footer {
 
     background: #333;
     display: grid;
-    padding: 10px;
+
     text-align: center;
     justify-content: center;
 }
@@ -1992,7 +2007,7 @@ footer .social li a:hover {
 
 footer nav li {
     display: inline-block;
-    margin: 0 12px 0 12px
+    margin: 0 8px 0 8px
 }
 
 footer nav li a:hover,

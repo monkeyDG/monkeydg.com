@@ -837,7 +837,6 @@ footer {
 	width: 100%;
 	background: #333;
 	display: grid;
-	padding: 10px;
 	text-align: center;
 	justify-content: center
 }

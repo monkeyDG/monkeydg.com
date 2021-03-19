@@ -8,24 +8,20 @@
 	<meta name="MobileOptimized" content="320">
 
     <title>Contact</title>
-    <link rel="stylesheet" type="text/css" href="assets/colors/theme-color.css">
 	<script src="https://www.adhamdannaway.com/wp-content/themes/dannaway/js/modernizr-2.5.3-min.js"></script>
 
-	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/favicon.ico"/>
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
+
+	<link rel="stylesheet" type="text/css" href="assets/colors/theme-color.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/contact.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/header.css">
 	
-	<!--===============================================================================================-->
 </head>
 <body>
     <main class="bg">
 		<div class="wrapper">
 			<header id="header">
-				<div class="row">
+				<div class="header-row">
 					<div class="col-12">
 						<a id="logo" class="logo" href="https://www.dgallo.ca/">David Gallo</a>
 						<div class="icon-nav">navigation</div>
@@ -152,49 +148,49 @@
 	<script src="assets/js/jquery-3.2.1.min.js"></script>
 	<script src="assets/js/contact.js"></script>
 	
-<script type='text/javascript' src='https://www.adhamdannaway.com/wp-includes/js/wp-embed.min.js?ver=5.6.2' id='wp-embed-js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
-<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> 
-<script src="assets/js/script.js"></script>
-<script type="text/javascript">
-/*
-* Call functions when dom is ready
-*/
-$(document).ready(function() {
+	<script type='text/javascript' src='https://www.adhamdannaway.com/wp-includes/js/wp-embed.min.js?ver=5.6.2' id='wp-embed-js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> 
+	<script src="assets/js/script.js"></script>
+	<script type="text/javascript">
+	/*
+	* Call functions when dom is ready
+	*/
+	$(document).ready(function() {
 
-	// Hide browser top bar in mobiles
-	$('body').scrollTop(1);
+		// Hide browser top bar in mobiles
+		$('body').scrollTop(1);
 
-	// Toggle Navigation for mobile devices
-	$('.icon-nav').on('click', function(){
-		$('header nav').slideToggle();
-		$(this).toggleClass('active');
-	});
-
-
-	// Function to fade in image sprites
-  	$('.sprite').fadeSprite();
+		// Toggle Navigation for mobile devices
+		$('.icon-nav').on('click', function(){
+			$('header nav').slideToggle();
+			$(this).toggleClass('active');
+		});
 
 
-	// Animate the header on first			
-	$('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
+		// Function to fade in image sprites
+		$('.sprite').fadeSprite();
 
-	// Preload the page with jPreLoader
-	$('body').jpreLoader({
 
-		showSplash: true
+		// Animate the header on first			
+		$('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
 
-	}, function() {	
+		// Preload the page with jPreLoader
+		$('body').jpreLoader({
 
-		//Show the page once images are loaded	
+			showSplash: true
+
+		}, function() {	
+
+			//Show the page once images are loaded	
+					
+				$('#face').animateHome();
+				$('#face').resizeFace();
+
 				
-			$('#face').animateHome();
-			$('#face').resizeFace();
+		});
 
-			
 	});
-
-});
-</script>
+	</script>
 </body>
 </html>
