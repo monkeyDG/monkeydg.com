@@ -1,29 +1,3 @@
-body,
-body div,
-h1,
-header,
-html,
-li,
-mark,
-nav,
-p,
-section,
-ul {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: bottom;
-	background: 0 0
-}
-
-header,
-nav,
-section {
-	display: block
-}
-
 .clearfix:after,
 .clearfix:before,
 .row:after,
@@ -48,156 +22,6 @@ section:after {
 	padding-bottom: 0!important
 }
 
-html {
-	background: #fff;
-	font-size: 60%;
-	-webkit-overflow-scrolling: touch;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%
-}
-
-body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, Sans-serif;
-	background-color: transparent;
-	font-size: 18px;
-	font-size: 1.8rem;
-	color: #111;
-	text-rendering: optimizeLegibility
-}
-
-header {
-	background: #111;
-	height: 82px;
-	padding: 0 5%;
-	width: 90%;
-	position: absolute;
-	z-index: 1000;
-	font-family: "Open Sans Regular", "Helvetica Neue", Helvetica, Arial, Sans-serif
-}
-
-header nav {
-	display: none;
-	background: #222;
-	position: absolute;
-	top: 82px;
-	right: 0;
-	z-index: 1000;
-	width: 100%;
-	font-size: 24px;
-	font-size: 2.4rem;
-	text-align: center
-}
-
-header nav li {
-	height: 3em;
-	list-style: none;
-	display: block;
-	border-top: #212121 solid 1px;
-	border-bottom: #363636 solid 1px
-}
-
-header nav li a {
-	display: block;
-	color: #fff;
-	line-height: 3em;
-	text-decoration: none;
-	text-transform: lowercase
-}
-
-mark {
-	background-color: #66d6ff
-}
-
-.logo {
-	height: 80px;
-	width: 192px;
-	background: url(images/shared/logo-initials-white.png) no-repeat;
-	transition: .1s;
-	display: block;
-	margin-right: 0;
-	text-indent: -9999px;
-	float: left
-}
-
-.logo:hover {
-	background: url(images/shared/logo-initials-blue.png) no-repeat;
-	transition: .1s
-}
-
-.icon-nav {
-	width: 27px;
-    height: 82px;
-	margin-top: 21px;
-	float: right;
-	background: url(images/shared/nav-hamburger.png) no-repeat;
-	transition: .1s;
-	display: block;
-	text-indent: -9999px
-}
-
-.icon-nav.active {
-	opacity: .5
-}
-
-.social li {
-	display: inline-block;
-	border: 0;
-	margin-top: 18px;
-	margin-left: 15px;
-	height: 32px
-}
-
-.social li a {
-	width: 32px;
-	height: auto;
-	display: inline-block;
-	transition: .1s;
-	text-indent: -9999px;
-	cursor: pointer;
-	padding: 0
-}
-
-.social li a:hover {
-	width: 32px;
-	height: auto;
-	display: inline-block;
-	transition: .1s;
-	text-indent: -9999px;
-	cursor: pointer;
-	padding: 0
-}
-
-.social .github a {
-	background: url(images/shared/github-white.png);
-	background-size: 32px 32px;
-	background-repeat: no-repeat
-}
-
-.social .linkedin a {
-	background: url(images/shared/linkedin-white.png);
-	background-size: 32px 32px;
-	background-repeat: no-repeat
-}
-
-.social .github:hover a {
-	background: url(images/shared/github-blue.png);
-	background-size: 32px 32px;
-	background-repeat: no-repeat
-}
-
-.social .linkedin:hover a {
-	background: url(images/shared/linkedin-blue.png);
-	background-size: 32px 32px;
-	background-repeat: no-repeat
-}
-
-.content {
-	margin-top: 82px
-}
-
 .h1,
 h1 {
 	margin-bottom: .1em;
@@ -207,68 +31,6 @@ h1 {
 	font-family: "Jetbrains Mono", "Helvetica Neue", Helvetica, Arial, Sans-serif;
 	letter-spacing: -.07em;
 	color: #222
-}
-p {
-	margin-bottom: 1.4em;
-	line-height: 1.5em
-}
-
-a {
-	text-decoration: underline;
-	cursor: pointer;
-	color: #333
-}
-
-a:active,
-a:hover {
-	color: #66d6ff
-}
-
-::selection {
-	background: #333;
-	color: #fff
-}
-
-::-moz-selection {
-	background: #333;
-	color: #fff
-}
-
-::-webkit-selection {
-	background: #333;
-	color: #fff
-}
-
-ul.ul {
-	list-style-type: disc;
-	padding-left: 2em;
-	margin-bottom: 1.4em;
-	line-height: 1.4em
-}
-
-ul.ul li {
-	margin-bottom: .7em
-}
-
-@font-face {
-	font-family: 'Open Sans Light';
-	font-style: normal;
-	font-weight: 300;
-	src: url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2')
-}
-
-@font-face {
-	font-family: 'Jetbrains Mono';
-	font-style: normal;
-	font-weight: 400;
-	src: url(https://fonts.gstatic.com/s/jetbrainsmono/v3/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOlOV.woff2) format('woff2')
-}
-
-@font-face {
-	font-family: 'Open Sans Bold';
-	font-style: normal;
-	font-weight: 600;
-	src: url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff')
 }
 
 section.light {
@@ -297,17 +59,6 @@ img {
 	height: auto
 }
 
-#jpreLoader {
-	width: 100px;
-	height: 100px;
-	background: url(images/shared/loader.png) 0 100% no-repeat;
-	position: fixed;
-	top: 43%;
-	left: 50%;
-	margin-left: -50px;
-	display: none
-}
-
 .js #coder,
 .js #coder-bg,
 .js #content,
@@ -322,11 +73,6 @@ img {
 .js #img-4,
 .js #img-5,
 .js .js #coder-img {
-	opacity: 0
-}
-
-.js #header {
-	top: -92px;
 	opacity: 0
 }
 
@@ -566,67 +312,6 @@ img {
 }
 
 @media only screen and (min-width:830px) {
-	.social {
-		margin-left: 30px
-	}
-	.social li {
-		margin-top: 30px
-	}
-	header {
-		background: #fff;
-		height: 92px
-	}
-	header nav {
-		float: right;
-		display: block;
-		font-size: 16px;
-		font-size: 1.6rem;
-		position: static;
-		background: 0 0;
-		width: auto
-	}
-	header nav li {
-		display: inline-block;
-		float: left;
-		position: relative;
-		height: 92px;
-		border: 0
-	}
-	header nav li a {
-		display: block;
-		color: #111;
-		line-height: 92px;
-		padding: 0 1em;
-		text-decoration: none
-	}
-	header nav li:hover a {
-		transition: .1s;
-		color: #66d6ff
-	}
-	header nav .portfolio .page-item-7 a {
-		color: #666
-	}
-	header .icon-nav {
-		display: none
-	}
-	.logo {
-		height: 80px;
-		width: 192px;
-		background: url(images/shared/logo-initials-black.png) no-repeat;
-		transition: .1s;
-		display: block;
-		margin-right: 0;
-		text-indent: -9999px;
-		float: left
-	}
-	
-	.logo:hover {
-		background: url(images/shared/logo-initials-blue.png) no-repeat;
-		transition: .1s
-	}
-	.content {
-		margin-top: 184px
-	}
 	.h1,
 	h1 {
 		font-size: 80px;
@@ -638,28 +323,9 @@ img {
 	img {
 		margin-bottom: 4em
 	}
-
-	.social .github a {
-		background: url(images/shared/github.png);
-		background-size: 32px 32px;
-		background-repeat: no-repeat
-	}
-	
-	.social .linkedin a {
-		background: url(images/shared/linkedin.png);
-		background-size: 32px 32px;
-		background-repeat: no-repeat
-	}
 }
 
 @media only screen and (min-width:1024px) {
-	.logo {
-		margin-right: 200px
-	}
-	header nav {
-		font-size: 18px;
-		font-size: 1.8rem
-	}
 	p {
 		line-height: 1.4em
 	}
@@ -726,16 +392,6 @@ img {
 }
 
 @media only screen and (min-width:1247px) {
-	.logo {
-		height: 80px;
-		width: 407px;
-		background: url(images/shared/logo-black.png) no-repeat
-	}
-	.logo:hover {
-		height: 80px;
-		width: 407px;
-		background: url(images/shared/logo-blue.png) no-repeat
-	}
 	p {
 		line-height: 1.6em
 	}
