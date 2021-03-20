@@ -59,7 +59,7 @@ body {
 header {
 	background: #111;
 	height: 82px;
-	padding: 0 5%;
+	padding: 10px 5% 0 5%;
 	width: 90%;
 	position: absolute;
 	z-index: 1000;
@@ -96,6 +96,22 @@ header nav li a {
 }
 
 .logo {
+	height: 80px;
+	width: 192px;
+	background: url(images/shared/logo-initials-white.png) no-repeat;
+	transition: .1s;
+	display: block;
+	margin-right: 0;
+	text-indent: -9999px;
+	float: left
+}
+
+.logo:hover {
+	background: url(images/shared/logo-initials-blue.png) no-repeat;
+	transition: .1s
+}
+
+.logo-white {
 	height: 80px;
 	width: 192px;
 	background: url(images/shared/logo-initials-white.png) no-repeat;
@@ -173,6 +189,30 @@ header nav li a {
 }
 
 .social .linkedin:hover a {
+	background: url(images/shared/linkedin-blue.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
+}
+
+.social .github-white a {
+	background: url(images/shared/github-white.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
+}
+
+.social .linkedin-white a {
+	background: url(images/shared/linkedin-white.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
+}
+
+.social .github-white:hover a {
+	background: url(images/shared/github-blue.png);
+	background-size: 32px 32px;
+	background-repeat: no-repeat
+}
+
+.social .linkedin-white:hover a {
 	background: url(images/shared/linkedin-blue.png);
 	background-size: 32px 32px;
 	background-repeat: no-repeat
@@ -260,24 +300,6 @@ ul.ul li {
 	opacity: 0
 }
 
-.face {
-	width: 100%;
-	position: relative
-}
-
-.face a {
-	color: #666;
-	text-decoration: none
-}
-
-@media only screen and (min-width:1356px) {
-	.face {
-		width: 1220px;
-		height: calc(100vh - 186px);
-		position: relative
-	}
-}
-
 @media only screen and (min-width:830px) {
 	.social {
 		margin-left: 30px
@@ -312,6 +334,7 @@ ul.ul li {
 		padding: 0 1em;
 		text-decoration: none
 	}
+
 	header nav li:hover a {
 		transition: .1s;
 		color: #66d6ff
@@ -329,7 +352,21 @@ ul.ul li {
 		text-indent: -9999px;
 		float: left
 	}
+	.logo-white {
+		height: 80px;
+		width: 192px;
+		background: url(images/shared/logo-initials-white.png) no-repeat;
+		transition: .1s;
+		display: block;
+		margin-right: 0;
+		text-indent: -9999px;
+		float: left
+	}
 	.logo:hover {
+		background: url(images/shared/logo-initials-blue.png) no-repeat;
+		transition: .1s
+	}
+	.logo-white:hover {
 		background: url(images/shared/logo-initials-blue.png) no-repeat;
 		transition: .1s
 	}
@@ -357,6 +394,7 @@ ul.ul li {
 		font-size: 1.8rem
 	}
 	.header-row {
+		max-width: 1200px;
 		clear: both;
 		margin: 0 auto
 	}
@@ -368,9 +406,23 @@ ul.ul li {
 		width: 407px;
 		background: url(images/shared/logo-black.png) no-repeat
 	}
+	.logo-white {
+		height: 80px;
+		width: 407px;
+		background: url(images/shared/logo-white.png) no-repeat
+	}
 	.logo:hover {
 		height: 80px;
 		width: 407px;
 		background: url(images/shared/logo-blue.png) no-repeat
 	}
+	.logo-white:hover {
+		height: 80px;
+		width: 407px;
+		background: url(images/shared/logo-blue.png) no-repeat
+	}
+}
+
+.white-fix {
+	color: #fff;
 }

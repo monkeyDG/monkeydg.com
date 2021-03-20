@@ -50,6 +50,13 @@ html {
 .profile-position,
 .profile-list,
 .section-txt-btn,
+.section-smallpad,
+.section-skills,
+.progress-line,
+.bar,
+.info,
+.column,
+.skill-bars,
 :after,
 :before {
     -webkit-box-sizing: border-box;
@@ -75,11 +82,11 @@ section {
 }
 
 ul {
-    list-style: none
+    list-style: none;
 }
 
 a {
-    text-decoration: none
+    text-decoration: none !important
 }
 
 @font-face {
@@ -543,7 +550,7 @@ body {
 }
 
 .section {
-    padding-top: 70px
+    padding-top: 50px
 }
 
 .section-smallpad {
@@ -552,7 +559,8 @@ body {
 
 .section-box {
     padding: 40px 40px;
-    overflow: visible
+    overflow: visible;
+    color: #5b5b5b;
 }
 
 .section-title {
@@ -572,20 +580,6 @@ body {
 @media (max-width:992px) {
     .section-box {
         padding: 50px 40px
-    }
-}
-
-@media (max-width:767px) {
-    .section {
-        padding-top: 50px
-    }
-
-    .section-box {
-        padding: 30px 20px
-    }
-
-    .section-title {
-        font-size: 30px
     }
 }
 
@@ -712,7 +706,7 @@ body {
 }
 
 .section-about {
-    padding-top: 40px;
+    padding-top: 0;
     position: relative
 }
 
@@ -726,7 +720,7 @@ body {
 
 .section-about .profile-photo {
     margin-right: 10%;
-    margin-bottom: 10px
+
 }
 
 .section-about .profile-info {
@@ -845,7 +839,7 @@ body {
     }
 }
 
-@media (max-width:767px) {
+@media (max-width:649px) {
     .section-about {
         padding-top: 0
     }
@@ -879,22 +873,26 @@ body {
     .section-about .profile-title {
         font-size: 28px
     }
-
+    .section-about .profile-photo {
+        margin-right: 0%;
+        margin-bottom: 10px
+    }
+    
 
 }
 
 .section-skills .section-box {
-    padding-bottom: 50px
+    padding-bottom: 30px
 }
 
 .column {
     float: left;
-    width: 50%;
+    width: 100%;
     text-align: left
 }
 
 .skill-bars {
-    padding: 25px 30px;
+    padding: 0 30px;
     width: 100%;
     background: #fff
 }
@@ -959,7 +957,7 @@ body {
 }
 
 .bar .progress-line.visualization span {
-    width: 60%
+    width: 70%
 }
 
 .bar .progress-line.analytics span {
@@ -1017,7 +1015,7 @@ body {
 }
 
 .progress-line.visualization span::after {
-    content: "60%"
+    content: "70%"
 }
 
 .progress-line.analytics span::after {
@@ -1035,12 +1033,6 @@ body {
 @media (min-width:768px) {
     .section-skills .section-box .row:last-child .progress-bar {
         margin-bottom: 0
-    }
-}
-
-@media (max-width:767px) {
-    .section-skills .section-box {
-        padding-bottom: 35px
     }
 }
 
@@ -1156,7 +1148,7 @@ body {
 
 .timeline-box {
     width: 50%;
-    color: #757575;
+    color: #5b5b5b;
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 25px;
@@ -1425,72 +1417,13 @@ body {
     max-width: 75%
 }
 
-header,
-nav {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: bottom;
-    background: 0 0;
-    display: block
-}
 
-header {
-    background: #111;
-    height: 62px;
-    padding: 0 5%;
-    width: 90%;
-    position: absolute;
-    z-index: 1;
-    font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, Sans-serif
-}
-
-header nav {
-    display: none;
-    background: #222;
-    position: absolute;
-    top: 62px;
-    right: 0;
-    z-index: 1000;
-    width: 100%;
-    font-size: 24px;
-    font-size: 2.4rem;
-    text-align: center
-}
-
-header nav li {
-    height: 3em;
-    list-style: none;
-    display: block;
-    border-top: #212121 solid 1px;
-    border-bottom: #363636 solid 1px
-}
-
-footer nav li a,
-header nav li a {
+footer nav li a {
     display: block;
     color: #fff;
     line-height: 3em;
     text-decoration: none;
     text-transform: lowercase
-}
-
-.logo {
-    height: 80px;
-    width: 192px;
-    background: url(images/shared/logo-initials-white.png) no-repeat;
-    transition: .1s;
-    display: block;
-    margin-right: 0;
-    text-indent: -9999px;
-    float: left
-}
-
-.logo:hover {
-    background: url(images/shared/logo-initials-blue.png) no-repeat;
-    transition: .1s
 }
 
 .icon-nav {
@@ -1505,205 +1438,27 @@ header nav li a {
     opacity: 0.5;
   }
 
-.social li {
-    display: inline-block;
-    border: 0;
-    margin-top: 18px;
-    margin-left: 0px !important;
-    height: 32px
-}
-
-.social li a {
-    width: 32px;
-    height: auto;
-    display: inline-block;
-    transition: .1s;
-    text-indent: -9999px;
-    cursor: pointer;
-    margin: 0 8px 0 8px;
-    padding: 0
-}
-
-.social li a:hover {
-    width: 32px;
-    height: auto;
-    display: inline-block;
-    transition: .1s;
-    text-indent: -9999px;
-    cursor: pointer;
-    padding: 0
-}
-
-.social .github a {
-    background: url(images/shared/github-white.png);
-    background-size: 32px 32px;
-    background-repeat: no-repeat;
-}
-
-.social .linkedin a {
-    background: url(images/shared/linkedin-white.png);
-    background-size: 32px 32px;
-    background-repeat: no-repeat
-}
-
-.social .github:hover a {
-    background: url(images/shared/github-blue.png);
-    background-size: 32px 32px;
-    background-repeat: no-repeat
-}
-
-.social .linkedin:hover a {
-    background: url(images/shared/linkedin-blue.png);
-    background-size: 32px 32px;
-    background-repeat: no-repeat
-}
-
-::selection {
-    background: #333;
-    color: #fff
-}
-
-::-moz-selection {
-    background: #333;
-    color: #fff
-}
-
-::-webkit-selection {
-    background: #333;
-    color: #fff
-}
-
 @media only screen and (min-width:830px) {
-    .social {
-        margin-left: 30px
-    }
-
-    .social li {
-        margin-top: 30px
-    }
-
-    header {
-        height: 92px
-    }
-
-    header nav {
-        float: right;
-        display: block;
-        font-size: 16px;
-        font-size: 1.6rem;
-        position: static;
-        background: 0 0;
-        width: auto
-    }
-
-    header nav li {
-        display: inline-block;
+    .column {
         float: left;
-        position: relative;
-        height: 92px;
-        border: 0
-    }
-
-    header nav li a {
-        display: block;
-        color: #fff;
-        line-height: 92px;
-        padding: 0 1em;
-        text-decoration: none
-    }
-
-    header nav li:hover a {
-        transition: .1s;
-        color: #66d6ff
-    }
-
-    header .icon-nav {
-        display: none
+        width: 50%;
+        text-align: left
     }
 }
 
-@media only screen and (min-width:1024px) {
-    .logo {
-        margin-right: 0
+@media only screen and (max-width:830px) {
+    .section {
+        padding-top: 50px
     }
-
-    header nav {
-        font-size: 18px;
-        font-size: 1.8rem
+    
+    .section-box {
+        padding: 30px 20px
     }
-
-    .row2 {
-        clear: both;
-        margin: 0 auto
+    
+    .section-title {
+        font-size: 30px
     }
-
-    .row2.alt [class^=colu-] {
-        float: right;
-        margin: 0 0 0 3.84615385%
-    }
-
-    [class^=colu-] {
-        float: left;
-        margin: 0 3.84615385% 0 0;
-        list-style: none;
-        position: relative
-    }
-
-    .row2.alt [class^=colu-]:last-child,
-    [class^=col-]:last-child {
-        margin: 0
-    }
-
-    .col-1 {
-        width: 4.80769231%
-    }
-
-    .col-2 {
-        width: 13.46153846%
-    }
-
-    .col-3 {
-        width: 22.11538462%
-    }
-
-    .col-4 {
-        width: 30.76923077%
-    }
-
-    .col-5 {
-        width: 39.42307692%
-    }
-
-    .col-6 {
-        width: 48.07692308%
-    }
-
-    .col-7 {
-        width: 56.73076923%
-    }
-
-    .col-8 {
-        width: 65.38461538%
-    }
-
-    .col-9 {
-        width: 74.03846154%
-    }
-
-    .col-10 {
-        width: 82.69230769%
-    }
-
-    .col-11 {
-        width: 91.34615385%
-    }
-
-    .col-12 {
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center
-    }
+    
 }
 
 .logo-footer-fix {
@@ -1712,22 +1467,20 @@ header nav li a {
 }
 
 @media only screen and (min-width:1247px) {
-    .logo {
-        height: 80px;
-        width: 407px;
-        background: url(images/shared/logo-white.png) no-repeat
-    }
-
-    .logo:hover {
-        height: 80px;
-        width: 407px;
-        background: url(images/shared/logo-blue.png) no-repeat
-    }
-    
     .logo-footer-fix {
         position: relative;
-        left: 0
+        left: 0 !important;
+        align-self: center !important;
+        align-items: center !important;
+        margin-right: 0 !important;
     }
+}
+
+.logo-footer-fix {
+    position: relative;
+    align-self: center !important;
+    align-items: center !important;
+    margin-right: 0 !important;
 }
 
 .nopad {
@@ -1736,43 +1489,17 @@ header nav li a {
 }
 
 .smallleftcolpad {
-    margin: 20px 10px 20px 50px
+    margin: 5px 10px 0 35px !important
 }
 
 .smallrightcolpad {
-    margin: 20px 50px 20px 50px
+    margin: 0 50px 25px 35px !important
 }
 
-.rowww {
+.awards-row {
     display: flex;
     flex-wrap: wrap;
     margin: 15px 0 0 0
-}
-
-.columnnn {
-    flex: 16%;
-    max-width: 25%;
-    padding: 0 4px
-}
-
-.columnnn img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%
-}
-
-@media screen and (max-width:800px) {
-    .columnnn {
-        flex: 50%;
-        max-width: 50%
-    }
-}
-
-@media screen and (max-width:600px) {
-    .columnnn {
-        flex: 100%;
-        max-width: 100%
-    }
 }
 
 /* SLIDESHOW */
@@ -2018,3 +1745,50 @@ header nav li a:hover {
 footer p {
     margin: 0 0 0 0
 }
+
+
+
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .a-image-grid {
+    display: inline-block;
+    margin-bottom: 8px;
+    width: calc(50% - 43px);
+    margin: 16px 16px 0 16px;
+    padding: 5px
+  }
+  
+  .a-image-grid:nth-of-type(2n) {
+    margin: 16px 16px 0 16px;
+  }
+  
+@media screen and (min-width: 600px) {
+    .a-image-grid {
+      width: calc(25% - 48px);
+    }
+    
+    .a-image-grid:nth-of-type(2n) {
+      margin: 22px 22px 0 22px;
+    }
+    
+    .a-image-grid:nth-of-type(4n) {
+        margin: 22px 22px 0 22px;
+    }
+}
+  
+  figure {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .img-image-grid {
+    border: none;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform .2s ease-in-out;
+  }

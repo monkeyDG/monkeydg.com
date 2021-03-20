@@ -8,7 +8,6 @@ mark,
 nav,
 p,
 section,
-typewriter,
 ul {
 	margin: 0;
 	padding: 0;
@@ -20,7 +19,6 @@ ul {
 }
 
 header,
-typewriter,
 nav,
 section {
 	display: block
