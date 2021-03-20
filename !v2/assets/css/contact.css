@@ -32,33 +32,33 @@ html {
 	-ms-text-size-adjust: 100%
 }
 
-.content,
-.container-bottompad,
-.vertical-center,
-.section-box,
-.container-contact100,
-.wrap-contact100,
 .contact100-form,
+.contact100-form-title,
+.contact100-more,
+.container-bottompad,
+.container-contact100,
+.content,
+.dis-flex,
+.flex-col-c-m,
+.flex-w,
+.focus-input100,
+.input100,
+.label-input100,
+.lnr,
+.lnr-envelope,
+.lnr-map-marker,
 .paddinglr,
 .paddingt,
-.label-input100,
-.wrap-input100,
-.validate-input,
-.input100,
-.focus-input100,
-.flex-col-c-m,
-.contact100-more,
-.flex-w,
+.section-box,
 .size1,
-.txt1,
-.lnr,
-.lnr-map-marker,
 .size2,
+.txt1,
 .txt2,
-.dis-flex,
 .txt3,
-.lnr-envelope,
-.contact100-form-title,
+.validate-input,
+.vertical-center,
+.wrap-contact100,
+.wrap-input100,
 :after,
 :before {
 	-webkit-box-sizing: border-box;
@@ -88,7 +88,7 @@ ul {
 }
 
 a {
-	text-decoration: none !important
+	text-decoration: none!important
 }
 
 @font-face {
@@ -730,87 +730,18 @@ header nav li a {
 	}
 }
 
-@media only screen and (min-width:1024px) {
-	.logo {
-		margin-right: 0
-	}
-	header nav {
-		font-size: 18px;
-		font-size: 1.8rem
-	}
-	.row2 {
-		clear: both;
-		margin: 0 auto
-	}
-	[class^=colu-] {
-		float: left;
-		margin: 0 3.84615385% 0 0;
-		list-style: none;
-		position: relative
-	}
-	[class^=col-]:last-child {
-		margin: 0
-	}
-	.col-1 {
-		width: 4.80769231%
-	}
-	.col-2 {
-		width: 13.46153846%
-	}
-	.col-3 {
-		width: 22.11538462%
-	}
-	.col-4 {
-		width: 30.76923077%
-	}
-	.col-5 {
-		width: 39.42307692%
-	}
-	.col-6 {
-		width: 48.07692308%
-	}
-	.col-7 {
-		width: 56.73076923%
-	}
-	.col-8 {
-		width: 65.38461538%
-	}
-	.col-9 {
-		width: 74.03846154%
-	}
-	.col-10 {
-		width: 82.69230769%
-	}
-	.col-11 {
-		width: 91.34615385%
-	}
-	.col-12 {
-		width: 100%;
-		margin: 0 auto;
-		display: flex;
-		justify-content: center
-	}
-}
-
 .logo-footer-fix {
 	position: relative;
 	left: 24%
 }
 
 @media only screen and (min-width:1247px) {
-	.logo {
-		height: 80px;
-		width: 407px;
-		background: url(images/shared/logo-white.png) no-repeat
-	}
-	.logo:hover {
-		height: 80px;
-		width: 407px;
-		background: url(images/shared/logo-blue.png) no-repeat
-	}
 	.logo-footer-fix {
 		position: relative;
-		left: 0
+		left: 0!important;
+		align-self: center!important;
+		align-items: center!important;
+		margin-right: 0!important
 	}
 }
 
@@ -839,13 +770,6 @@ footer {
 	display: grid;
 	text-align: center;
 	justify-content: center
-}
-
-.center-all {
-	text-align: center!important;
-	justify-content: center!important;
-	align-self: center!important;
-	align-items: center!important
 }
 
 footer nav {
@@ -1291,11 +1215,11 @@ textarea.input100 {
 		padding: 56px 15px 15px 15px
 	}
 	.paddingt {
-		margin-top: 0;
+		margin-top: 0
 	}
 	.paddinglr {
 		margin-left: 5px;
-		margin-right: 5px;
+		margin-right: 5px
 	}
 }
 

@@ -58,7 +58,7 @@ body {
 
 header {
 	background: #111;
-	height: 82px;
+	height: 88px;
 	padding: 10px 5% 0 5%;
 	width: 90%;
 	position: absolute;
@@ -66,11 +66,15 @@ header {
 	font-family: "Open Sans Regular", "Helvetica Neue", Helvetica, Arial, Sans-serif
 }
 
+.transparent {
+	background: rgba(0, 0, 0, .4) !important;
+}
+
 header nav {
 	display: none;
 	background: #222;
 	position: absolute;
-	top: 82px;
+	top: 98px;
 	right: 0;
 	z-index: 1000;
 	width: 100%;
@@ -219,7 +223,7 @@ header nav li a {
 }
 
 .content {
-	margin-top: 82px
+	margin-top: 98px
 }
 
 a {
@@ -382,6 +386,9 @@ ul.ul li {
 		background: url(images/shared/linkedin.png);
 		background-size: 32px 32px;
 		background-repeat: no-repeat
+	}
+	.transparent {
+		background: transparent !important;
 	}
 }
 
