@@ -1180,22 +1180,22 @@ $.fn.resizeFace = function() {
         // Show large face
         if ($(window).width() >= 1140) {
 
-            $('#designer-img').css({
+            $('#creative-img').css({
                 'opacity': '1'
             });
-            $('#coder-img').css({
+            $('#professional-img').css({
                 'opacity': '1'
             });
-            $('#designer-bg').css({
+            $('#creative-bg').css({
                 'opacity': '1'
             });
-            $('#coder-bg').css({
+            $('#professional-bg').css({
                 'opacity': '1'
             });
-            $('#designer').css({
+            $('#creative').css({
                 'opacity': '1'
             });
-            $('#coder').css({
+            $('#professional').css({
                 'opacity': '1'
             });
 
@@ -1204,10 +1204,10 @@ $.fn.resizeFace = function() {
             $('#face-img').css({
                 'opacity': '1'
             });
-            $('#designer').css({
+            $('#creative').css({
                 'opacity': '1'
             });
-            $('#coder').css({
+            $('#professional').css({
                 'opacity': '1'
             });
         }
@@ -1226,34 +1226,34 @@ $.fn.animateHome = function() {
         $('#content').animate({
             'opacity': '1'
         }, 500, 'easeOutExpo');
-        $('#designer-img').css({
+        $('#creative-img').css({
             'left': '-500px'
         }).stop().animate({
             'opacity': '1',
             'left': '100px'
         }, 1000, 'easeOutExpo');
-        $('#coder-img').css({
+        $('#professional-img').css({
             'right': '-500px'
         }).stop().animate({
             'opacity': '1',
             'right': '100px'
         }, 1000, 'easeOutExpo');
-        $('#designer-bg').css({
+        $('#creative-bg').css({
             'left': '-500px'
         }).stop().animate({
             'opacity': '1',
             'left': '100px'
         }, 1500, 'easeOutBack');
-        $('#coder-bg').css({
+        $('#professional-bg').css({
             'right': '-500px'
         }).stop().animate({
             'opacity': '1',
             'right': '100px'
         }, 1500, 'easeOutBack');
-        $('#designer').delay(1500).animate({
+        $('#creative').delay(1500).animate({
             'opacity': '1'
         }, 500, 'easeOutExpo');
-        $('#coder').delay(1500).animate({
+        $('#professional').delay(1500).animate({
             'opacity': '1'
         }, 500, 'easeOutExpo', function() {
             animateFace();
@@ -1267,10 +1267,10 @@ $.fn.animateHome = function() {
         $('#face-img').animate({
             'opacity': '1'
         }, 2000, 'easeOutExpo');
-        $('#designer').delay(1000).animate({
+        $('#creative').delay(1000).animate({
             'opacity': '1'
         }, 500, 'easeOutExpo');
-        $('#coder').delay(1000).animate({
+        $('#professional').delay(1000).animate({
             'opacity': '1'
         }, 500, 'easeOutExpo', function() {
             animateContent();
@@ -1286,16 +1286,16 @@ $.fn.animateHome = function() {
  */
 function animateFace() {
 
-    var designerImg = $('#designer-img');
-    var coderImg = $('#coder-img');
-    var designerHover = $('#designer');
-    var coderHover = $('#coder');
-    var designerDesc = $('#designer-desc');
-    var coderDesc = $('#coder-desc');
-    var designerArrow = $('#designer-arrow');
-    var coderArrow = $('#coder-arrow');
-    var designerBg = $('#designer-bg');
-    var coderBg = $('#coder-bg');
+    var creativeImg = $('#creative-img');
+    var professionalImg = $('#professional-img');
+    var creativeHover = $('#creative');
+    var professionalHover = $('#professional');
+    var creativeDesc = $('#creative-desc');
+    var professionalDesc = $('#professional-desc');
+    var creativeArrow = $('#creative-arrow');
+    var professionalArrow = $('#professional-arrow');
+    var creativeBg = $('#creative-bg');
+    var professionalBg = $('#professional-bg');
     var face = $('#face');
     var section = $('#body');
     var duration = 500;
@@ -1328,29 +1328,29 @@ function animateFace() {
             // zeno's paradox dampens the movement
             xp += (relMouseX - xp) / 12;
 
-            designerImg.css({
+            creativeImg.css({
                 width: 520 + (520 - xp) * 0.5,
                 left: 100 + (520 - xp) * 0.1
             });
-            coderImg.css({
+            professionalImg.css({
                 width: 520 + (xp - 520) * 0.5,
                 right: 100 - (520 - xp) * 0.1
             });
 
-            designerBg.css({
+            creativeBg.css({
                 left: 100 + (520 - xp) * 0.05,
                 opacity: ((1040 - xp) / 520)
             });
 
-            coderBg.css({
+            professionalBg.css({
                 right: 100 + (xp - 520) * 0.05,
                 opacity: (xp / 520)
             });
 
-            designerDesc.css({
+            creativeDesc.css({
                 opacity: ((1040 - xp) / 520)
             });
-            coderDesc.css({
+            professionalDesc.css({
                 opacity: (xp / 520)
             });
 

@@ -337,12 +337,12 @@ img {
 	display: none
 }
 
-.js #coder,
-.js #coder-bg,
+.js #professional,
+.js #professional-bg,
 .js #content,
-.js #designer,
-.js #designer-bg,
-.js #designer-img,
+.js #creative,
+.js #creative-bg,
+.js #creative-img,
 .js #face-img,
 .js #img-0,
 .js #img-1,
@@ -350,7 +350,7 @@ img {
 .js #img-3,
 .js #img-4,
 .js #img-5,
-.js .js #coder-img {
+.js .js #professional-img {
 	opacity: 0
 }
 
@@ -374,8 +374,8 @@ img {
 	text-decoration: none
 }
 
-.face .coder,
-.face .designer {
+.face .professional,
+.face .creative {
 	position: absolute;
 	width: 40%;
 	display: block;
@@ -386,91 +386,91 @@ img {
 	bottom: 0
 }
 
-.face .coder h1,
-.face .designer h1 {
+.face .professional h1,
+.face .creative h1 {
 	font-size: 22px;
 	font-size: 2.2rem
 }
 
-.face .designer {
+.face .creative {
 	left: 0
 }
 
-.face .coder {
+.face .professional {
 	right: 0;
 	text-align: right
 }
 
-.face .coder p,
-.face .coder-bg,
-.face .coder-img,
-.face .designer p,
-.face .designer-bg,
-.face .designer-img {
+.face .professional p,
+.face .professional-bg,
+.face .professional-img,
+.face .creative p,
+.face .creative-bg,
+.face .creative-img {
 	display: none
 }
 
 @media only screen and (min-width:1px) {
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 12px;
 		font-size: 1.2rem
 	}
 }
 
 @media only screen and (min-width:310px) {
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 14px;
 		font-size: 1.4rem
 	}
 }
 
 @media only screen and (min-width:373px) {
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 16px;
 		font-size: 1.6rem
 	}
 }
 
 @media only screen and (min-width:418px) {
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 19px;
 		font-size: 1.9rem
 	}
 }
 
 @media only screen and (min-width:486px) {
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 24px;
 		font-size: 2.4rem
 	}
 }
 
 @media only screen and (min-width:600px) {
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 32px;
 		font-size: 3.2rem
 	}
 }
 
 @media only screen and (min-width:750px) {
-	.face .coder,
-	.face .designer {
+	.face .professional,
+	.face .creative {
 		width: 25%;
 		height: 35%
 	}
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 33px;
 		font-size: 3.3rem
 	}
-	.face .coder p,
-	.face .designer p {
+	.face .professional p,
+	.face .creative p {
 		display: block;
 		font-size: 16px;
 		font-size: 1.6rem;
@@ -479,30 +479,30 @@ img {
 }
 
 @media only screen and (min-width:860px) {
-	.face .coder,
-	.face .designer {
+	.face .professional,
+	.face .creative {
 		width: 30%;
 		height: 30%
 	}
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 42px;
 		font-size: 4.2rem
 	}
-	.face .coder p,
-	.face .designer p {
+	.face .professional p,
+	.face .creative p {
 		font-size: 16px;
 		font-size: 1.6rem
 	}
 }
 
 @media only screen and (min-width:1079px) {
-	.face .coder,
-	.face .designer {
+	.face .professional,
+	.face .creative {
 		height: 40%
 	}
-	.face .coder h1,
-	.face .designer h1 {
+	.face .professional h1,
+	.face .creative h1 {
 		font-size: 52px;
 		font-size: 5.2rem
 	}
@@ -514,55 +514,55 @@ img {
 		height: calc(100vh - 186px);
 		position: relative;
 	}
-	.face .coder,
-	.face .designer {
+	.face .professional,
+	.face .creative {
 		height: 200px;
 		position: absolute
 	}
-	.face .coder .description,
-	.face .designer .description {
+	.face .professional .description,
+	.face .creative .description {
 		position: absolute;
 		width: 270px
 	}
-	.face .coder p,
-	.face .designer p {
+	.face .professional p,
+	.face .creative p {
 		font-size: 18px;
 		font-size: 1.8rem;
 		line-height: 1.4em
 	}
-	.face .coder {
+	.face .professional {
 		text-align: left;
 		right: 0
 	}
-	.face .coder .description {
+	.face .professional .description {
 		right: 0
 	}
-	.face .designer {
+	.face .creative {
 		left: 0
 	}
-	.face .designer .description {
+	.face .creative .description {
 		left: 0
 	}
-	.face .coder-img {
+	.face .professional-img {
 		width: 510px;
 		height: calc(100vh - 186px);
 		position: absolute;
-		background: url(images/homepage/sprite-coder.png) no-repeat;
+		background: url(images/homepage/sprite-professional.png) no-repeat;
 		display: block;
 		z-index: 1
 	}
-	.face .designer-img {
+	.face .creative-img {
 		width: 510px;
 		height: 710px;
 		position: absolute;
-		background: url(images/homepage/sprite-designer.png) no-repeat;
+		background: url(images/homepage/sprite-creative.png) no-repeat;
 		display: block;
 		z-index: 1
 	}
-	.face .coder-img {
+	.face .professional-img {
 		background-position: 100% 0%;
 	}
-	.face .coder-bg {
+	.face .professional-bg {
 		width: 420px;
 		height: 200px;
 		top: 500px;
@@ -572,7 +572,7 @@ img {
 		display: block;
 		background-position: 100%
 	}
-	.face .designer-bg {
+	.face .creative-bg {
 		width: 420px;
 		height: 200px;
 		top: 500px;

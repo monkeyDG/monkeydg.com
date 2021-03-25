@@ -113,7 +113,6 @@ input[type=text] {
 	padding: 6px 12px;
 	background: 0 0;
 	border: 1px solid #d8d8d8;
-	border-radius: 4px
 }
 
 input[type=email],
@@ -262,7 +261,10 @@ textarea:-ms-input-placeholder {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
-	flex-direction: row-reverse
+	flex-direction: row-reverse;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px
 }
 
 .contact100-more {
@@ -304,9 +306,6 @@ textarea:-ms-input-placeholder {
 }
 
 .btn2 {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
@@ -314,7 +313,10 @@ textarea:-ms-input-placeholder {
 	-moz-transition: all .3s ease-out;
 	transition: all .3s ease-out;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .2), 0 2px 5px rgba(0, 0, 0, .17);
-	background-color: #66d6ff
+	background-color: #66d6ff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px
 }
 
 .btn2:focus,
@@ -339,7 +341,10 @@ textarea:-ms-input-placeholder {
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap
+	flex-wrap: wrap;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0
 }
 
 .contact100-form-title {
@@ -356,7 +361,10 @@ textarea:-ms-input-placeholder {
 .wrap-input100 {
 	width: 100%;
 	position: relative;
-	border: 1px solid #e6e6e6
+	border: 1px solid #e6e6e6;
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px
 }
 
 .label-input100 {
@@ -378,7 +386,10 @@ textarea:-ms-input-placeholder {
 	border-bottom: none;
 	padding: 10px 25px;
 	margin-top: 15px;
-	margin-bottom: 0
+	margin-bottom: 0;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0
 }
 
 .input100 {
@@ -389,7 +400,10 @@ textarea:-ms-input-placeholder {
 	font-size: 14px;
 	color: #666;
 	line-height: 1.2;
-	padding: 0 13px
+	padding: 0 13px;
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px
 }
 
 input.input100 {
@@ -456,7 +470,6 @@ textarea.input100 {
 	padding: 0 20px;
 	min-width: 200px;
 	height: 50px;
-	border-radius: 2px;
 	background: #66d6ff;
 	font-family: "Open Sans Light";
 	font-size: 18px;
@@ -464,7 +477,10 @@ textarea.input100 {
 	-webkit-transition: all .4s;
 	-o-transition: all .4s;
 	-moz-transition: all .4s;
-	transition: all .4s
+	transition: all .4s;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px
 }
 
 .contact100-form-btn:hover {
