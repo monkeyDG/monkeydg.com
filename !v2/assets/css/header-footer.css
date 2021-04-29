@@ -519,3 +519,8 @@ footer p {
 	align-items: center!important;
 	margin-right: 0!important
 }
+
+.copyright {
+	color: #999;
+	padding-bottom: 15px
+}

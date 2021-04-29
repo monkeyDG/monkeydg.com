@@ -1415,3 +1415,96 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 .c-header-home_controls {
 	transition-delay: 0.65s;
 }
+
+
+
+/* ============= AVRA =================*/
+.avra {
+	background-color: black;
+}
+.blackbg {
+	background-color: black;
+	color: rgb(226, 226, 226);
+}
+.video-foreground iframe {
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+}
+  
+.scroll-container,
+.scroll-area {
+height: 100vh;
+}
+
+.scroll-container {
+overflow: auto;
+scroll-snap-type: y mandatory;
+}
+
+.scroll-area {
+scroll-snap-align: start;
+}
+
+.avra-p-padding {
+	padding: 33vh 50px 50px 50px
+}
+
+.avra-p {
+	font-size: 3vh;
+}
+
+
+@media (max-width: 1249px) {
+	.avra-p-padding {
+		padding: 24vh 50px 50px 50px
+	}
+	.avra-p {
+		font-size: 3vh;
+	}
+}
+@media (max-width: 1024px) {
+	.avra-p-padding {
+		padding: 20vh 50px 50px 50px
+	}
+	.avra-p {
+		font-size: 3vh;
+	}
+}
+@media (max-width: 912px) {
+	.avra-p-padding {
+		padding: 18vh 50px 50px 50px
+	}
+	.avra-p {
+		font-size: 3vh;
+	}
+}
+@media (max-width: 829px) {
+	.avra-p-padding {
+		padding: 3vh 50px 50px 50px
+	}
+	.avra-p {
+		font-size: 2vh;
+	}
+}
+
+
+
+
+
+
+/* ================= FOOTER ================== 
+.footer {
+	z-index: 99999999;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #333;
+	display: grid;
+	text-align: center;
+	justify-content: center
+} */
