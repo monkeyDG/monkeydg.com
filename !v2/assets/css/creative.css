@@ -1450,7 +1450,7 @@ scroll-snap-align: start;
 }
 
 .avra-p-padding {
-	padding: 33vh 50px 50px 50px
+	padding: 20vh 50px 50px 50px
 }
 
 .avra-p {
@@ -1460,7 +1460,7 @@ scroll-snap-align: start;
 
 @media (max-width: 1249px) {
 	.avra-p-padding {
-		padding: 24vh 50px 50px 50px
+		padding: 12vh 50px 50px 50px
 	}
 	.avra-p {
 		font-size: 3vh;
@@ -1468,15 +1468,7 @@ scroll-snap-align: start;
 }
 @media (max-width: 1024px) {
 	.avra-p-padding {
-		padding: 20vh 50px 50px 50px
-	}
-	.avra-p {
-		font-size: 3vh;
-	}
-}
-@media (max-width: 912px) {
-	.avra-p-padding {
-		padding: 18vh 50px 50px 50px
+		padding: 16vh 50px 50px 50px
 	}
 	.avra-p {
 		font-size: 3vh;
@@ -1492,6 +1484,16 @@ scroll-snap-align: start;
 }
 
 
+
+.centered-creative-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	max-width: 400px;
+	height: auto;
+	padding-bottom: 5vh;
+}
 
 
 
