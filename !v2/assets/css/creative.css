@@ -1432,7 +1432,6 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
   left: 0;
   width: 100%;
   height: 100vh;
-
 }
   
 .scroll-container,
@@ -1483,8 +1482,6 @@ scroll-snap-align: start;
 	}
 }
 
-
-
 .centered-creative-img {
 	display: block;
 	margin-left: auto;
@@ -1495,18 +1492,28 @@ scroll-snap-align: start;
 	padding-bottom: 5vh;
 }
 
+.creative-footer-fix {
+	position: inherit !important;
+}
 
 
+/* ============= POG Bot =================*/
+.pog {
+	background-color: #36393E;
+}
+.greybg {
+	background-color: #36393E;
+	color: white;
+}
+.discord-embed {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	padding-top: 102px
+}
 
-/* ================= FOOTER ================== 
-.footer {
-	z-index: 99999999;
-	position: relative;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background: #333;
-	display: grid;
-	text-align: center;
-	justify-content: center
-} */
+.prevent-oversize {
+	box-sizing: border-box;
+}
