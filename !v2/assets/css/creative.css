@@ -1417,6 +1417,44 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 }
 
 
+.creative-p-padding {
+	padding: 15vh 50px 50px 50px
+}
+
+.creative-p {
+	font-size: 3vh;
+}
+
+
+@media (max-width: 1249px) {
+	.creative-p-padding {
+		padding: 12vh 50px 50px 50px
+	}
+	.creative-p {
+		font-size: 3vh;
+	}
+}
+@media (max-width: 1024px) {
+	.creative-p-padding {
+		padding: 16vh 50px 50px 50px
+	}
+	.creative-p {
+		font-size: 3vh;
+	}
+}
+@media (max-width: 829px) {
+	.creative-p-padding {
+		padding: 3vh 50px 50px 50px
+	}
+	.creative-p {
+		font-size: 2vh;
+	}
+}
+
+
+.creative-footer-fix {
+	position: inherit !important;
+}
 
 /* ============= AVRA =================*/
 .avra {
@@ -1448,41 +1486,7 @@ scroll-snap-type: y mandatory;
 scroll-snap-align: start;
 }
 
-.avra-p-padding {
-	padding: 20vh 50px 50px 50px
-}
-
-.avra-p {
-	font-size: 3vh;
-}
-
-
-@media (max-width: 1249px) {
-	.avra-p-padding {
-		padding: 12vh 50px 50px 50px
-	}
-	.avra-p {
-		font-size: 3vh;
-	}
-}
-@media (max-width: 1024px) {
-	.avra-p-padding {
-		padding: 16vh 50px 50px 50px
-	}
-	.avra-p {
-		font-size: 3vh;
-	}
-}
-@media (max-width: 829px) {
-	.avra-p-padding {
-		padding: 3vh 50px 50px 50px
-	}
-	.avra-p {
-		font-size: 2vh;
-	}
-}
-
-.centered-creative-img {
+.avra-img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -1492,17 +1496,13 @@ scroll-snap-align: start;
 	padding-bottom: 5vh;
 }
 
-.creative-footer-fix {
-	position: inherit !important;
-}
-
 
 /* ============= POG Bot =================*/
 .pog {
-	background-color: #36393E;
+	background-color: #111;
 }
 .greybg {
-	background-color: #36393E;
+	background-color: #111;
 	color: white;
 }
 .discord-embed {
@@ -1516,4 +1516,58 @@ scroll-snap-align: start;
 
 .prevent-oversize {
 	box-sizing: border-box;
+}
+
+.pog-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+	max-width: 300px;
+	height: auto;
+	padding-bottom: 2vh;
+}
+
+@media (max-width: 961px) {
+	.pog-img {
+		display: none
+	}
+}
+
+.btn2 {
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	line-height: 1;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+	margin-bottom: 0;
+	background-image: none;
+	width: auto;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .2), 0 2px 5px rgba(0, 0, 0, .17);
+	background-color: #66d6ff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px
+}
+
+.btn2:focus,
+.btn2:hover {
+	opacity: .95;
+	text-decoration: none;
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15)
+}
+
+.btn2-text {
+	color: white;
+	font-size: 3vh;
 }

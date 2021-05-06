@@ -32,6 +32,10 @@
 	box-sizing: border-box
 }
 
+.section-box {
+	border-radius: 3px;
+}
+
 .container {
 	width: 100%;
 	max-width: 1000px;
@@ -249,7 +253,7 @@ textarea:-ms-input-placeholder {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	background: #fff
+	background: #fff;
 }
 
 .wrap-contact100 {
@@ -274,7 +278,9 @@ textarea:-ms-input-placeholder {
 	background-position: center;
 	position: relative;
 	z-index: 1;
-	padding: 30px 15px 0 15px
+	padding: 30px 15px 0 15px;
+	background-image: url(images/contact/bg-01.jpg);
+	border-radius: 3px;
 }
 
 .contact100-more::before {
@@ -286,7 +292,8 @@ textarea:-ms-input-placeholder {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, .8)
+	background: rgba(0, 0, 0, .8);
+	border-radius: 3px;
 }
 
 .btn2 {
@@ -327,11 +334,11 @@ textarea:-ms-input-placeholder {
 }
 
 .paddinglr {
-	margin: 0 55px 0 55px
+	margin: 0 40px 0 40px
 }
 
 .paddingt {
-	margin: 56px 0 0 0
+	margin: 40px 0 0 0
 }
 
 .contact100-form {
@@ -381,7 +388,7 @@ textarea:-ms-input-placeholder {
 	display: flex;
 	align-items: center;
 	width: 100%;
-	min-height: 55px;
+	min-height: 40px;
 	border: 1px solid #e6e6e6;
 	border-bottom: none;
 	padding: 10px 25px;
@@ -407,11 +414,11 @@ textarea:-ms-input-placeholder {
 }
 
 input.input100 {
-	height: 55px
+	height: 40px
 }
 
 textarea.input100 {
-	min-height: 139px;
+	min-height: 90px;
 	padding-top: 19px;
 	padding-bottom: 15px
 }
@@ -552,7 +559,7 @@ textarea.input100 {
 	flex-direction: column;
 	-ms-align-items: center;
 	align-items: center;
-	justify-content: center
+	justify-content: center;
 }
 
 .flex-w {
