@@ -58,13 +58,12 @@ body {
 }
 
 header {
-	position: relative;
 	margin-bottom: 75px;
 	box-sizing: content-box;
 	background: #111;
 	height: 88px;
 	padding: 10px 5% 0 5%;
-	width: 90%;
+	width: 90vw;
 	position: absolute;
 	z-index: 1000;
 	font-family: "Open Sans Regular", "Helvetica Neue", Helvetica, Arial, Sans-serif

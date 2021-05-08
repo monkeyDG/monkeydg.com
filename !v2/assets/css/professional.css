@@ -2,7 +2,6 @@
 .bar,
 .col-5,
 .col-7,
-.column,
 .container,
 .content,
 .info,
@@ -151,7 +150,8 @@ img {
 .section-box {
 	padding: 40px 40px;
 	overflow: visible;
-	color: #5b5b5b
+	color: #5b5b5b;
+	border-radius: 3px;
 }
 
 .timeline-box-inner {
@@ -346,12 +346,6 @@ img {
 
 .section-skills .section-box {
 	padding-bottom: 30px
-}
-
-.column {
-	float: left;
-	width: 100%;
-	text-align: left
 }
 
 .skill-bars {
@@ -597,7 +591,8 @@ img {
 	font-size: 16px;
 	line-height: 1.5;
 	margin-bottom: 25px;
-	position: relative
+	position: relative;
+	border-radius: 3px;
 }
 
 .timeline-box:last-child {
@@ -673,7 +668,8 @@ img {
 	padding: 20px 5%;
 	position: relative;
 	border-width: 5px 0 0;
-	border-style: solid
+	border-style: solid;
+	border-radius: 3px;
 }
 
 .timeline-box-left .dot,
@@ -857,14 +853,6 @@ img {
 .client-logo>a,
 .client-logo>img {
 	max-width: 75%
-}
-
-@media only screen and (min-width:830px) {
-	.column {
-		float: left;
-		width: 50%;
-		text-align: left
-	}
 }
 
 @media only screen and (max-width:830px) {

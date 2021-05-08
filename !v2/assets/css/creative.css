@@ -1,3 +1,33 @@
+.animate-up,
+.bar,
+.col-5,
+.col-7,
+.container,
+.content,
+.info,
+.profile,
+.profile-info,
+.profile-list,
+.profile-photo,
+.profile-position,
+.profile-preword,
+.profile-title,
+.progress-line,
+.row,
+.section,
+.section-about,
+.section-box,
+.section-skills,
+.section-smallpad,
+.section-txt-btn,
+.skill-bars,
+:after,
+:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
 mark {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -469,10 +499,6 @@ strong {
 .o-action-link:hover .o-action-link_label::after {
 	transform: scaleX(1);
 }
-.o-h, h1, .o-h1, h2, .o-h2, h3, .o-h3, h4, .o-h4, h5, .o-h5, h6, .o-h6 {
-	margin-top: 0;
-	line-height: 1.1;
-}
 @media (max-width: 699px) {
 	h1, .o-h1 {
 		font-size: 26px;
@@ -497,18 +523,6 @@ strong {
 	h2, .o-h2 {
 		font-size: 2.25rem;
    }
-}
-h3, .o-h3 {
-	font-size: 1.5625rem;
-}
-h4, .o-h4 {
-	font-size: 1rem;
-}
-h5, .o-h5 {
-	font-size: 0.8125rem;
-}
-h6, .o-h6 {
-	font-size: 0.6875rem;
 }
 .o-hsub {
 	font-size: 0.75rem;
@@ -1422,7 +1436,7 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 }
 
 .creative-p {
-	font-size: 3vh;
+	font-size: 2.5vh;
 }
 
 
@@ -1431,7 +1445,7 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 		padding: 12vh 50px 50px 50px
 	}
 	.creative-p {
-		font-size: 3vh;
+		font-size: 2.5vh;
 	}
 }
 @media (max-width: 1024px) {
@@ -1439,7 +1453,7 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 		padding: 16vh 50px 50px 50px
 	}
 	.creative-p {
-		font-size: 3vh;
+		font-size: 2.5vh;
 	}
 }
 @media (max-width: 829px) {
@@ -1447,31 +1461,10 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 		padding: 3vh 50px 50px 50px
 	}
 	.creative-p {
-		font-size: 2vh;
+		font-size: 1.5vh;
 	}
 }
 
-
-.creative-footer-fix {
-	position: inherit !important;
-}
-
-/* ============= AVRA =================*/
-.avra {
-	background-color: black;
-}
-.blackbg {
-	background-color: black;
-	color: rgb(226, 226, 226);
-}
-.video-foreground iframe {
-
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-}
-  
 .scroll-container,
 .scroll-area {
 height: 100vh;
@@ -1486,12 +1479,31 @@ scroll-snap-type: y mandatory;
 scroll-snap-align: start;
 }
 
+.creative-footer-fix {
+	position: inherit !important;
+}
+
+/* ============= AVRA =================*/
+.avra {
+	background-color: black;
+}
+.blackbg {
+	background-color: black;
+	color: rgb(226, 226, 226);
+}
+.video-foreground iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
 .avra-img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 40%;
-	max-width: 400px;
+	width: 100%;
+	max-width: 1400px;
 	height: auto;
 	padding-bottom: 5vh;
 }
@@ -1560,14 +1572,12 @@ scroll-snap-align: start;
 	border-radius: 3px
 }
 
-.btn2:focus,
-.btn2:hover {
-	opacity: .95;
-	text-decoration: none;
-	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15)
-}
 
-.btn2-text {
+/* ============= CASCO =================*/
+.CASCO {
+	background-color: black;
+}
+.bluebg {
+	background-color: rgb(0, 4, 61);
 	color: white;
-	font-size: 3vh;
 }

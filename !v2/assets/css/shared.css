@@ -269,10 +269,64 @@ li>ul {
 	line-height: 38px
 }
 
+.btn2 {
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	line-height: 1;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+	margin-bottom: 0;
+	background-image: none;
+	background-color: #fff;
+	width: 100%
+}
+
+.btn2 {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .2), 0 2px 5px rgba(0, 0, 0, .17);
+	background-color: #66d6ff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px
+}
+
+.btn2:focus,
+.btn2:hover {
+	opacity: .95;
+	text-decoration: none;
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15)
+}
+
 @media (max-width:1180px) {
 	.btn-scroll-top {
 		right: 15px;
 		bottom: 15px
+	}
+}
+
+.column {
+	float: left;
+	width: 100%;
+	text-align: left;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+@media only screen and (min-width:830px) {
+	.column {
+		float: left;
+		width: 50%;
+		text-align: left
 	}
 }
 
@@ -402,7 +456,8 @@ body {
 }
 
 .profile-social {
-	padding: 15px 0
+	padding: 15px 0;
+	border-radius: 3px;
 }
 
 ::selection {
