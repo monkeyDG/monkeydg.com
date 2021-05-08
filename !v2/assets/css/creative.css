@@ -1437,12 +1437,13 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 
 .creative-p {
 	font-size: 2.5vh;
+	position: relative;
+	z-index: 100;
 }
-
 
 @media (max-width: 1249px) {
 	.creative-p-padding {
-		padding: 12vh 50px 50px 50px
+		padding: 15vh 50px 50px 50px
 	}
 	.creative-p {
 		font-size: 2.5vh;
@@ -1538,6 +1539,8 @@ scroll-snap-align: start;
 	max-width: 300px;
 	height: auto;
 	padding-bottom: 2vh;
+	position: relative;
+	z-index: 100;
 }
 
 @media (max-width: 961px) {
@@ -1569,15 +1572,111 @@ scroll-snap-align: start;
 	background-color: #66d6ff;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	border-radius: 3px
+	border-radius: 3px;
+	position: relative;
+	z-index: 100;
 }
 
+.circuit {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  }
+  .path {
+	animation: draw 100s infinite;
+	animation-timing-function: linear;
+  }
+  .path-01 {
+	animation-delay: 0s;
+  }
+  .path-02 {
+	animation-delay: 1s;
+  }
+  .path-03 {
+	animation-delay: 2s;
+  }
+  .path-04 {
+	animation-delay: 3s;
+  }
+  .path-05 {
+	animation-delay: 4s;
+  }  
+  
+  @keyframes draw {
+	0% {
+	}
+	100% {
+	  stroke-dashoffset: 0;
+	  stroke-opacity: 1;
+	}
+  }
 
 /* ============= CASCO =================*/
-.CASCO {
+.casco {
 	background-color: black;
 }
-.bluebg {
-	background-color: rgb(0, 4, 61);
-	color: white;
+
+/* ============= VORON =================*/
+.voron {
+	background: linear-gradient(-45deg, #330D12, #311635, #111E38, #093A2E);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+	color: white
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.voron-logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	max-width: 600px;
+	height: auto;
+	padding-bottom: 8vh;
+	position: relative;
+	z-index: 100;
+}
+
+@media (max-width: 1156px) {
+	.voron-logo {
+		display: none
+	}
+}
+
+@media (min-width: 830px) {
+	.btn2 {
+		display: none
+	}
+}
+
+@media (min-width: 883px) {
+	.btn2 {
+		display: block
+	}
+}
+
+.photo-sub {
+	font-size: 2vh;
+	text-align: center;
+}
+.voron-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 1400px;
+	height: auto;
+	padding-bottom: 3vh;
 }
