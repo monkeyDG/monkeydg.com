@@ -1,7 +1,5 @@
 .animate-up,
 .bar,
-.col-5,
-.col-7,
 .container,
 .content,
 .info,
@@ -1484,6 +1482,13 @@ scroll-snap-align: start;
 	position: inherit !important;
 }
 
+.left-col-padding {
+	padding-left: 10px;
+}
+.right-col-padding {
+	padding-right: 1px;
+}
+
 /* ============= AVRA =================*/
 .avra {
 	background-color: black;
@@ -1649,21 +1654,9 @@ scroll-snap-align: start;
 	z-index: 100;
 }
 
-@media (max-width: 1156px) {
+@media (max-width: 1227px) {
 	.voron-logo {
 		display: none
-	}
-}
-
-@media (min-width: 830px) {
-	.btn2 {
-		display: none
-	}
-}
-
-@media (min-width: 883px) {
-	.btn2 {
-		display: block
 	}
 }
 
@@ -1679,4 +1672,16 @@ scroll-snap-align: start;
 	max-width: 1400px;
 	height: auto;
 	padding-bottom: 3vh;
+}
+
+@media (max-width: 830px) {
+	.toggle-hidden-p {
+		display: block
+	}
+}
+
+@media (max-width: 994px) {
+	.toggle-hidden-p {
+		display: none
+	}
 }
