@@ -24,7 +24,7 @@ const items = document.querySelectorAll('.item'),
   headerItems = document.querySelectorAll('.item-header'),
   descriptionItems = document.querySelectorAll('.item-description'),
   activeDelay = .76,
-  interval = 5000;
+  interval = 10000;
 
 let current = 0;
 
