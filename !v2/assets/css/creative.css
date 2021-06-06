@@ -1685,3 +1685,23 @@ scroll-snap-align: start;
 		display: none
 	}
 }
+
+/* ============= PCs =================*/
+.pc {
+	background: #444;
+	color: white
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#pc-b-roll {
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+  
+/* ============= GALLERY =================*/
+.gallery {
+	background: black;
+	color: white
+}
