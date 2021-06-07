@@ -498,6 +498,13 @@ main {
 	align-items: center!important
 }
 
+.center-all-weak {
+	text-align: center;
+	justify-content: center;
+	align-self: center;
+	align-items: center
+}
+
 
 .image-grid {
 	display: flex;
