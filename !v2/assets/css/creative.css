@@ -1493,6 +1493,10 @@ height: 100vh;
 	scroll-snap-type: y mandatory;
 }
 
+.during-scroll {
+	scroll-snap-type: none !important;
+}
+
 .scroll-snap {
 	scroll-snap-align: start;
 }
