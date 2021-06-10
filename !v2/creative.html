@@ -22,28 +22,27 @@
     <link rel="stylesheet" type="text/css" href="assets/css/header-footer.css">
 </head>
 <body class="theme-color-66d6ff theme-skin-light">
-	
+	<header id="header" class="transparent">
+		<div class="header-row">
+			<a id="logo" class="logo-white" href="index.html">David Gallo</a>
+			<div class="icon-nav">navigation</div>
+			<nav class="header-nav">
+				<ul id="nav">
+					<li><a class="white-fix" href="professional.html">professional</a></li>
+					<li><a class="white-fix" href="creative.html">creative</a></li>
+					<li><a class="white-fix" href="contact.html">contact</a></li>
+					<li>
+						<ul class="social">
+							<li class="github-white"><a href="https://www.github.com/monkeydg" title="Check out my Github" target="_blank">github</a></li>
+							<li class="linkedin-white"><a href="https://linkedin.com/in/davidgallo747" title="Connect with me on Linkedin" target="_blank">linkedin</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 	<div class="scroll-container">
-		<header id="header" class="transparent">
-			<div class="header-row">
-				<a id="logo" class="logo-white" href="https://www.dgallo.ca/">David Gallo</a>
-				<div class="icon-nav">navigation</div>
-				<nav class="header-nav">
-					<ul id="nav">
-						<li><a class="white-fix" href="https://www.dgallo.ca/professional">professional</a></li>
-						<li><a class="white-fix" href="https://www.dgallo.ca/creative">creative</a></li>
-						<li><a class="white-fix" href="https://www.dgallo.ca/contact">contact</a></li>
-						<li>
-							<ul class="social">
-								<li class="github-white"><a href="https://www.github.com/monkeydg" title="Check out my Github" target="_blank">github</a></li>
-								<li class="linkedin-white"><a href="https://linkedin.com/in/davidgallo747" title="Connect with me on Linkedin" target="_blank">linkedin</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<div id="wrapper">
+		<div class="wrapper scroll-snap">
 			<section class="slideshow" id="js-header">
 				<div class="slideshow__slide js-slider-home-slide is-current" data-slide="1">
 					<div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#js-header">
@@ -99,7 +98,7 @@
 							<div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
 								<h1 class="slideshow__slide-caption-title"><mark>Planetside Open Games</mark></h1>
 								<a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
-								<span class="slideshow__slide-caption-subtitle-label">Check our a real-time interactive demo</span>
+								<span class="slideshow__slide-caption-subtitle-label"><a href="#pog">Check our a real-time interactive demo</a></span>
 								</a>
 							</div>
 						</div>
@@ -229,9 +228,9 @@
 				</div>
 			</section>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper scroll-snap">
 			<div class="content" style="margin-top: 0">
-				<section id="avra" class="avra scroll-area">
+				<section id="avra" class="avra fullscreen">
 					<div class="row blackbg">
 						<div class="column left-col-padding">
 							<div class="video-foreground">
@@ -253,9 +252,9 @@
 				</section>
 			</div>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper scroll-snap">
 			<div class="content" style="margin-top: 0">
-				<section id="pog" class="pog scroll-area">
+				<section id="pog" class="pog fullscreen">
 					<div class="row">
 						<svg class="circuit" width="2400px" height="1600px" viewBox="0 0 2400 1600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<defs>
@@ -1517,9 +1516,9 @@
 				</section>
 			</div>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper scroll-snap">
 			<div class="content" style="margin-top: 0">
-				<section id="casco" class="avra scroll-area">
+				<section id="casco" class="avra fullscreen">
 					<div class="row blackbg">
 						<div class="column left-col-padding">
 							<div class="video-foreground">
@@ -1538,9 +1537,9 @@
 				</section>
 			</div>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper scroll-snap">
 			<div class="content" style="margin-top: 0">
-				<section id="voron" class="voron scroll-area">
+				<section id="voron" class="voron fullscreen">
 					<div class="row">
 						<div class="column creative-p-padding">
 							<div class="desktop-hidden">
@@ -1584,9 +1583,9 @@
 				</section>
 			</div>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper scroll-snap">
 			<div class="content" style="margin-top: 0">
-				<section id="pc" class="pc scroll-area">
+				<section id="pc" class="pc fullscreen">
 					<!-- The video -->
 					<video autoplay muted loop id="pc-b-roll">
 						<source src="assets/css/images/creative/rain.mp4" type="video/mp4">
@@ -1594,9 +1593,9 @@
 				</section>
 			</div>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper scroll-snap">
 			<div class="content" style="margin-top: 0">
-				<section id="gallery" class="gallery" style="padding-bottom: 40px;">
+				<section id="gallery" class="gallery min-fullscreen" style="padding-bottom: 40px;">
 					<div class="center-all-weak">
 						<h1 style="padding-top: 122px; color: white;">A small gallery of WIP projects</h1>
 					</div>
@@ -1604,112 +1603,130 @@
 						<div class="row justify-content-center">
 							<div class="col col-md-12">
 								<div class="gallery-container" id="animated-thumbnails-gallery">
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/lmg_1.jpg" data-sub-html="<h4>D0ku LMG from Planetside 2</h4>">
+									<a data-lg-size="1108-938" class="gallery-item" data-src="assets/css/images/creative/projects/doku_model.jpg" data-sub-html="<h4>D0ku LMG from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/doku_model (13).jpg" />
+									</a>
+									<a data-lg-size="3024-2268" class="gallery-item" data-src="assets/css/images/creative/projects/lmg_1.jpg" data-sub-html="<h4>D0ku LMG from Planetside 2</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/lmg_1 (13).jpg" />
 									</a>
-									<a data-lg-size="1600-2400" class="gallery-item" data-src="assets/css/images/creative/projects/lmg_2.jpg" data-sub-html="<h4>D0ku LMG from Planetside 2</h4>">
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/lmg_2.jpg" data-sub-html="<h4>D0ku LMG from Planetside 2</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/lmg_2 (13).jpg" />
 									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/barrel.jpg" data-sub-html="<h4>D0ku LMG from Planetside 2</h4>">
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/barrel.jpg" data-sub-html="<h4>D0ku LMG from Planetside 2</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/barrel (13).jpg" />
 									</a>
-									<a data-lg-size="1600-2400" class="gallery-item" data-src="assets/css/images/creative/projects/grenade.jpg" data-sub-html="<h4>Concussion Grenade from Planetside 2</h4>">
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/grenade.jpg" data-sub-html="<h4>Concussion Grenade from Planetside 2</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/grenade (13).jpg" />
 									</a>
-									<a data-lg-size="1600-2398" class="gallery-item" data-src="assets/css/images/creative/projects/medkit.jpg" data-sub-html="<h4>Medkit from Planetside 2</h4>">
-									<img class="img-responsive" src="assets/css/images/creativeprojects//medkit (13).jpg" />
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/medkit.jpg" data-sub-html="<h4>Medkit from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/medkit (13).jpg" />
 									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/helmet.jpg" data-sub-html="<h4>Immortal Helmet from Planetside 2</h4>">
+									<a data-lg-size="1112-941" class="gallery-item" data-src="assets/css/images/creative/projects/helmet.jpg" data-sub-html="<h4>Immortal Helmet from Planetside 2</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/helmet (13).jpg" />
 									</a>
-									<a data-lg-size="1600-1126" class="gallery-item" data-src="assets/css/images/creative/projects/lumine_edge.jpg" data-sub-html="<h4>Lumine Edge from Planetside 2</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/lumine_edge (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1063" class="gallery-item" data-src="assets/css/images/creative/projects/spiker_model.jpg" data-sub-html="<h4>Spiker Pistol from Planetside 2</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/spiker_model (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1063" class="gallery-item" data-src="assets/css/images/creative/projects/spiker.jpg" data-sub-html="<h4>Spiker Pistol from Planetside 2</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/spiker (13).jpg" />
-									</a>
-									<a data-lg-size="1600-2400" class="gallery-item" data-src="assets/css/images/creative/projects/covid_masks.jpg" data-sub-html="<h4>COVID-19 Masks</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/covid_masks (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1144" class="gallery-item" data-src="assets/css/images/creative/projects/globe_1.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_1 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/globe_2.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_2 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/globe_3.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_3 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-2400" class="gallery-item" data-src="assets/css/images/creative/projects/globe_4.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_4 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/globe_5.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_5 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/globe_6.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_6 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/globe_7.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_7 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/globe_8.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_8 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/globe_9.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_9 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/globe_10.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/globe_10 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-2400" class="gallery-item" data-src="assets/css/images/creative/projects/hand.jpg" data-sub-html="<h4>Tomura Shigaraki Costume Hands</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/hand (13).jpg" />
-									</a>
-									<a data-lg-size="1600-2400" class="gallery-item" data-src="assets/css/images/creative/projects/hands.jpg" data-sub-html="<h4>Tomura Shigaraki Costume Hands</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/hands (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1065" class="gallery-item" data-src="assets/css/images/creative/projects/pathfinder.jpg" data-sub-html="<h4>Apex Legends Pathfinder Repaint</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/pathfinder (13).jpg" />
-									</a>
-									<a data-lg-size="1600-2134" class="gallery-item" data-src="assets/css/images/creative/projects/voron_frame.jpg" data-sub-html="<h4>Voron 2.4 XL Frame</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/voron_frame (13).jpg" />
-									</a>
-									<a data-lg-size="1600-2134" class="gallery-item" data-src="assets/css/images/creative/projects/voron_rails.jpg" data-sub-html="<h4>Voron 2.4 XL Rails</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/voron_rails (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1060" class="gallery-item" data-src="assets/css/images/creative/projects/led_drum_1.jpg" data-sub-html="<h4>Sound-triggered LED Drums</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/led_drum_1 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1060" class="gallery-item" data-src="assets/css/images/creative/projects/led_drum_2.jpg" data-sub-html="<h4>Sound-triggered LED Drums</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/led_drum_2 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1060" class="gallery-item" data-src="assets/css/images/creative/projects/led_drum_3.jpg" data-sub-html="<h4>Sound-triggered LED Drums</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/led_drum_3 (13).jpg" />
-									</a>
-									<a data-lg-size="1600-1037" class="gallery-item" data-src="assets/css/images/creative/projects/wallet_1.jpg" data-sub-html="<h4>Custom Laser-Etched Card Holder</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/wallet_1.jpg" />
-									</a>
-									<a data-lg-size="1600-899" class="gallery-item" data-src="assets/css/images/creative/projects/wallet_2.jpg" data-sub-html="<h4>Custom Laser-Etched Card Holder</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/wallet_2.jpg" />
-									</a>
-									<a data-lg-size="1600-1067" class="gallery-item" data-src="assets/css/images/creative/projects/megadrum.jpg" data-sub-html="<h4>Piezo-triggered Drum Machine</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/megadrum (13).jpg" />
-									</a>
-									<a data-lg-size="1536-2304" class="gallery-item" data-src="assets/css/images/creative/projects/soundproofing.jpg" data-sub-html="<h4>DIY Rockwool Insulation Soundproofing</h4>">
-									<img class="img-responsive" src="assets/css/images/creative/projects/soundproofing (13).jpg" />
-									</a>
-									<a data-lg-size="1536-2304" class="gallery-item" data-src="assets/css/images/creative/projects/print_fail.jpg" data-sub-html="<h4>Helmet Printing Failure</h4>">
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/print_fail.jpg" data-sub-html="<h4>Helmet Printing Failure</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/print_fail (13).jpg" />
 									</a>
-									<a data-lg-size="1536-2304" class="gallery-item" data-src="assets/css/images/creative/projects/tv_table_1.jpg" data-sub-html="<h4>TV-mounted Table for Tabletop Games</h4>">
+									<a data-lg-size="1110-941" class="gallery-item" data-src="assets/css/images/creative/projects/lumine_edge.jpg" data-sub-html="<h4>Lumine Edge from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/lumine_edge (13).jpg" />
+									</a>
+									<a data-lg-size="720-1280" data-video='{"source": [{"src":"assets/css/images/creative/projects/lumine_edge_vid.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}' data-poster="assets/css/images/creative/projects/lumine_edge_vid_thumb.jpg" data-sub-html="<h4>Lumine Edge from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/lumine_edge_vid_thumb.jpg"/>
+									</a>
+									<a data-lg-size="1114-940" class="gallery-item" data-src="assets/css/images/creative/projects/spiker_model.jpg" data-sub-html="<h4>Spiker Pistol from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/spiker_model (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/spiker.jpg" data-sub-html="<h4>Spiker Pistol from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/spiker (13).jpg" />
+									</a>
+									<a data-lg-size="720-1280" data-video='{"source": [{"src":"assets/css/images/creative/projects/spiker_vid.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}' data-poster="assets/css/images/creative/projects/spiker_vid_thumb.jpg" data-sub-html="<h4>Lumine Edge from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/spiker_vid_thumb.jpg"/>
+									</a>
+									<a data-lg-size="1111-941" class="gallery-item" data-src="assets/css/images/creative/projects/deringer.jpg" data-sub-html="<h4>Spiker Pistol from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/deringer (13).jpg" />
+									</a>
+									<a data-lg-size="1110-940" class="gallery-item" data-src="assets/css/images/creative/projects/commissioner.jpg" data-sub-html="<h4>Spiker Pistol from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/commissioner (13).jpg" />
+									</a>
+									<a data-lg-size="1111-938" class="gallery-item" data-src="assets/css/images/creative/projects/boots.jpg" data-sub-html="<h4>Spiker Pistol from Planetside 2</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/boots (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/covid_masks.jpg" data-sub-html="<h4>COVID-19 Masks</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/covid_masks (13).jpg" />
+									</a>
+									<a data-lg-size="3024-1470" class="gallery-item" data-src="assets/css/images/creative/projects/globe_1.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_1 (13).jpg" />
+									</a>
+									<a data-lg-size="3024-1470" class="gallery-item" data-src="assets/css/images/creative/projects/globe_2.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_2 (13).jpg" />
+									</a>
+									<a data-lg-size="3024-1470" class="gallery-item" data-src="assets/css/images/creative/projects/globe_4.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_4 (13).jpg" />
+									</a>
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/globe_5.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_5 (13).jpg" />
+									</a>
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/globe_6.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_6 (13).jpg" />
+									</a>
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/globe_7.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_7 (13).jpg" />
+									</a>
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/globe_8.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_8 (13).jpg" />
+									</a>
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/globe_9.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_9 (13).jpg" />
+									</a>
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/globe_10.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_10 (13).jpg" />
+									</a>
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/globe_11.jpg" data-sub-html="<h4>Pine and Resin Globe</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/globe_11 (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/hand.jpg" data-sub-html="<h4>Tomura Shigaraki Costume Hands</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/hand (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/hands.jpg" data-sub-html="<h4>Tomura Shigaraki Costume Hands</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/hands (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/pathfinder.jpg" data-sub-html="<h4>Apex Legends Pathfinder Repaint</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/pathfinder (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/voron_frame.jpg" data-sub-html="<h4>Voron 2.4 XL Frame</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/voron_frame (13).jpg" />
+									</a>
+									<a data-lg-size="3024-2268" class="gallery-item" data-src="assets/css/images/creative/projects/voron_rails.jpg" data-sub-html="<h4>Voron 2.4 XL Rails</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/voron_rails (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/led_drum_1.jpg" data-sub-html="<h4>Sound-triggered LED Drums</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/led_drum_1 (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/led_drum_2.jpg" data-sub-html="<h4>Sound-triggered LED Drums</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/led_drum_2 (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/led_drum_3.jpg" data-sub-html="<h4>Sound-triggered LED Drums</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/led_drum_3 (13).jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/wallet_1.jpg" data-sub-html="<h4>Custom Laser-Etched Card Holder</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/wallet_1.jpg" />
+									</a>
+									<a data-lg-size="2268-3024" class="gallery-item" data-src="assets/css/images/creative/projects/wallet_2.jpg" data-sub-html="<h4>Custom Laser-Etched Card Holder</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/wallet_2.jpg" />
+									</a>
+									<a data-lg-size="3024-2268" class="gallery-item" data-src="assets/css/images/creative/projects/megadrum.jpg" data-sub-html="<h4>Piezo-triggered Drum Machine</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/megadrum (13).jpg" />
+									</a>
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/soundproofing.jpg" data-sub-html="<h4>DIY Rockwool Insulation Soundproofing</h4>">
+									<img class="img-responsive" src="assets/css/images/creative/projects/soundproofing (13).jpg" />
+									</a>
+									<a data-lg-size="3024-2268" class="gallery-item" data-src="assets/css/images/creative/projects/tv_table_1.jpg" data-sub-html="<h4>TV-mounted Table for Tabletop Games</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/tv_table_1 (13).jpg" />
 									</a>
-									<a data-lg-size="1536-2304" class="gallery-item" data-src="assets/css/images/creative/projects/tv_table_2.jpg" data-sub-html="<h4>TV-mounted Table for Tabletop Games</h4>">
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/tv_table_2.jpg" data-sub-html="<h4>TV-mounted Table for Tabletop Games</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/tv_table_2 (13).jpg" />
 									</a>
-									<a data-lg-size="1536-2304" class="gallery-item" data-src="assets/css/images/creative/projects/tv_table_3.jpg" data-sub-html="<h4>TV-mounted Table for Tabletop Games</h4>">
+									<a data-lg-size="1470-3024" class="gallery-item" data-src="assets/css/images/creative/projects/tv_table_3.jpg" data-sub-html="<h4>TV-mounted Table for Tabletop Games</h4>">
 									<img class="img-responsive" src="assets/css/images/creative/projects/tv_table_3 (13).jpg" />
 									</a>
 								</div>
@@ -1720,13 +1737,13 @@
 			</div>
 		</div>
 		<a class="btn-scroll-top" onclick="topFunction()" id="myBtn" href="#"><i class="totop totop-arrow-up">↑</i></a>
-		<footer class="creative-footer-fix" style="z-index: -100">
-			<a id="logo" class="logo-white logo-footer-fix" href="https://www.dgallo.ca/">David Gallo</a>
+		<footer class="creative-footer-fix scroll-snap" style="z-index: -100">
+			<a id="logo" class="logo-white logo-footer-fix" href="index.html">David Gallo</a>
 			<nav>
 				<ul id="nav">
-					<li><a href="https://www.dgallo.ca/professional">professional</a></li>
-					<li><a href="https://www.dgallo.ca/creative">creative</a></li>
-					<li><a href="https://www.dgallo.ca/contact">contact</a></li>
+					<li><a href="professional.html">professional</a></li>
+					<li><a href="creative.html">creative</a></li>
+					<li><a href="contact.html">contact</a></li>
 				</ul>
 			</nav>
 			<ul class="social">
