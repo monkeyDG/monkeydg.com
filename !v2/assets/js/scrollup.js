@@ -4,17 +4,17 @@ mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-	mybutton.style.display = "block";
-  } else {
-	mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document -- Professional page
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 // When the user clicks on the button, scroll to the top of the document -- Creative page
@@ -24,29 +24,29 @@ var box = document.getElementById('scroll-container'); // <-- Scroll area
 targetElm = document.getElementById('js-header'); // <-- Scroll to here
 
 document.getElementById('myBtn').addEventListener('click', function(){
-  document.getElementById("scroll-container").classList.add('during-scroll');
-  scrollToElm(box, targetElm , 1);
-  setTimeout(function(){ document.getElementById("scroll-container").classList.remove('during-scroll'); }, 3000); //prevents the class from being removed before scrolling animation is finished
+    document.getElementById("scroll-container").classList.add('during-scroll');
+    scrollToElm(box, targetElm , 1);
+    setTimeout(function(){ document.getElementById("scroll-container").classList.remove('during-scroll'); }, 3000); //prevents the class from being removed before scrolling animation is finished
 });
 
 function scrollToElm(container, elm, duration){
-  var pos = getRelativePos(elm);
-  scrollTo( container, pos.top , duration);  // duration in seconds
+    var pos = getRelativePos(elm);
+    scrollTo( container, pos.top , duration);  // duration in seconds
 }
 
 function getRelativePos(elm){
-  var pPos = elm.parentNode.getBoundingClientRect(), // parent pos
-      cPos = elm.getBoundingClientRect(), // target pos
-      pos = {};
+    var pPos = elm.parentNode.getBoundingClientRect(), // parent pos
+        cPos = elm.getBoundingClientRect(), // target pos
+        pos = {};
 
-  pos.top    = cPos.top    - pPos.top + elm.parentNode.scrollTop,
-  pos.right  = cPos.right  - pPos.right,
-  pos.bottom = cPos.bottom - pPos.bottom,
-  pos.left   = cPos.left   - pPos.left;
+    pos.top    = cPos.top    - pPos.top + elm.parentNode.scrollTop,
+    pos.right  = cPos.right  - pPos.right,
+    pos.bottom = cPos.bottom - pPos.bottom,
+    pos.left   = cPos.left   - pPos.left;
 
-  return pos;
+    return pos;
 }
-    
+
 function scrollTo(element, to, duration) {
     var start = element.scrollTop,
         change = to - start,

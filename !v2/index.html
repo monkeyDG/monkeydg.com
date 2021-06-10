@@ -10,7 +10,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta http-equiv="cleartype" content="on">
-    
+
     <link rel="stylesheet" type="text/css" href="assets/css/shared.css">
     <link rel="stylesheet" type="text/css" href="assets/css/homepage.css">
     <link rel="stylesheet" type="text/css" href="assets/css/header-footer.css">
@@ -32,9 +32,9 @@
                         <div class="icon-nav">navigation</div>
                         <nav>
                             <ul id="nav">
-                                <li><a href="https://www.dgallo.ca/professional">professional</a></li>
-                                <li><a href="https://www.dgallo.ca/creative">creative</a></li>
-                                <li><a href="https://www.dgallo.ca/contact">contact</a></li>
+								<li><a href="professional.html">professional</a></li>
+								<li><a href="creative.html">creative</a></li>
+								<li><a href="contact.html">contact</a></li>
                                 <li>
                                     <ul class="social">
                                         <li class="github"><a href="https://www.github.com/monkeydg" title="Check out my Github" target="_blank">github</a></li>
@@ -55,7 +55,7 @@
                                     <div id="creative" class="creative">
                                         <div id="creative-desc" class="description">
                                             <h1>professional portfolio</h1>
-                                            <p><mark>Technology consultant driving real business value with data & AI</mark></p>
+                                            <p><mark>Technology consultant delivering real business value with data & AI</mark></p>
                                         </div>
                                     </div>
                                 </a>
@@ -63,7 +63,7 @@
                                     <div id="professional" class="professional">
                                         <div id="professional-desc" class="description">
                                             <h1>creative portfolio</h1>
-                                            <p><mark>Musician, maker, and part-time professional that loves to tinker</mark></p>
+                                            <p><mark>Musician, coder, and part-time maker that loves to tinker</mark></p>
                                         </div>
                                     </div>
                                 </a>
@@ -83,9 +83,9 @@
         <a id="logo" class="logo-white logo-footer-fix" href="https://www.dgallo.ca/">David Gallo</a>
         <nav>
             <ul id="nav">
-                <li><a href="https://www.dgallo.ca/professional">professional</a></li>
-                <li><a href="https://www.dgallo.ca/creative">creative</a></li>
-                <li><a href="https://www.dgallo.ca/contact">contact</a></li>
+                <li><a href="professional.html">professional</a></li>
+                <li><a href="creative.html">creative</a></li>
+                <li><a href="contact.html">contact</a></li>
             </ul>
         </nav>
         <ul class="social">
@@ -94,47 +94,46 @@
         </ul>
         <p class="copyright">© 2021 David Gallo</p>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
-    <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="assets/js/script.js"></script>
-    <script type="text/javascript">   
-        // Call functions when dom is ready
-        $(document).ready(function() {
-        
-            // Hide browser top bar in mobiles
-            $('body').scrollTop(1);
-        
-            // Toggle Navigation for mobile devices
-            $('.icon-nav').on('click', function(){
-                $('header nav').slideToggle();
-                $(this).toggleClass('active');
-            });
-        
-            // Function to scroll to top
-            $('a[href=#top]').click(function(){
-        
-                $('html, body').animate({scrollTop:0}, 1000, 'easeInOutQuad');
-                return false;
-            });
-        
-            // Function to fade in image sprites
-            $('.sprite').fadeSprite();
-        
-            // Function to animate when leaving page
-            $('.transition, #nav .page_item a, #logo, #face a').leavePage();	
-        
-            // Animate the header on first			
-            $('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
-        
-            // Preload the page with jPreLoader
-            $('body').jpreLoader({
-                showSplash: true
-            }, function() {	
-                // Show the page once images are loaded	
-                    $('#face').animateHome();
-                    $('#face').resizeFace();
-            });
+    <script type="text/javascript">
+    // Call functions when dom is ready
+    $(document).ready(function() {
+
+        // Hide browser top bar in mobiles
+        $('body').scrollTop(1);
+
+        // Toggle Navigation for mobile devices
+        $('.icon-nav').on('click', function(){
+            $('header nav').slideToggle();
+            $(this).toggleClass('active');
         });
+
+        // Function to scroll to top
+        $('a[href=#top]').click(function(){
+            $('html, body').animate({scrollTop:0}, 1000, 'easeInOutQuad');
+            return false;
+        });
+
+        // Function to fade in image sprites
+        $('.sprite').fadeSprite();
+
+        // Function to animate when leaving page
+        $('.transition, #nav .page_item a, #logo, #face a').leavePage();
+
+        // Animate the header on first
+        $('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
+
+        // Preload the page with jPreLoader
+        $('body').jpreLoader({
+            showSplash: true
+        }, function() {
+            // Show the page once images are loaded
+                $('#face').animateHome();
+                $('#face').resizeFace();
+        });
+    });
     </script>
 </body>
 </html>

@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/professional.css">
     <link rel="stylesheet" type="text/css" href="assets/css/creative.css">
     <link rel="stylesheet" type="text/css" href="assets/css/header-footer.css">
-	
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
 </head>
 
@@ -182,6 +182,31 @@
 					</div>
 				</div>
 				<div class="slideshow__slide js-slider-home-slide is-prev" data-slide="6">
+					<div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#js-header">
+						<div class="slideshow__slide-background-load-wrap background-absolute">
+							<div class="slideshow__slide-background-load background-absolute">
+								<div class="slideshow__slide-background-wrap background-absolute">
+									<div class="slideshow__slide-background background-absolute">
+										<div class="slideshow__slide-image-wrap background-absolute">
+											<div class="slideshow__slide-image background-absolute" style="background-image: url('assets/css/images/creative/website.jpg');"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slideshow__slide-caption">
+						<div class="slideshow__slide-caption-text">
+							<div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
+								<h1 class="slideshow__slide-caption-title"><mark>Monkeydg.com</mark></h1>
+								<a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
+								<span class="slideshow__slide-caption-subtitle-label">Learn how I built and deployed my website</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slideshow__slide js-slider-home-slide is-prev" data-slide="7">
 					<div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#js-header">
 						<div class="slideshow__slide-background-load-wrap background-absolute">
 							<div class="slideshow__slide-background-load background-absolute">
@@ -1033,7 +1058,7 @@
 							  <circle cx="1824" cy="1296" r="4"></circle>
 							  <circle cx="1811" cy="1280" r="4"></circle>
 							</g>
-						  
+
 							<g id="paths-bg" transform="translate(0.000000, 0.000000)" stroke="#2a2a2a" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
 							  <g id="C23" transform="translate(176.000000, 0.000000)">
 								<polyline id="path" points="52 92 84 92 116 60 116 0"></polyline>
@@ -1597,6 +1622,51 @@
 		</div>
 		<div class="wrapper scroll-snap">
 			<div class="content" style="margin-top: 0">
+				<section id="website" class="website fullscreen">
+					<div class="row">
+						<div class="column creative-p-padding">
+							<div class="desktop-hidden">
+								<img class="voron-logo" src="assets/css/images/creative/voron-logo.png" alt="Voron Logo">
+								<p class="creative-p"><b>I designed, built, and deployed the website you're on now.</b></p>
+								<br>
+								<p class="creative-p">I developed my site from scratch with HTML, CSS, Javascript, and JQuery, and hosted it in an integrated Amazon AWS ecosystem. Static files are hosted in S3, custom DNS routing uses Route53, CDN is handled by CloudFront, and contact form emails use Lambda and SES.</p>
+								<br>
+							</div>
+							<div class="mobile-hidden">
+								<img class="voron-logo" src="assets/css/images/creative/voron-logo.png" alt="Voron Logo">
+								<p class="creative-p"><b>I designed, built, and deployed the website you're on now.</b></p>
+								<br>
+								<p class="creative-p">My site was developed from scratch with HTML, CSS, Javascript, and JQuery, and is deployed in an integrated Amazon AWS ecosystem. Static files are hosted in S3, custom DNS routing uses Route53, CDN is handled by CloudFront, and contact form emails use Lambda and SES.</p>
+								<br>
+							</div>
+							<div class="mobile-hidden" style="text-align: center;">
+								<a class="btn2" style="margin-top: 15px;" href="https://discord.gg/voron">
+									<div class="profile-social" style="padding-left:30px; padding-right:30px">
+										<h6 class="creative-p">See the code on Github</h6>
+									</div>
+								</a>
+							</div>
+							<div class="desktop-hidden" style="text-align: center;">
+								<a class="btn2" href="https://discord.gg/voron">
+									<div class="profile-social" style="padding-left:30px; padding-right:30px">
+										<h6 class="creative-p">See the code on Github</h6>
+									</div>
+								</a>
+							</div>
+							<div class="desktop-hidden">
+								<img class="voron-img" style="padding-top: 6vh;" src="assets/css/images/creative/voron-cad.png" alt="Voron 2.4 CAD">
+							</div>
+						</div>
+						<div class="column creative-p-padding mobile-hidden">
+							<img class="voron-img" style="padding-top: 6vh;" src="assets/css/images/creative/voron-cad.png" alt="Voron 2.4 CAD">
+							<p class="photo-sub"><i>Voron 2.4 CAD model in Autodesk Fusion 360</i></p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="wrapper scroll-snap">
+			<div class="content" style="margin-top: 0">
 				<section id="gallery" class="gallery min-fullscreen" style="padding-bottom: 40px;">
 					<div class="center-all-weak">
 						<h1 style="padding-top: 122px; color: white;">A small gallery of WIP projects</h1>
@@ -1736,7 +1806,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 			</div>
 		</div>
 		<a class="btn-scroll-top btn-scroll-top-creative" id="myBtn" href="#"><i class="totop totop-arrow-up">↑</i></a>
@@ -1760,9 +1830,9 @@
     <!--===============================================================================================-->
 	<script src="assets/js/scrollup.js"></script>
 	<script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js'></script>
-	<script src="assets/js/jquery-3.2.1.min.js"></script>	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
-	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> 
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
 	<script src="assets/js/script.js"></script>
 	<script src="assets/js/creative.js"></script>
 
@@ -1794,9 +1864,7 @@
 	</script>
 
 	<script type="text/javascript">
-	/*
-	* Call functions when dom is ready
-	*/
+	// Call functions when dom is ready
 	$(document).ready(function() {
 
 		// Hide browser top bar in mobiles
@@ -1811,19 +1879,17 @@
 		// Function to fade in image sprites
 		$('.sprite').fadeSprite();
 
-		// Animate the header on first			
+		// Animate the header on first
 		$('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
 
 		// Preload the page with jPreLoader
 		$('body').jpreLoader({
 			showSplash: true
-
-		}, function() {	
-			//Show the page once images are loaded	
+		}, function() {
+			//Show the page once images are loaded
 				$('#face').animateHome();
-				$('#face').resizeFace();	
+				$('#face').resizeFace();
 		});
-
 	});
 	</script>
 </body>

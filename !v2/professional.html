@@ -10,7 +10,7 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
     <meta http-equiv="cleartype" content="on">
-    
+
     <link rel="stylesheet" type="text/css" href="assets/css/theme-color.css">
     <link rel="stylesheet" type="text/css" href="assets/css/shared.css">
     <link rel="stylesheet" type="text/css" href="assets/css/professional.css">
@@ -29,9 +29,9 @@
                     <div class="icon-nav">navigation</div>
                     <nav class="header-nav">
                         <ul id="nav">
-                            <li><a class="white-fix" href="https://www.dgallo.ca/professional">professional</a></li>
-                            <li><a class="white-fix" href="https://www.dgallo.ca/creative">creative</a></li>
-                            <li><a class="white-fix" href="https://www.dgallo.ca/contact">contact</a></li>
+                            <li><a class="white-fix" href="professional.html">professional</a></li>
+                            <li><a class="white-fix" href="creative.html">creative</a></li>
+                            <li><a class="white-fix" href="contact.html">contact</a></li>
                             <li>
                                 <ul class="social">
                                     <li class="github-white"><a href="https://www.github.com/monkeydg" title="Check out my Github" target="_blank">github</a></li>
@@ -976,9 +976,9 @@
         <a id="logo" class="logo-white logo-footer-fix" href="https://www.dgallo.ca/">David Gallo</a>
         <nav>
             <ul id="nav">
-                <li><a href="https://www.dgallo.ca/professional">professional</a></li>
-                <li><a href="https://www.dgallo.ca/creative">creative</a></li>
-                <li><a href="https://www.dgallo.ca/contact">contact</a></li>
+                <li><a href="professional.html">professional</a></li>
+                <li><a href="creative.html">creative</a></li>
+                <li><a href="contact.html">contact</a></li>
             </ul>
         </nav>
         <ul class="social">
@@ -990,16 +990,14 @@
     <!--===============================================================================================-->
 	<script src="assets/js/professional.js"></script>
     <script src="assets/js/scrollup.js"></script>
-    <script src="assets/js/jquery-3.2.1.min.js"></script>	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
-	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> 
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
 	<script src="assets/js/script.js"></script>
-	<script type="text/javascript">
-	/*
-	* Call functions when dom is ready
-	*/
-	$(document).ready(function() {
 
+	<script type="text/javascript">
+    // Call functions when dom is ready
+	$(document).ready(function() {
 		// Hide browser top bar in mobiles
 		$('body').scrollTop(1);
 
@@ -1009,25 +1007,20 @@
 			$(this).toggleClass('active');
 		});
 
-
 		// Function to fade in image sprites
 		$('.sprite').fadeSprite();
 
-
-		// Animate the header on first			
+		// Animate the header on first
 		$('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
 
 		// Preload the page with jPreLoader
 		$('body').jpreLoader({
 			showSplash: true
-
-		}, function() {	
-			//Show the page once images are loaded	
-					
+		}, function() {
+			//Show the page once images are loaded
 				$('#face').animateHome();
-				$('#face').resizeFace();	
+				$('#face').resizeFace();
 		});
-
 	});
 	</script>
 </body>
