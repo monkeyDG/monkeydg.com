@@ -1,4 +1,3 @@
-.animate-up,
 .bar,
 .col-5,
 .col-7,
@@ -1030,4 +1029,27 @@ img {
 
 .controls ul li.active {
 	background: #6a6a77
+}
+
+
+.animate-up {
+	/* This timing applies on the way OUT */
+	transition-timing-function: ease-in;
+
+	/* Quick on the way out */
+	transition: 0.2s;
+
+	/* Hide thing by pushing it outside by default */
+	transform: translateY(130%);	  
+}
+
+.animate-up.in-progress {
+	/* This timing applies on the way IN */
+	transition-timing-function: ease-out;
+
+	/* A litttttle slower on the way in */
+	transition: 0.25s;
+
+	/* Move into place */
+	transform: translateY(0);
 }
