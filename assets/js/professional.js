@@ -69,3 +69,41 @@ const slider = {
 
 let intervalF = setInterval(slider.nextSlide, interval);
 slider.init();
+
+// animations for elements easing in:
+function callbackFunc(entries, observer)
+{
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target == document.getElementById('trig1')) {
+        if (document.getElementById('ani1').classList.contains("in-progress") == false) {
+            document.getElementById('ani1').style.display = "block";
+            document.getElementById('ani1').classList.add("in-progress");
+        }
+    } else if (entry.isIntersecting && entry.target == document.getElementById('trig2')) {
+        if (document.getElementById('thirdBlock').classList.contains("in-progress") == false) {
+            document.getElementById('thirdBlock').classList.add("in-progress");
+            }
+    } else if (entry.isIntersecting && entry.target == document.getElementById('trig3')) {
+        if (document.getElementById('fourthBlock').classList.contains("in-progress") == false) {
+            document.getElementById('fourthBlock').classList.add("in-progress");
+            }
+    } else if (entry.isIntersecting && entry.target == document.getElementById('trig4')) {
+        if (document.getElementById('fifthBlock').classList.contains("in-progress") == false) {
+            document.getElementById('fifthBlock').classList.add("in-progress");
+            }
+        }
+    });
+}
+
+let options = {
+    root: document.getElementById("overlay"),
+    rootMargin: '0px',
+    threshold: 0.3
+};
+
+let observer = new IntersectionObserver(callbackFunc, options);
+
+observer.observe(document.getElementById('trig1'));
+observer.observe(document.getElementById('trig2'));
+observer.observe(document.getElementById('trig3'));
+observer.observe(document.getElementById('trig4'));
