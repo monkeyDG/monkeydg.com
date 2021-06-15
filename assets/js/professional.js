@@ -70,6 +70,7 @@ const slider = {
 let intervalF = setInterval(slider.nextSlide, interval);
 slider.init();
 
+<<<<<<< Updated upstream
 // animations for elements easing in:
 function callbackFunc(entries, observer)
 {
@@ -107,3 +108,18 @@ observer.observe(document.getElementById('trig1'));
 observer.observe(document.getElementById('trig2'));
 observer.observe(document.getElementById('trig3'));
 observer.observe(document.getElementById('trig4'));
+=======
+
+// EMAIL FORM:
+const form = document.querySelector('form')
+form.addEventListener('submit', event => {
+  // prevent the form submit from refreshing the page
+  event.preventDefault()
+ 
+  const { name, email, message } = event.target
+  console.log('Name: ', name.value)
+  console.log('email: ', email.value)
+  console.log('Message: ', message.value)
+  
+})
+>>>>>>> Stashed changes
