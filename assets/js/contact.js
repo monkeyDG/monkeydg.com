@@ -7,14 +7,47 @@
 
     $('.validate-form').on('submit',function(){
         var check = true;
-
         for(var i=0; i<input.length; i++) {
             if(validate(input[i]) == false){
                 showValidate(input[i]);
                 check=false;
             }
         }
+        if (check == true) {
+            // prevent the form submit from refreshing the page
+            event.preventDefault();
 
+            const {name, email, phone, message} = event.target;
+            const endpoint = "https://cw6u5cl22b.execute-api.us-east-2.amazonaws.com/default/SES-email-sending-func";
+            //encodes message input from html form into stringified json for the web api request
+            const requestOptions = {
+                method: "POST", 
+                body: JSON.stringify(
+                    {
+                        senderName: name.value,
+                        senderEmail: email.value,
+                        senderPhone: phone.value,
+                        message: message.value
+                    }
+                )
+            };
+            fetch(endpoint, requestOptions).then((response) => {
+                if (!response.ok) throw new Error("Error in fetch");
+                    return response.json();
+                })
+                .then((response) => {
+                    //clears form and changes submit button to sent
+                    document.getElementById("submit").value = "Sent!"
+                    document.getElementById("name").value = ""
+                    document.getElementById("email").value = ""
+                    document.getElementById("phone").value = ""
+                    document.getElementById("message").value = ""
+                    document.getElementById("submit").classList.add("disabled")
+                })
+                .catch((error) => {
+                    alert("An unknown error occured. I'd love to debug it though -- send me an email with what you were doing!")
+            });
+        }
         return check;
     });
 
@@ -52,18 +85,3 @@
     
 
 })(jQuery);
-
-
-
-// EMAIL FORM:
-const form = document.querySelector('form')
-form.addEventListener('submit', event => {
-  // prevent the form submit from refreshing the page
-  event.preventDefault()
- 
-  const { name, email, message } = event.target
-  console.log('Name: ', name.value)
-  console.log('email: ', email.value)
-  console.log('Message: ', message.value)
-  
-})

@@ -127,6 +127,27 @@ input[type=text] {
 	height: 34px
 }
 
+input[type=submit] {
+	padding: 15px 0;
+	font-weight: 600;
+	font-family: "Jetbrains Mono", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	line-height: 1.1;
+	margin-bottom: 30px;
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 0
+}
+
+.alert-validate{
+	background-color: rgb(255, 226, 226);
+}
+
+.disabled {
+	pointer-events: none;
+	background-color: rgb(114, 114, 114);
+	cursor: not-allowed;
+}
+
 ::-webkit-input-placeholder {
 	color: #333
 }
