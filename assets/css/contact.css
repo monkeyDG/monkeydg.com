@@ -245,7 +245,7 @@ textarea:-ms-input-placeholder {
 	font-family: "Open Sans Light";
 	font-size: 15px;
 	line-height: 1.6;
-	color: #999
+	color: rgb(170, 170, 170)
 }
 
 .txt3 {
@@ -253,6 +253,10 @@ textarea:-ms-input-placeholder {
 	font-size: 15px;
 	line-height: 1.6;
 	color: #66d6ff
+}
+
+.txt3 a {
+	color: rgb(170, 170, 170)
 }
 
 .size1 {
@@ -484,7 +488,7 @@ textarea.input100 {
 	max-width: 1000px;
 	overflow: visible;
 	margin: 0 auto;
-	padding: 0 0 20px 0
+	padding: 0 0 120px 0
 }
 
 @media (max-width:768px) {

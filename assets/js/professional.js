@@ -202,12 +202,18 @@ function trig10() {
 }
 
 function trig11() {
+  if (document.getElementById('container-full-tech').classList.contains("in-progress") == false) {
+    document.getElementById('container-full-tech').classList.add("in-progress");
+  }
+}
+
+function trig12() {
   if (document.getElementById('education').classList.contains("in-progress") == false) {
     document.getElementById('education').classList.add("in-progress");
   }
 }
 
-function trig12() {
+function trig13() {
   if (document.getElementById('edu-timeline1').classList.contains("in-progress") == false) {
     document.getElementById('edu-timeline1').classList.add("in-progress");
   }
@@ -216,7 +222,7 @@ function trig12() {
   }
 }
 
-function trig13() {
+function trig14() {
   if (document.getElementById('edu-timeline2').classList.contains("in-progress") == false) {
     document.getElementById('edu-timeline2').classList.add("in-progress");
   }
@@ -225,13 +231,13 @@ function trig13() {
   }
 }
 
-function trig14() {
+function trig15() {
   if (document.getElementById('awards').classList.contains("in-progress") == false) {
     document.getElementById('awards').classList.add("in-progress");
   }
 }
 
-function trig15() {
+function trig16() {
   if (document.getElementById('volunteering-full').classList.contains("in-progress") == false) {
     document.getElementById('volunteering-full').classList.add("in-progress");
   }
@@ -391,11 +397,29 @@ function callbackFunc(entries, observer)
       trig14();
       trig15();
     }
+    if (entry.isIntersecting && entry.target == document.getElementById('trig16')) {
+      trig1();
+      trig2();
+      trig3();
+      trig4();
+      trig5();
+      trig6();
+      trig7();
+      trig8();
+      trig9();
+      trig10();
+      trig11();
+      trig12();
+      trig13();
+      trig14();
+      trig15();
+      trig16();
+    }
   });
 }
 
 let options = {
-    root: document.getElementById("overlay"),
+    root: null,
     rootMargin: '0px',
     threshold: 0.3
 };
@@ -417,3 +441,4 @@ observer.observe(document.getElementById('trig12'));
 observer.observe(document.getElementById('trig13'));
 observer.observe(document.getElementById('trig14'));
 observer.observe(document.getElementById('trig15'));
+observer.observe(document.getElementById('trig16'));
