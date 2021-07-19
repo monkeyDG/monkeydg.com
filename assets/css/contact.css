@@ -570,3 +570,16 @@ textarea.input100 {
 	display: -ms-flexbox;
 	display: flex
 }
+
+.animate-up {
+	/* Hide element by pushing it outside by default */
+	transform: translateY(120%);
+	opacity: 0;  
+}
+
+.animate-up.in-progress {
+	transition-timing-function: ease-out;
+	transition: 0.95s;
+	transform: translateY(0);
+	opacity: 1;
+}

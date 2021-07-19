@@ -38,19 +38,6 @@ section.light {
 	padding: 3em 1.5em
 }
 
-section.light {
-	-webkit-box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, .05);
-	-moz-box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, .05);
-	box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, .05);
-	border-bottom: #ddd solid 1px
-}
-
-.home section.light {
-	-webkit-box-shadow: inset 0 0 0 0 transparent;
-	-moz-box-shadow: inset 0 0 0 0 transparent;
-	box-shadow: inset 0 0 0 0 transparent
-}
-
 img {
 	max-width: 100%;
 	position: relative;
@@ -60,29 +47,24 @@ img {
 
 .js #professional,
 .js #professional-bg,
+.js #professional-img,
 .js #content,
 .js #creative,
 .js #creative-bg,
 .js #creative-img,
-.js #face-img,
 .js #img-0,
 .js #img-1,
 .js #img-2,
 .js #img-3,
 .js #img-4,
-.js #img-5,
-.js .js #professional-img {
+.js #img-5 {
+	top: 400px;
 	opacity: 0
 }
 
 .face {
 	width: 100%;
 	position: relative
-}
-
-.face .face-img {
-	display: block;
-	margin: 0
 }
 
 .face a {
@@ -177,8 +159,7 @@ img {
 @media only screen and (min-width:750px) {
 	.face .professional,
 	.face .creative {
-		width: 25%;
-		height: 35%
+		height: 400px;
 	}
 	.face .professional h1,
 	.face .creative h1 {
@@ -198,8 +179,7 @@ img {
 @media only screen and (min-width:860px) {
 	.face .professional,
 	.face .creative {
-		width: 30%;
-		height: 30%
+		height: 400px;
 	}
 	.face .professional h1,
 	.face .creative h1 {
@@ -217,7 +197,7 @@ img {
 @media only screen and (min-width:1079px) {
 	.face .professional,
 	.face .creative {
-		height: 40%
+		height: 400px;
 	}
 	.face .professional h1,
 	.face .creative h1 {
@@ -226,7 +206,17 @@ img {
 	}
 }
 
+.desktop {
+	display: none
+}
+
 @media only screen and (min-width:1356px) {
+	.desktop {
+		display: block
+	}
+	.mobile {
+		display: none;
+	}
 	.face {
 		width: 1220px;
 		height: calc(100vh - 186px);
@@ -234,8 +224,7 @@ img {
 	}
 	.face .professional,
 	.face .creative {
-		height: 200px;
-		position: absolute
+		height: 400px;
 	}
 	.face .professional .description,
 	.face .creative .description {
@@ -264,6 +253,7 @@ img {
 	.face .professional-img {
 		width: 510px;
 		height: calc(100vh - 186px);
+		right: 100px;
 		position: absolute;
 		background: url(images/homepage/face-professional.png) no-repeat;
 		display: block;
@@ -271,7 +261,8 @@ img {
 	}
 	.face .creative-img {
 		width: 510px;
-		height: 710px;
+		height: calc(100vh - 186px);
+		left: 100px;
 		position: absolute;
 		background: url(images/homepage/face-creative.png) no-repeat;
 		display: block;
@@ -283,8 +274,8 @@ img {
 	.face .professional-bg {
 		width: 420px;
 		height: 200px;
-		top: 500px;
-		right: 60%;
+		top: 450px;
+		right: 100px;
 		position: absolute;
 		background: url(images/homepage/sprite-background.png) no-repeat;
 		display: block;
@@ -293,14 +284,11 @@ img {
 	.face .creative-bg {
 		width: 420px;
 		height: 200px;
-		top: 500px;
-		left: 60%;
+		top: 450px;
+		left: 100px;
 		position: absolute;
 		background: url(images/homepage/sprite-background.png) no-repeat;
 		display: block;
-	}
-	.face .face-img {
-		display: none
 	}
 }
 
@@ -317,9 +305,6 @@ img {
 	h1 {
 		font-size: 80px;
 		font-size: 8rem
-	}
-	section.light {
-		padding: 4.5em 5%
 	}
 	img {
 		margin-bottom: 4em
@@ -355,13 +340,48 @@ img {
 		display: flex;
 		justify-content: center
 	}
-	section.light {
-		padding: 6em 5%
-	}
 }
 
 @media only screen and (min-width:1247px) {
 	p {
 		line-height: 1.6em
+	}
+}
+
+@media (max-height:660px) {
+	.professional-img {
+		display: none !important;;
+	}
+	.creative-img {
+		display: none !important;
+	}
+	.professional {
+		left: 500px
+	}
+	.creative {
+		right: 500px
+	}
+}
+
+.typewriter {
+	padding-top: calc(7vh + 102px);
+	padding-bottom: calc(6vh + 20px);
+}
+
+
+.homepage-col {
+	float: left;
+	width: 100%;
+	text-align: left;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+@media only screen and (min-width:830px) {
+	.homepage-col {
+		float: left;
+		width: 50%;
+		text-align: left
 	}
 }

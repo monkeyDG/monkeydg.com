@@ -85,3 +85,29 @@
     
 
 })(jQuery);
+
+function trig1() {
+    if (document.getElementById('contact').classList.contains("in-progress") == false) {
+      document.getElementById('contact').classList.add("in-progress");
+    }
+  }
+
+// animations for elements easing in:
+function callbackFunc(entries, observer)
+{
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target == document.getElementById('trig1')) {
+      trig1();
+    } 
+});
+}
+
+let options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3
+};
+
+let observer = new IntersectionObserver(callbackFunc, options);
+
+observer.observe(document.getElementById('trig1'));

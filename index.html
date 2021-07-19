@@ -20,10 +20,11 @@
         document.documentElement.className = 'js';
     </script>
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js?ver=5.6.2' id='jquery-js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
 </head>
 
 <body id="body" class="clearfix">
-    <main>
+    <main style="height: 100vh; overflow:hidden">
         <div class="wrapper">
             <header id="header" class="transparent">
                 <div class="header-row">
@@ -46,12 +47,35 @@
                     </div>
                 </div>
             </header>
-            <div id="content" class="content clearfix home">
-                <section id="section" class="light nopad-t nopad-b">
+            <h1 id="typewriter" class="typewriter center-all"></h1>
+            <div class="mobile">
+                <div class="homepage-col">
+                    <a href="/professional">
+                        <div id="creative-mobile" class="creative">
+                            <div id="creative-desc" class="description">
+                                <h1>professional portfolio</h1>
+                                <p><mark>Technology consultant delivering real business value with data & AI</mark></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="homepage-col">
+                    <a href="/creative">
+                        <div id="professional-mobile" class="professional">
+                            <div id="professional-desc" class="description">
+                                <h1>creative portfolio</h1>
+                                <p><mark>Musician, maker, and part-time programmer that loves to tinker</mark></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="content" class="clearfix home desktop">
+                <section id="section" class="nopad-t nopad-b">
                     <div class="row">
                         <div class="col-full">
                             <div id="face" class="face">
-                                <a href="/professional">
+                                <a href="professional.html">
                                     <div id="creative" class="creative">
                                         <div id="creative-desc" class="description">
                                             <h1>professional portfolio</h1>
@@ -59,15 +83,14 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="/creative">
+                                <a href="creative.html">
                                     <div id="professional" class="professional">
                                         <div id="professional-desc" class="description">
                                             <h1>creative portfolio</h1>
-                                            <p><mark>Musician, coder, and part-time maker that loves to tinker</mark></p>
+                                            <p><mark>Musician, maker, and part-time programmer that loves to tinker</mark></p>
                                         </div>
                                     </div>
                                 </a>
-                                <img id="face-img" class="face-img" src="assets/css/images/homepage/face-both.jpg" alt="David Gallo professional creative">
                                 <div id="creative-img" class="creative-img"></div>
                                 <div id="professional-img" class="professional-img"></div>
                                 <div id="creative-bg" class="creative-bg"></div>
@@ -97,6 +120,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/index.js"></script>
     <script type="text/javascript">
     // Call functions when dom is ready
     $(document).ready(function() {
