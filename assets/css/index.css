@@ -226,10 +226,15 @@ img {
 	.face .creative {
 		height: 400px;
 	}
+	.face .professional h1,
+	.face .creative h1 {
+		font-size: 52px;
+		font-size: 5.2rem
+	}
 	.face .professional .description,
 	.face .creative .description {
 		position: absolute;
-		width: 270px
+		width: 380px
 	}
 	.face .professional p,
 	.face .creative p {
@@ -239,13 +244,14 @@ img {
 	}
 	.face .professional {
 		text-align: left;
-		right: 0
+		right: calc(320px - 28vw);
 	}
 	.face .professional .description {
 		right: 0
 	}
 	.face .creative {
-		left: 0
+		text-align: right;
+		left: calc(320px - 28vw);
 	}
 	.face .creative .description {
 		left: 0
@@ -292,11 +298,32 @@ img {
 	}
 }
 
+@media only screen and (min-width:1550px) {
+	.typewriter {
+		font-size: 82px;
+		font-size: 8.2rem
+	}
+	.face .professional h1,
+	.face .creative h1 {
+		font-size: 62px;
+		font-size: 6.2rem
+	}
+	.face .professional p,
+	.face .creative p {
+		font-size: 32px;
+		font-size: 3.2rem
+	}
+}
+
 @media only screen and (min-width:428px) {
 	.h1,
 	h1 {
 		font-size: 72px;
 		font-size: 7.2rem
+	}
+	.portfolio-h1 {
+		font-size: 30px;
+		font-size: 3rem
 	}
 }
 
@@ -306,12 +333,20 @@ img {
 		font-size: 80px;
 		font-size: 8rem
 	}
+	.portfolio-h1 {
+		font-size: 50px;
+		font-size: 5rem
+	}
 	img {
 		margin-bottom: 4em
 	}
 }
 
 @media only screen and (min-width:1024px) {
+	.portfolio-h1 {
+		font-size: 60px;
+		font-size: 6rem
+	}
 	p {
 		line-height: 1.4em
 	}
@@ -333,7 +368,6 @@ img {
 	[class^=col-]:last-child {
 		margin: 0
 	}
-
 	.col-full {
 		width: 100%;
 		margin: 0 auto;
