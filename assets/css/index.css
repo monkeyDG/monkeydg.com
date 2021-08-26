@@ -85,7 +85,7 @@ img {
 }
 
 .face .professional h1,
-.face .creative h1 {
+.subtitle {
 	font-size: 22px;
 	font-size: 2.2rem
 }
@@ -109,48 +109,46 @@ img {
 }
 
 @media only screen and (min-width:1px) {
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
 		font-size: 12px;
 		font-size: 1.2rem
 	}
 }
 
 @media only screen and (min-width:310px) {
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
 		font-size: 14px;
 		font-size: 1.4rem
 	}
 }
 
 @media only screen and (min-width:373px) {
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
+		font-size: 16px;
+		font-size: 1.6rem
+	}
+	.typewriter {
 		font-size: 16px;
 		font-size: 1.6rem
 	}
 }
 
 @media only screen and (min-width:418px) {
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
 		font-size: 19px;
 		font-size: 1.9rem
 	}
 }
 
 @media only screen and (min-width:486px) {
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
 		font-size: 24px;
 		font-size: 2.4rem
 	}
 }
 
 @media only screen and (min-width:600px) {
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
 		font-size: 32px;
 		font-size: 3.2rem
 	}
@@ -161,8 +159,7 @@ img {
 	.face .creative {
 		height: 400px;
 	}
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
 		font-size: 33px;
 		font-size: 3.3rem
 	}
@@ -181,8 +178,7 @@ img {
 	.face .creative {
 		height: 400px;
 	}
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
 		font-size: 42px;
 		font-size: 4.2rem
 	}
@@ -199,8 +195,7 @@ img {
 	.face .creative {
 		height: 400px;
 	}
-	.face .professional h1,
-	.face .creative h1 {
+	.subtitle {
 		font-size: 52px;
 		font-size: 5.2rem
 	}
