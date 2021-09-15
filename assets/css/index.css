@@ -208,6 +208,42 @@ img {
 	background-color: rgba(255,255,255,0.5);
 }
 
+.mobile-buttons {
+	position: absolute; 
+	bottom: 0;
+	width: 100vw;
+}
+
+.btn2 {
+	padding: 24px 0;
+	font-weight: 600;
+	font-family: "Jetbrains Mono", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	line-height: 1.1;
+	margin-bottom: 30px;
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 0;
+	width: 95vw;
+	max-width: 470px;
+	background-image: linear-gradient(to right, #66d6ff 0%, #57b8db  100%);
+}
+
+.professional-btn {
+	margin: 20px 0 20px 0;
+	position: absolute;
+	left: 50%;
+	-ms-transform: translate(-50%, -30%);
+	transform: translate(-50%, -103px);
+}
+
+.creative-btn {
+	margin: 20px 0 20px 0;
+	position: absolute;
+	left: 50%;
+	-ms-transform: translate(-50%, -30%);
+	transform: translate(-50%, -187px);
+}
+
 @media only screen and (max-width:1355px) {
 	main {
 		background-color: transparent !important;
@@ -215,7 +251,8 @@ img {
 		background-position: center center; 
 		background-repeat: no-repeat;
 	}
-	.typewriter {
+	.typewriter-bg {
+		display: none;
 		bottom: 100vh;
 	}
 	.homepage-col {
@@ -363,6 +400,11 @@ img {
 	img {
 		margin-bottom: 4em
 	}
+	.homepage-col {
+		float: left;
+		width: 50%;
+		text-align: left
+	}
 }
 
 @media only screen and (min-width:1024px) {
@@ -427,12 +469,4 @@ img {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box
-}
-
-@media only screen and (min-width:830px) {
-	.homepage-col {
-		float: left;
-		width: 50%;
-		text-align: left
-	}
 }
