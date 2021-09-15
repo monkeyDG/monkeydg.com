@@ -127,10 +127,6 @@ img {
 		font-size: 16px;
 		font-size: 1.6rem
 	}
-	.typewriter {
-		font-size: 16px;
-		font-size: 1.6rem
-	}
 }
 
 @media only screen and (min-width:418px) {
@@ -205,12 +201,44 @@ img {
 	display: none
 }
 
+.typewriter {
+	font-size: calc(3vw + 34px);
+}
+.typewriter-bg {
+	background-color: rgba(255,255,255,0.5);
+}
+
+@media only screen and (max-width:1355px) {
+	main {
+		background-color: transparent !important;
+		background-image: url(images/homepage/mobile-bg.jpg) !important;
+		background-position: center center; 
+		background-repeat: no-repeat;
+	}
+	.typewriter {
+		bottom: 100vh;
+	}
+	.homepage-col {
+		display: none;
+	}
+}
+
 @media only screen and (min-width:1356px) {
 	.desktop {
 		display: block
 	}
+	.main {
+		background-color: rgb(230,230,230);
+	}
 	.mobile {
 		display: none;
+	}
+	.typewriter {
+		padding-top: calc(7vh + 102px);
+		padding-bottom: calc(5vh + 15px);
+	}
+	.typewriter-bg {
+		background-color: transparent;
 	}
 	.face {
 		width: 1220px;
@@ -391,12 +419,6 @@ img {
 		right: 500px
 	}
 }
-
-.typewriter {
-	padding-top: calc(7vh + 102px);
-	padding-bottom: calc(6vh + 20px);
-}
-
 
 .homepage-col {
 	float: left;
