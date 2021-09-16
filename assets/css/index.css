@@ -202,7 +202,7 @@ img {
 }
 
 .typewriter {
-	font-size: calc(3vw + 34px);
+	font-size: calc(3vw + 29px);
 }
 .typewriter-bg {
 	background-color: rgba(255,255,255,0.5);
@@ -225,14 +225,13 @@ img {
 	margin-bottom: 0;
 	width: 95vw;
 	max-width: 470px;
-	background-image: linear-gradient(to right, #66d6ff 0%, #57b8db  100%);
+	background: linear-gradient(to right, #66d6ff 0%, #57b8db  100%);
 }
 
 .professional-btn {
 	margin: 20px 0 20px 0;
 	position: absolute;
 	left: 50%;
-	-ms-transform: translate(-50%, -30%);
 	transform: translate(-50%, -103px);
 }
 
@@ -240,8 +239,32 @@ img {
 	margin: 20px 0 20px 0;
 	position: absolute;
 	left: 50%;
-	-ms-transform: translate(-50%, -30%);
 	transform: translate(-50%, -187px);
+}
+
+
+.animate-right {
+	transform: translate(100%, -187px);
+	opacity: 0;
+}
+
+.animate-right.in-progress {
+	transition-timing-function: ease-out;
+	transition: 0.75s;
+	transform: translate(-50%, -187px);
+	opacity: 1;
+}
+
+.animate-left {
+	transform: translate(-200%, -103px);
+	opacity: 0;  
+}
+
+.animate-left.in-progress {
+	transition-timing-function: ease-out;
+	transition: 0.75s;
+	transform: translate(-50%, -103px);
+	opacity: 1;
 }
 
 @media only screen and (max-width:1355px) {
@@ -250,10 +273,11 @@ img {
 		background-image: url(images/homepage/mobile-bg.jpg) !important;
 		background-position: center center; 
 		background-repeat: no-repeat;
+		min-height: 100vh;
 	}
 	.typewriter-bg {
-		display: none;
-		bottom: 100vh;
+		position:relative;
+		bottom: calc(-100vh + 250px);
 	}
 	.homepage-col {
 		display: none;

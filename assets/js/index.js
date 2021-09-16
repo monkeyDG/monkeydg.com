@@ -199,7 +199,7 @@ function animateFace() {
     });
 };
 
-new TypeIt("#typewriter", {
+new TypeIt("#typewriter-desktop", {
     speed: 70,
     waitUntilVisible: true,
     startDelay: 2500
@@ -207,3 +207,24 @@ new TypeIt("#typewriter", {
     .type("Hi!", {delay: 800})
     .type(" My name's David.")
     .go();
+
+new TypeIt("#typewriter-mobile", {
+    speed: 70,
+    waitUntilVisible: false,
+    startDelay: 2500
+    })
+    .type("Hi!", {delay: 800})
+    .type(" I'm David.")
+    .go();
+
+function animate_buttons_mobile() {
+    if (document.getElementById("professional-btn-mobile").classList.contains("in-progress") == false) {
+        document.getElementById("professional-btn-mobile").classList.add("in-progress");
+    }
+    if (document.getElementById("creative-btn-mobile").classList.contains("in-progress") == false) {
+        document.getElementById("creative-btn-mobile").classList.add("in-progress");
+    }
+}
+
+//window.onload = animate_buttons_mobile();
+//now using onload="animate_buttons_mobile()" in the <body> tag since it loads the buttons only after the background image is loaded.

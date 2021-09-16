@@ -23,9 +23,8 @@
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
 </head>
 
-<body id="body" class="clearfix">
+<body id="body" class="clearfix" onload="animate_buttons_mobile()">
     <main style="height: 100vh; overflow:hidden">
-        
         <header id="header" class="transparent">
             <div class="header-row">
                 <div class="col-12">
@@ -45,17 +44,16 @@
                         </ul>
                     </nav>
                 </div>
-            </div>
+            </div>  
         </header>
+        <div class="mobile typewriter-bg"><h1 id="typewriter-mobile" class="typewriter center-all"></h1></div>
         <div class="mobile-buttons">
-            <button class="btn2 professional-btn">Creative Portfolio</button>
-            <button class="btn2 creative-btn">Professional Portfolio</button>
-            
-             <!-- mobile homepage details here -->
+            <a href="creative.html"><button id="creative-btn-mobile" class="mobile btn2 professional-btn animate-left">Creative Portfolio</button></a>
+            <a href="professional.html"><button id="professional-btn-mobile" class="mobile btn2 creative-btn animate-right">Professional Portfolio</button></a>
         </div>     
         <div class="wrapper">
             <div id="content" class="clearfix home desktop">
-                <div class="typewriter-bg"><h1 id="typewriter" class="typewriter center-all"></h1></div>
+                <h1 id="typewriter-desktop" class="typewriter center-all"></h1>
                 <section id="section" class="nopad-t nopad-b">
                     <div class="row">
                         <div class="col-full">
