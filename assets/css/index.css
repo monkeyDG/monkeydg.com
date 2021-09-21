@@ -269,7 +269,7 @@ img {
 @media only screen and (max-width:1355px) {
 	main {
 		background-color: transparent !important;
-		background-image: url(images/homepage/mobile-bg3.jpg) !important;
+		background-image: url(images/homepage/mobile-bg.jpg) !important;
 		background-position: center center; 
 		background-repeat: no-repeat;
 		min-height: 100vh;
