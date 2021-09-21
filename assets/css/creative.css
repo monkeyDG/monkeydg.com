@@ -1460,6 +1460,11 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 	display: none;
 }
 
+.swiper-scrollbar-drag,
+.swiper-scrollbar {
+	display: none;
+}
+
 @media (max-width: 829px) {
 	.creative-p-padding {
 		padding: 108px 40px 25px 40px
@@ -1476,9 +1481,18 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
 	.column {
 		height: auto;
 	}
+	.swiper-scrollbar-drag,
+	.swiper-scrollbar {
+		display: block;
+	}
+	.swiper-scrollbar-drag {
+  		box-shadow: 0px 0px 5px white;
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: none !important;
+	}
 }
-
-
 
 .scroll-container {
 height: 100vh;
@@ -1486,6 +1500,12 @@ height: 100vh;
 
 .fullscreen {
 	height: 100vh
+}
+
+.fullscreen-crop {
+	height: 100vh;
+	width: auto; 
+	object-fit: cover;
 }
 
 .scroll-container {
@@ -1735,13 +1755,29 @@ height: 100vh;
 	color: white
 }
 
-/* Style the video: 100% width and height to cover the entire window */
+.swiper {
+	width: 100vw;
+	height: 100vh;
+}
+
+.swiper-button-next {
+	padding-right: 80px;
+	color: #66d6ff !important
+}
+
+.swiper-button-prev {
+	padding-left: 80px;
+	color: #66d6ff !important
+	
+}
+
+/* Style the video: 100% width and height to cover the entire window -- DEPRECATED, NOW USING SLIDESHOW
 #pc-b-roll {
 	right: 0;
 	bottom: 0;
 	min-width: 100%;
 	min-height: 100%;
-}
+} */
   
 /* ============= GALLERY =================*/
 .gallery {

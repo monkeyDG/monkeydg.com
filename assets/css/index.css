@@ -219,7 +219,6 @@ img {
 	font-weight: 600;
 	font-family: "Jetbrains Mono", "Helvetica Neue", Helvetica, Arial, Sans-serif;
 	line-height: 1.1;
-	margin-bottom: 30px;
 	font-size: 20px;
 	color: #fff;
 	margin-bottom: 0;
@@ -270,7 +269,7 @@ img {
 @media only screen and (max-width:1355px) {
 	main {
 		background-color: transparent !important;
-		background-image: url(images/homepage/mobile-bg.jpg) !important;
+		background-image: url(images/homepage/mobile-bg3.jpg) !important;
 		background-position: center center; 
 		background-repeat: no-repeat;
 		min-height: 100vh;
@@ -345,7 +344,7 @@ img {
 		height: calc(100vh - 186px);
 		right: 100px;
 		position: absolute;
-		background: url(images/homepage/face-professional.png) no-repeat;
+		background: url(images/homepage/dg-face-professional.png) no-repeat;
 		display: block;
 		z-index: 1
 	}
@@ -408,6 +407,12 @@ img {
 	.portfolio-h1 {
 		font-size: 30px;
 		font-size: 3rem
+	}
+}
+
+@media only screen and (max-width:829px) {
+	#header {
+		background-color: transparent !important;
 	}
 }
 
