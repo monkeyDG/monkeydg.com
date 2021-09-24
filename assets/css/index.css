@@ -84,10 +84,17 @@ img {
 	bottom: 0
 }
 
+.face .creative h1,
 .face .professional h1,
 .subtitle {
 	font-size: 22px;
 	font-size: 2.2rem
+}
+
+.face .creative h1:hover,
+.face .professional h1:hover,
+.subtitle:hover {
+	color: rgb(74, 74, 74)
 }
 
 .face .creative {
@@ -269,7 +276,7 @@ img {
 @media only screen and (max-width:1355px) {
 	main {
 		background-color: transparent !important;
-		background-image: url(images/homepage/mobile-bg.jpg) !important;
+		background-image: url(images/index/mobile-bg.jpg) !important;
 		background-position: center center; 
 		background-repeat: no-repeat;
 		min-height: 100vh;
@@ -340,20 +347,20 @@ img {
 		left: 0
 	}
 	.face .professional-img {
-		width: 510px;
+		width: 601px;
 		height: calc(100vh - 186px);
-		right: 100px;
+		right: 10px;
 		position: absolute;
-		background: url(images/homepage/dg-face-professional.png) no-repeat;
+		background: url(images/index/dg-face-right.png) no-repeat;
 		display: block;
 		z-index: 1
 	}
 	.face .creative-img {
-		width: 510px;
+		width: 601px;
 		height: calc(100vh - 186px);
-		left: 100px;
+		left: 10px;
 		position: absolute;
-		background: url(images/homepage/face-creative.png) no-repeat;
+		background: url(images/index/dg-face-left.png) no-repeat;
 		display: block;
 		z-index: 1
 	}
@@ -361,22 +368,22 @@ img {
 		background-position: 100% 0%;
 	}
 	.face .professional-bg {
-		width: 420px;
-		height: 200px;
+		width: 430px;
+		height: 403px;
 		top: 450px;
-		right: 100px;
+		right: 0px;
 		position: absolute;
-		background: url(images/homepage/sprite-background.png) no-repeat;
+		background: url(images/index/sprite-background.png) no-repeat;
 		display: block;
 		background-position: 100%
 	}
 	.face .creative-bg {
-		width: 420px;
-		height: 200px;
+		width: 496px;
+		height: 403px;
 		top: 450px;
-		left: 100px;
+		left: 0px;
 		position: absolute;
-		background: url(images/homepage/sprite-background.png) no-repeat;
+		background: url(images/index/sprite-background.png) no-repeat;
 		display: block;
 	}
 }

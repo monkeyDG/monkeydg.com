@@ -1186,8 +1186,6 @@ var ie = (function() {
 
 }());
 
-
-
 /* 
  * Function to print IE page
  */

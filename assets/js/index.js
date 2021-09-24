@@ -126,25 +126,20 @@ function animateFace() {
 
     var creativeImg = $('#creative-img');
     var professionalImg = $('#professional-img');
-    var creativeHover = $('#creative');
-    var professionalHover = $('#professional');
     var creativeDesc = $('#creative-desc');
     var professionalDesc = $('#professional-desc');
-    var creativeArrow = $('#creative-arrow');
-    var professionalArrow = $('#professional-arrow');
     var creativeBg = $('#creative-bg');
     var professionalBg = $('#professional-bg');
     var face = $('#face');
     var section = $('#body');
-    var duration = 500;
 
     var mouseX = 100;
-    var relMouseX = 520;
-    var xp = 520;
+    var relMouseX = 601;
+    var xp = 601;
     frameRate = 30;
     timeInterval = Math.round(1000 / frameRate);
 
-    // Firstly animate the bottom content onto the page
+    // First animate the bottom content onto the page
     animateContent();
 
     section.mouseover(function(e) {
@@ -163,33 +158,32 @@ function animateFace() {
         // Animate the face based on mouse movement
         loop = setInterval(function() {
 
-            // zeno's paradox dampens the movement
             xp += (relMouseX - xp) / 12;
 
             creativeImg.css({
-                width: 520 + (520 - xp) * 0.5,
-                left: 100 + (520 - xp) * 0.1
+                width: 601 + (601 - xp) * 0.5,
+                left: 10 + (601 - xp) * 0.1
             });
             professionalImg.css({
-                width: 520 + (xp - 520) * 0.5,
-                right: 100 - (520 - xp) * 0.1
+                width: 601 + (xp - 601) * 0.5,
+                right: 10 - (601 - xp) * 0.1
             });
 
             creativeBg.css({
-                left: 100 + (520 - xp) * 0.05,
-                opacity: ((1040 - xp) / 520)
+                left: 0 + (601 - xp) * 0.05,
+                opacity: ((1040 - xp) / 601)
             });
 
             professionalBg.css({
-                right: 100 + (xp - 520) * 0.05,
-                opacity: (xp / 520)
+                right: 0 + (xp - 601) * 0.05,
+                opacity: (xp / 601)
             });
 
             creativeDesc.css({
-                opacity: ((1040 - xp) / 520)
+                opacity: ((1040 - xp) / 601)
             });
             professionalDesc.css({
-                opacity: (xp / 520)
+                opacity: (xp / 601)
             });
 
         }, timeInterval);
