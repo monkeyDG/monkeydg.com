@@ -25,46 +25,70 @@ function topFunction() {
 var box = document.getElementById('scroll-container'); // <-- Scroll area
 targetElm = document.getElementById('js-header'); // <-- Scroll to here
 
-document.getElementById('btnScrollUp').addEventListener('click', function(){
-    document.getElementById("scroll-container").classList.add('during-scroll');
-    scrollToElm(box, targetElm , 1);
-    setTimeout(function(){ document.getElementById("scroll-container").classList.remove('during-scroll'); }, 3000); //prevents the class from being removed before scrolling animation is finished
-});
+var el0 = document.getElementById('btnScrollUp')
+if (el0) {
+    el0.addEventListener('click', function(){
+        document.getElementById("scroll-container").classList.add('during-scroll');
+        scrollToElm(box, targetElm , 1);
+        setTimeout(function(){ document.getElementById("scroll-container").classList.remove('during-scroll'); }, 3000); //prevents the class from being removed before scrolling animation is finished
+    });
+}
 
 //scroll to AVRA
-document.getElementById('avra-link').addEventListener('click', function(){
-    document.getElementById("avra").scrollIntoView({ behavior: 'smooth', block: 'start'});
-});
+var el1 = document.getElementById('avra-link')
+if (el1) {
+    el1.addEventListener('click', function(){
+        document.getElementById("avra").scrollIntoView({ behavior: 'smooth', block: 'start'});
+    });
+}
 
 //scroll to POG
-document.getElementById('pog-link').addEventListener('click', function(){
-    document.getElementById("pog").scrollIntoView({ behavior: 'smooth', block: 'start'});
-});
+var el2 = document.getElementById('pog-link')
+if (el2) {
+    el2.addEventListener('click', function(){
+        document.getElementById("pog").scrollIntoView({ behavior: 'smooth', block: 'start'});
+    });
+}
 
 //scroll to CASCO
-document.getElementById('casco-link').addEventListener('click', function(){
-    document.getElementById("casco").scrollIntoView({ behavior: 'smooth', block: 'start'});
-});
+var el3 = document.getElementById('casco-link')
+if (el3) {
+    el3.addEventListener('click', function(){
+        document.getElementById("casco").scrollIntoView({ behavior: 'smooth', block: 'start'});
+    });
+}
 
 //scroll to Voron
-document.getElementById('voron-link').addEventListener('click', function(){
-    document.getElementById("voron").scrollIntoView({ behavior: 'smooth', block: 'start'});
-});
+var el4 = document.getElementById('voron-link')
+if (el4) {
+    el4.addEventListener('click', function(){
+        document.getElementById("voron").scrollIntoView({ behavior: 'smooth', block: 'start'});
+    });
+}
 
 // scroll to PC
-document.getElementById('pc-link').addEventListener('click', function(){
-    document.getElementById("pc").scrollIntoView({ behavior: 'smooth', block: 'start'});
-});
+var el5 = document.getElementById('pc-link')
+if (el5) {
+    el5.addEventListener('click', function(){
+        document.getElementById("pc").scrollIntoView({ behavior: 'smooth', block: 'start'});
+    });
+}
 
 //Scroll to website
-document.getElementById('website-link').addEventListener('click', function(){
-    document.getElementById("website").scrollIntoView({ behavior: 'smooth', block: 'start'});
-});
+var el6 = document.getElementById('website-link')
+if (el6) {
+    el6.addEventListener('click', function(){
+        document.getElementById("website").scrollIntoView({ behavior: 'smooth', block: 'start'});
+    });
+}
 
 //Scroll to WIP gallery
-document.getElementById('gallery-link').addEventListener('click', function(){
-    document.getElementById("gallery").scrollIntoView({ behavior: 'smooth', block: 'start'});
-});
+var el7 = document.getElementById('gallery-link')
+if (el7) {
+    el7.addEventListener('click', function(){
+        document.getElementById("gallery").scrollIntoView({ behavior: 'smooth', block: 'start'});
+    });
+}
 
 function scrollToElm(container, elm, duration){
     var pos = getRelativePos(elm);
