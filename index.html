@@ -25,7 +25,7 @@
 
 <body id="body" class="clearfix" onload="animate_buttons_mobile()">
     <main style="height: 100vh; overflow:hidden">
-        <header id="header" class="transparent">
+        <header id="header">
             <div class="header-row">
                 <div class="col-12">
                     <a id="logo" class="logo" href="index.html">David Gallo</a>
@@ -114,6 +114,7 @@
         // Toggle Navigation for mobile devices
         $('.icon-nav').on('click', function(){
             $('header nav').slideToggle();
+            $('header').toggleClass('grey-bg');
             $(this).toggleClass('active');
         });
 

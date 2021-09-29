@@ -235,14 +235,14 @@ img {
 }
 
 .professional-btn {
-	margin: 20px 0 20px 0;
+	margin: 0;
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, -103px);
 }
 
 .creative-btn {
-	margin: 20px 0 20px 0;
+	margin: 0;
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, -187px);
@@ -419,7 +419,7 @@ img {
 
 @media only screen and (max-width:829px) {
 	#header {
-		background-color: transparent !important;
+		background-color: transparent;
 	}
 }
 
@@ -505,4 +505,8 @@ img {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box
+}
+
+.grey-bg {
+	background-color: rgb(34, 34, 34) !important;
 }
