@@ -217,7 +217,7 @@ img {
 
 .mobile-buttons {
 	position: absolute; 
-	bottom: 0;
+	bottom: 100px;
 	width: 100vw;
 }
 
@@ -282,7 +282,7 @@ img {
 	}
 	.typewriter-bg {
 		position:relative;
-		bottom: calc(-100vh + 250px);
+		bottom: calc(-100vh + 348px);
 	}
 	.homepage-col {
 		display: none;
