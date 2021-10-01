@@ -282,7 +282,7 @@ img {
 	}
 	.typewriter-bg {
 		position:relative;
-		bottom: calc(-100vh + 348px);
+		bottom: calc(-100vh + 368px);
 	}
 	.homepage-col {
 		display: none;
