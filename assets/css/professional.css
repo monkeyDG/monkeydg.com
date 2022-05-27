@@ -417,11 +417,11 @@ img {
 	width: 90%
 }
 
-.bar .progress-line.sql span {
+.bar .progress-line.ml span {
 	width: 80%
 }
 
-.bar .progress-line.python span {
+.bar .progress-line.cloud span {
 	width: 70%
 }
 
@@ -469,11 +469,11 @@ img {
 	content: "90%"
 }
 
-.progress-line.sql span::after {
+.progress-line.ml span::after {
 	content: "80%"
 }
 
-.progress-line.python span::after {
+.progress-line.cloud span::after {
 	content: "70%"
 }
 
@@ -488,6 +488,10 @@ img {
 }
 
 .section-awards .section-box {
+	text-align: center
+}
+
+.section-certifications .section-box {
 	text-align: center
 }
 
