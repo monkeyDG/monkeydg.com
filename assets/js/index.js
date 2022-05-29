@@ -15,10 +15,10 @@ $.fn.resizeFace = function() {
             $('#professional-img').css({
                 'opacity': '1'
             });
-            $('#creative-bg').css({
+            $('#professional-bg').css({
                 'opacity': '1'
             });
-            $('#professional-bg').css({
+            $('#creative-bg').css({
                 'opacity': '1'
             });
             $('#creative').css({
@@ -63,13 +63,13 @@ $.fn.animateHome = function() {
             'opacity': '1',
             'top': '0'
         }, 1300, 'easeOutExpo');
-        $('#creative-bg').css({
+        $('#professional-bg').css({
             'top': '650px'
         }).stop().animate({
             'opacity': '1',
             'top': '450px'
         }, 1500, 'easeOutExpo');
-        $('#professional-bg').css({
+        $('#creative-bg').css({
             'top': '650px'
         }).stop().animate({
             'opacity': '1',
@@ -128,8 +128,8 @@ function animateFace() {
     var professionalImg = $('#professional-img');
     var creativeDesc = $('#creative-desc');
     var professionalDesc = $('#professional-desc');
-    var creativeBg = $('#creative-bg');
-    var professionalBg = $('#professional-bg');
+    var creativeBg = $('#professional-bg');
+    var professionalBg = $('#creative-bg');
     var face = $('#face');
     var section = $('#body');
 

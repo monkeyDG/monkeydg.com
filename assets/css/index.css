@@ -46,11 +46,11 @@ img {
 }
 
 .js #professional,
-.js #professional-bg,
+.js #creative-bg,
 .js #professional-img,
 .js #content,
 .js #creative,
-.js #creative-bg,
+.js #professional-bg,
 .js #creative-img,
 .js #img-0,
 .js #img-1,
@@ -107,10 +107,10 @@ img {
 }
 
 .face .professional p,
-.face .professional-bg,
+.face .creative-bg,
 .face .professional-img,
 .face .creative p,
-.face .creative-bg,
+.face .professional-bg,
 .face .creative-img {
 	display: none
 }
@@ -367,7 +367,7 @@ img {
 	.face .professional-img {
 		background-position: 100% 0%;
 	}
-	.face .professional-bg {
+	.face .creative-bg {
 		width: 430px;
 		height: 403px;
 		top: 450px;
@@ -377,7 +377,7 @@ img {
 		display: block;
 		background-position: 100%
 	}
-	.face .creative-bg {
+	.face .professional-bg {
 		width: 496px;
 		height: 403px;
 		top: 450px;
