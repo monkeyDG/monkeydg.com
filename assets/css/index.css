@@ -209,7 +209,7 @@ img {
 }
 
 .typewriter {
-	font-size: calc(3vw + 29px);
+	font-size: calc(1vw + 29px);
 }
 .typewriter-bg {
 	background-color: rgba(255,255,255,0.5);
@@ -272,7 +272,7 @@ img {
 	opacity: 1;
 }
 
-@media only screen and (max-width:1355px) {
+@media only screen and (max-width:1023px) {
 	main {
 		background-color: transparent !important;
 		background-image: url(images/index/mobile-bg.jpg) !important;
@@ -289,7 +289,7 @@ img {
 	}
 }
 
-@media only screen and (min-width:1356px) {
+@media only screen and (min-width:1024px) {
 	.desktop {
 		display: block
 	}
@@ -307,6 +307,7 @@ img {
 		background-color: transparent;
 	}
 	.face {
+		min-width: 1220px;
 		width: 1220px;
 		height: calc(100vh - 186px);
 		position: relative;
@@ -317,8 +318,8 @@ img {
 	}
 	.face .professional h1,
 	.face .creative h1 {
-		font-size: 52px;
-		font-size: 5.2rem
+		font-size: calc(1vw + 20px);
+		font-size: calc(1vw + 26px);
 	}
 	.face .professional .description,
 	.face .creative .description {
@@ -327,8 +328,8 @@ img {
 	}
 	.face .professional p,
 	.face .creative p {
-		font-size: 24px;
-		font-size: 2.4rem;
+		font-size: calc(1vw + 7px);
+		font-size: calc(1vw + 7px);
 		line-height: 1.4em
 	}
 	.face .professional {
@@ -387,7 +388,7 @@ img {
 	}
 }
 
-@media only screen and (min-width:1550px) {
+@media only screen and (min-width:1750px) {
 	.typewriter {
 		font-size: 82px;
 		font-size: 8.2rem
