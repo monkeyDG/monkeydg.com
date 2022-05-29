@@ -67,13 +67,13 @@ $.fn.animateHome = function() {
             'top': '650px'
         }).stop().animate({
             'opacity': '1',
-            'top': '450px'
+            'top': '30vh'
         }, 1500, 'easeOutExpo');
         $('#creative-bg').css({
             'top': '650px'
         }).stop().animate({
             'opacity': '1',
-            'top': '450px'
+            'top': '30vh'
         }, 1500, 'easeOutExpo');
         $('#creative').css({
             'top': '550px'

@@ -310,7 +310,6 @@ img {
 		min-width: 1220px;
 		width: 1220px;
 		height: calc(100vh - 186px);
-		position: relative;
 	}
 	.face .professional,
 	.face .creative {
@@ -368,19 +367,17 @@ img {
 		background-position: 100% 0%;
 	}
 	.face .creative-bg {
-		width: 430px;
+		width: 530px;
 		height: 403px;
-		top: 450px;
 		right: 0px;
 		position: absolute;
 		background: url(images/index/sprite-background.png) no-repeat;
 		display: block;
-		background-position: 100%
+		background-position: 100% 50%;
 	}
 	.face .professional-bg {
 		width: 496px;
 		height: 403px;
-		top: 450px;
 		left: 0px;
 		position: absolute;
 		background: url(images/index/sprite-background.png) no-repeat;
