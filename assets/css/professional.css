@@ -330,6 +330,10 @@ img {
 	}
 }
 
+.open-external {
+	text-decoration: underline; !important
+}
+
 @media (max-width:480px) {
 	.section-about .row>div {
 		width: 100%
