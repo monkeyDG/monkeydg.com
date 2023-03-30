@@ -149,6 +149,15 @@ function trig_experience() {
     }
 }
 
+function trig_experience_0() {
+    if (document.getElementById('timeline0').classList.contains("in-progress") == false) {
+        document.getElementById('timeline0').classList.add("in-progress");
+    }
+    if (document.getElementById('dot0').classList.contains("opacity-1") == false) {
+        document.getElementById('dot0').classList.add("opacity-1");
+    }
+}
+
 function trig_experience_1() {
     if (document.getElementById('timeline1').classList.contains("in-progress") == false) {
         document.getElementById('timeline1').classList.add("in-progress");
@@ -286,11 +295,19 @@ function callbackFunc(entries, observer)
             trig_skills_bars();
             trig_experience();
         } 
+        if (entry.isIntersecting && entry.target == document.getElementById('trig_experience_0')) {
+            trig_about();
+            trig_skills();
+            trig_skills_bars();
+            trig_experience();
+            trig_experience_0();
+        }
         if (entry.isIntersecting && entry.target == document.getElementById('trig_experience_1')) {
             trig_about();
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
         }
         if (entry.isIntersecting && entry.target == document.getElementById('trig_experience_2')) {
@@ -298,6 +315,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
         } 
@@ -306,6 +324,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -315,6 +334,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -325,6 +345,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -336,6 +357,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -348,6 +370,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -361,6 +384,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -375,6 +399,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -390,6 +415,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -406,6 +432,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -423,6 +450,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -441,6 +469,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -462,6 +491,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -484,6 +514,7 @@ function callbackFunc(entries, observer)
             trig_skills();
             trig_skills_bars();
             trig_experience();
+            trig_experience_0();
             trig_experience_1();
             trig_experience_2();
             trig_experience_3();
@@ -517,6 +548,7 @@ observer.observe(document.getElementById('trig_about'));
 observer.observe(document.getElementById('trig_skills'));
 observer.observe(document.getElementById('trig_skills_bars'));
 observer.observe(document.getElementById('trig_experience'));
+observer.observe(document.getElementById('trig_experience_0'));
 observer.observe(document.getElementById('trig_experience_1'));
 observer.observe(document.getElementById('trig_experience_2'));
 observer.observe(document.getElementById('trig_experience_3'));

@@ -331,7 +331,7 @@ img {
 }
 
 .open-external {
-	text-decoration: underline; !important
+	text-decoration: underline !important;
 }
 
 @media (max-width:480px) {
