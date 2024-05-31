@@ -103,9 +103,6 @@ function trig_skills_bars() {
     if (document.getElementById('text6').classList.contains("animate-progress-text") == false) {
         document.getElementById('text6').classList.add("animate-progress-text");
     }
-    if (document.getElementById('text7').classList.contains("animate-progress-text") == false) {
-        document.getElementById('text7').classList.add("animate-progress-text");
-    }
 
     if (document.getElementById('span1').classList.contains("animate-progress-span") == false) {
         document.getElementById('span1').classList.add("animate-progress-span");
@@ -125,9 +122,6 @@ function trig_skills_bars() {
     if (document.getElementById('span6').classList.contains("animate-progress-span") == false) {
         document.getElementById('span6').classList.add("animate-progress-span");
     }
-    if (document.getElementById('span7').classList.contains("animate-progress-span") == false) {
-        document.getElementById('span7').classList.add("animate-progress-span");
-    }
 
     if (document.getElementById('line1').classList.contains("animate-progress-line") == false) {
         document.getElementById('line1').classList.add("animate-progress-line");
@@ -146,9 +140,6 @@ function trig_skills_bars() {
     }
     if (document.getElementById('line6').classList.contains("animate-progress-line") == false) {
         document.getElementById('line6').classList.add("animate-progress-line");
-    }
-    if (document.getElementById('line7').classList.contains("animate-progress-line") == false) {
-        document.getElementById('line7').classList.add("animate-progress-line");
     }
 }
 
