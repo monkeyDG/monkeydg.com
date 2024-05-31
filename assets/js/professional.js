@@ -103,6 +103,9 @@ function trig_skills_bars() {
     if (document.getElementById('text6').classList.contains("animate-progress-text") == false) {
         document.getElementById('text6').classList.add("animate-progress-text");
     }
+    if (document.getElementById('text7').classList.contains("animate-progress-text") == false) {
+        document.getElementById('text7').classList.add("animate-progress-text");
+    }
 
     if (document.getElementById('span1').classList.contains("animate-progress-span") == false) {
         document.getElementById('span1').classList.add("animate-progress-span");
@@ -122,6 +125,9 @@ function trig_skills_bars() {
     if (document.getElementById('span6').classList.contains("animate-progress-span") == false) {
         document.getElementById('span6').classList.add("animate-progress-span");
     }
+    if (document.getElementById('span7').classList.contains("animate-progress-span") == false) {
+        document.getElementById('span7').classList.add("animate-progress-span");
+    }
 
     if (document.getElementById('line1').classList.contains("animate-progress-line") == false) {
         document.getElementById('line1').classList.add("animate-progress-line");
@@ -140,6 +146,9 @@ function trig_skills_bars() {
     }
     if (document.getElementById('line6').classList.contains("animate-progress-line") == false) {
         document.getElementById('line6').classList.add("animate-progress-line");
+    }
+    if (document.getElementById('line7').classList.contains("animate-progress-line") == false) {
+        document.getElementById('line7').classList.add("animate-progress-line");
     }
 }
 
@@ -211,7 +220,14 @@ function trig_experience_6() {
         document.getElementById('dot6').classList.add("opacity-1");
     }
 }
-
+function trig_experience_7() {
+    if (document.getElementById('timeline7').classList.contains("in-progress") == false) {
+        document.getElementById('timeline7').classList.add("in-progress");
+    }
+    if (document.getElementById('dot7').classList.contains("opacity-1") == false) {
+        document.getElementById('dot7').classList.add("opacity-1");
+    }
+}
 function trig_tech() {
     if (document.getElementById('container-full-tech').classList.contains("in-progress") == false) {
         document.getElementById('container-full-tech').classList.add("in-progress");
@@ -365,6 +381,19 @@ function callbackFunc(entries, observer)
             trig_experience_5();
             trig_experience_6();
         }
+        if (entry.isIntersecting && entry.target == document.getElementById('trig_experience_7')) {
+            trig_about();
+            trig_skills();
+            trig_skills_bars();
+            trig_experience();
+            trig_experience_0();
+            trig_experience_1();
+            trig_experience_2();
+            trig_experience_3();
+            trig_experience_4();
+            trig_experience_5();
+            trig_experience_7();
+        }
         if (entry.isIntersecting && entry.target == document.getElementById('trig_tech')) {
             trig_about();
             trig_skills();
@@ -377,6 +406,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
         }
         if (entry.isIntersecting && entry.target == document.getElementById('trig_education')) {
@@ -391,6 +421,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
             trig_education();
         }
@@ -406,6 +437,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
             trig_education();
             trig_education_1();
@@ -422,6 +454,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
             trig_education();
             trig_education_1();
@@ -439,6 +472,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
             trig_education();
             trig_education_1();
@@ -457,6 +491,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
             trig_education();
             trig_education_1();
@@ -476,6 +511,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
             trig_education();
             trig_education_1();
@@ -498,6 +534,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
             trig_education();
             trig_education_1();
@@ -521,6 +558,7 @@ function callbackFunc(entries, observer)
             trig_experience_4();
             trig_experience_5();
             trig_experience_6();
+            trig_experience_7();
             trig_tech();
             trig_education();
             trig_education_1();
@@ -555,6 +593,7 @@ observer.observe(document.getElementById('trig_experience_3'));
 observer.observe(document.getElementById('trig_experience_4'));
 observer.observe(document.getElementById('trig_experience_5'));
 observer.observe(document.getElementById('trig_experience_6'));
+observer.observe(document.getElementById('trig_experience_7'));
 observer.observe(document.getElementById('trig_tech'));
 observer.observe(document.getElementById('trig_education'));
 observer.observe(document.getElementById('trig_education_1'));
