@@ -1,184 +1,212 @@
-const $window = $(window);
-const $body = $('body');
+// Creative page: the hero slideshow, YouTube facade, the lazy Discord embed, the PC photo
+// carousel, and the gallery lightbox.
 
-class Slideshow {
-	constructor (userOptions = {}) {
-    const defaultOptions = {
-      $el: $('.slideshow'),
-      showArrows: false,
-      showPagination: true,
-      duration: 7500,
-      autoplay: true
-    }
-    
-    let options = Object.assign({}, defaultOptions, userOptions);
-    
-		this.$el = options.$el;
-		this.maxSlide = this.$el.find($('.js-slider-home-slide')).length;
-    this.showArrows = this.maxSlide > 1 ? options.showArrows : false;
-    this.showPagination = options.showPagination;
-		this.currentSlide = 1;
-		this.isAnimating = false;
-		this.animationDuration = 1200;
-		this.autoplaySpeed = options.duration;
-		this.interval;
-		this.$controls = this.$el.find('.js-slider-home-button');
-    this.autoplay = this.maxSlide > 1 ? options.autoplay : false;
+/* ---------- Hero slideshow ---------- */
+// Same mechanics as the original: the current slide gets .is-current and its neighbours get
+// .is-prev / .is-next, and CSS does the slide-past-and-zoom transition between them.
+(() => {
+  const show = document.getElementById("show");
+  if (!show) return;
+  const slides = [...show.querySelectorAll(".slide")];
+  const dotsBox = show.querySelector(".show-dots");
+  const DURATION = 7500;
+  const LOCK = 1200; // matches the CSS transition, so clicks can't pile up
+  let current = 0;
+  let busy = false;
+  let timer = null;
 
-		this.$el.on('click', '.js-slider-home-next', (event) => this.nextSlide());
-		this.$el.on('click', '.js-slider-home-prev', (event) => this.prevSlide());
-    this.$el.on('click', '.js-pagination-item', event => {
-      if (!this.isAnimating) {
-        this.preventClick();
-  this.goToSlide(event.target.dataset.slide);
-      }
+  const dots = slides.map((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-label", `Slide ${i + 1}`);
+    b.addEventListener("click", () => go(i));
+    dotsBox.append(b);
+    return b;
+  });
+
+  function go(i, force = false) {
+    if (busy && !force) return;
+    busy = true;
+    setTimeout(() => { busy = false; }, LOCK);
+    current = (i + slides.length) % slides.length;
+    const prev = (current - 1 + slides.length) % slides.length;
+    const next = (current + 1) % slides.length;
+    slides.forEach((s, j) => {
+      s.classList.toggle("is-current", j === current);
+      s.classList.toggle("is-prev", j === prev);
+      s.classList.toggle("is-next", j === next && j !== prev);
+      if (j === current || j === next) s.querySelector("img").loading = "eager";
     });
-
-		this.init();
-	}
-  
-  init() {
-    this.goToSlide(1);
-    if (this.autoplay) {
-      this.startAutoplay();
-    }
-    
-    if (this.showPagination) {
-      let paginationNumber = this.maxSlide;
-      let pagination = '<div class="pagination"><div class="container" style="padding: 0">';
-      
-      for (let i = 0; i < this.maxSlide; i++) {
-        let item = `<span class="pagination__item js-pagination-item ${ i === 0 ? 'is-current' : ''}" data-slide=${i + 1}>${i + 1}</span>`;
-        pagination  = pagination + item;
-      }
-      
-      pagination = pagination + '</div></div>';
-      
-      this.$el.append(pagination);
-    }
+    dots.forEach((d, j) => d.setAttribute("aria-selected", j === current));
+    restart();
   }
-  
-  preventClick() {
-		this.isAnimating = true;
-		this.$controls.prop('disabled', true);
-		clearInterval(this.interval);
-
-		setTimeout(() => {
-			this.isAnimating = false;
-			this.$controls.prop('disabled', false);
-      if (this.autoplay) {
-			  this.startAutoplay();
-      }
-		}, this.animationDuration);
-	}
-
-	goToSlide(index) {    
-    this.currentSlide = parseInt(index);
-    
-    if (this.currentSlide > this.maxSlide) {
-      this.currentSlide = 1;
-    }
-    
-    if (this.currentSlide === 0) {
-      this.currentSlide = this.maxSlide;
-    }
-    
-    const newCurrent = this.$el.find('.js-slider-home-slide[data-slide="'+ this.currentSlide +'"]');
-    const newPrev = this.currentSlide === 1 ? this.$el.find('.js-slider-home-slide').last() : newCurrent.prev('.js-slider-home-slide');
-    const newNext = this.currentSlide === this.maxSlide ? this.$el.find('.js-slider-home-slide').first() : newCurrent.next('.js-slider-home-slide');
-    
-    this.$el.find('.js-slider-home-slide').removeClass('is-prev is-next is-current');
-    this.$el.find('.js-pagination-item').removeClass('is-current');
-    
-		if (this.maxSlide > 1) {
-      newPrev.addClass('is-prev');
-      newNext.addClass('is-next');
-    }
-    
-    newCurrent.addClass('is-current');
-    this.$el.find('.js-pagination-item[data-slide="'+this.currentSlide+'"]').addClass('is-current');
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(() => { if (!document.hidden) go(current + 1); }, DURATION);
   }
-  
-  nextSlide() {
-    this.preventClick();
-    this.goToSlide(this.currentSlide + 1);
-	}
-   
-	prevSlide() {
-    this.preventClick();
-    this.goToSlide(this.currentSlide - 1);
-	}
 
-	startAutoplay() {
-		this.interval = setInterval(() => {
-			if (!this.isAnimating) {
-				this.nextSlide();
-			}
-		}, this.autoplaySpeed);
-	}
+  show.querySelectorAll("[data-step]").forEach((b) =>
+    b.addEventListener("click", () => go(current + Number(b.dataset.step))));
 
-	destroy() {
-		this.$el.off();
-	}
-}
+  document.addEventListener("keydown", (e) => {
+    if (e.target.closest("input, textarea, dialog")) return;
+    const box = show.getBoundingClientRect();
+    if (box.bottom < 0 || box.top > innerHeight) return;
+    if (e.key === "ArrowRight") go(current + 1);
+    if (e.key === "ArrowLeft") go(current - 1);
+  });
 
-(function() {
-	let loaded = false;
-	let maxLoad = 3000;  
-  
-	function load() {
-		const options = {
-      showPagination: true
-    };
+  let x0 = null;
+  show.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") x0 = e.clientX; });
+  show.addEventListener("pointerup", (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
+  });
 
-    let slideShow = new Slideshow(options);
-	}
-  
-	function addLoadClass() {
-		$body.addClass('is-loaded');
-
-		setTimeout(function() {
-			$body.addClass('is-animated');
-		}, 600);
-	}
-  
-	$window.on('load', function() {
-		if(!loaded) {
-			loaded = true;
-			load();
-		}
-	});
-  
-	setTimeout(function() {
-		if(!loaded) {
-			loaded = true;
-			load();
-		}
-	}, maxLoad);
-
-	addLoadClass();
+  go(0, true);
 })();
 
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  loop: true,
-
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-
-  //pagination: {
-  //  el: '.swiper-pagination',
-  //},
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+/* ---------- YouTube: load the player only when someone asks for it ---------- */
+document.querySelectorAll("[data-yt]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const frame = document.createElement("iframe");
+    frame.src = `https://www.youtube-nocookie.com/embed/${button.dataset.yt}?autoplay=1&rel=0`;
+    frame.title = "AVRA on YouTube";
+    frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    frame.allowFullscreen = true;
+    button.replaceChildren(frame);
+    button.removeAttribute("aria-label");
+  }, { once: true });
 });
+
+/* ---------- The live POG Discord, loaded when it gets close to the screen ---------- */
+(() => {
+  const box = document.getElementById("discord");
+  if (!box) return;
+  const io = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    io.disconnect();
+    const widget = document.createElement("widgetbot");
+    widget.setAttribute("server", box.dataset.server);
+    widget.setAttribute("channel", box.dataset.channel);
+    widget.setAttribute("width", "100%");
+    widget.setAttribute("height", "100%");
+    box.append(widget);
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/@widgetbot/html-embed";
+    script.async = true;
+    script.onerror = () => {
+      box.querySelector(".discord-loading").textContent = "Discord didn't load. It might be blocked on your network.";
+    };
+    document.body.append(script);
+  }, { rootMargin: "600px 0px" });
+  io.observe(box);
+})();
+
+/* ---------- PC builds: one photo per screen, arrows, swipe, or drag ---------- */
+(() => {
+  const track = document.getElementById("pc-track");
+  if (!track) return;
+  const bar = document.querySelector(".pc-bar");
+  const count = track.children.length;
+  const index = () => Math.round(track.scrollLeft / track.clientWidth);
+  const goTo = (i) => track.scrollTo({ left: ((i + count) % count) * track.clientWidth, behavior: "smooth" });
+
+  document.querySelectorAll(".pc-arrow").forEach((b) =>
+    b.addEventListener("click", () => goTo(index() + Number(b.dataset.dir))));
+  track.addEventListener("scroll", () => bar.style.setProperty("--i", index()), { passive: true });
+
+  // mouse drag
+  let x0 = null;
+  let left0 = 0;
+  track.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse") return;
+    x0 = e.clientX;
+    left0 = track.scrollLeft;
+    track.style.scrollSnapType = "none";
+    track.setPointerCapture(e.pointerId);
+  });
+  track.addEventListener("pointermove", (e) => {
+    if (x0 !== null) track.scrollLeft = left0 - (e.clientX - x0);
+  });
+  const drop = (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0;
+    x0 = null;
+    track.style.scrollSnapType = "";
+    const from = Math.round(left0 / track.clientWidth);
+    goTo(Math.abs(dx) > 60 ? from + (dx < 0 ? 1 : -1) : from);
+  };
+  track.addEventListener("pointerup", drop);
+  track.addEventListener("pointercancel", drop);
+})();
+
+/* ---------- Gallery: "show all" on phones, and the lightbox ---------- */
+(() => {
+  const grid = document.getElementById("gallery-grid");
+  if (!grid) return;
+  const more = document.querySelector(".gallery-more");
+  more?.addEventListener("click", () => {
+    grid.classList.remove("is-collapsed");
+    more.hidden = true;
+  });
+
+  const box = document.getElementById("lightbox");
+  const stage = box.querySelector(".lightbox-stage");
+  const title = box.querySelector(".lightbox-title");
+  const counter = box.querySelector(".lightbox-count");
+  let list = [];
+  let index = 0;
+
+  function show(i) {
+    index = (i + list.length) % list.length;
+    const link = list[index];
+    let media;
+    if (link.hasAttribute("data-video")) {
+      media = document.createElement("video");
+      media.src = link.href;
+      media.controls = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.poster = link.querySelector("img").src;
+    } else {
+      media = document.createElement("img");
+      media.src = link.href;
+      media.alt = link.dataset.caption;
+    }
+    stage.replaceChildren(media);
+    title.textContent = link.dataset.caption;
+    counter.textContent = `${String(index + 1).padStart(2, "0")}/${String(list.length).padStart(2, "0")}`;
+  }
+
+  grid.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+    e.preventDefault();
+    list = [...grid.querySelectorAll("a")].filter((a) => a.offsetParent !== null);
+    box.showModal();
+    show(list.indexOf(link));
+  });
+
+  box.querySelectorAll("[data-step]").forEach((b) =>
+    b.addEventListener("click", () => show(index + Number(b.dataset.step))));
+  box.querySelector(".lightbox-close").addEventListener("click", () => box.close());
+  box.addEventListener("close", () => stage.replaceChildren());
+  box.addEventListener("click", (e) => { if (e.target === box || e.target === stage) box.close(); });
+  box.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") show(index + 1);
+    if (e.key === "ArrowLeft") show(index - 1);
+  });
+
+  let x0 = null;
+  stage.addEventListener("pointerdown", (e) => { x0 = e.clientX; });
+  stage.addEventListener("pointerup", (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+  });
+})();

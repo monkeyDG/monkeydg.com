@@ -1,0 +1,40 @@
+/* 404 page */
+
+.page-404 { background: var(--paper); }
+
+.nf {
+  min-height: 100svh;
+  padding: calc(var(--header-h) + clamp(32px, 7vh, 80px)) 0 clamp(56px, 8vw, 96px);
+}
+
+.nf-title {
+  min-height: 2.1em;
+  max-width: 14em;
+  font-size: clamp(40px, 6vw, 84px);
+  line-height: 1.02;
+}
+
+.nf-chart { max-width: 640px; margin: 24px 0 28px; }
+.nf-chart svg { width: 100%; height: auto; overflow: visible; }
+.nf-curve { fill: none; stroke: var(--ink); stroke-width: 3; }
+.nf-tail { fill: var(--blue); }
+.nf-axis { stroke: var(--ink); stroke-width: 2; }
+.nf-obs { stroke: var(--ink); stroke-width: 2; stroke-dasharray: 5 5; }
+.nf-label, .nf-p { font-family: var(--mono); font-size: 15px; font-weight: 700; fill: var(--ink); }
+
+.js .nf-chart .nf-curve {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  transition: stroke-dashoffset 1.6s var(--ease-out) 0.3s;
+}
+.js .nf-chart.is-in .nf-curve { stroke-dashoffset: 0; }
+
+.nf-verdict {
+  margin-bottom: 14px;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+.nf-copy { max-width: 36em; font-size: 19px; color: var(--ink-2); }
+.nf-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
