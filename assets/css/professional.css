@@ -155,6 +155,9 @@ main section { scroll-margin-top: 24px; }
   gap: 10px;
   margin-top: 22px;
 }
+.profile-actions .btn:hover,
+.profile-actions .btn:focus-visible { box-shadow: 0 2px 6px rgb(0 0 0 / 0.1); }
+.profile-actions .btn:active { box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
 .btn-icon {
   width: 17px;
   height: 17px;
@@ -589,35 +592,27 @@ main section { scroll-margin-top: 24px; }
   color: var(--night-muted);
   transition: color 0.25s;
 }
-.tool-mark {
-  position: relative;
-  display: block;
+/* One logo per tool. At rest it's drawn as a white silhouette; hover lets its real colours
+   through. Same shape either way, only the colour changes. Logos that are white on dark
+   (OpenAI, Cursor, MCP, GitHub) just dim a little instead. */
+.tool-logo {
   width: 32px;
   height: 32px;
-}
-.tool-mark svg,
-.tool-mark img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
   margin: 0;
   object-fit: contain;
-  transition: opacity 0.25s;
+  filter: brightness(0) invert(0.92);
+  transition: filter 0.25s;
 }
-.tool-mark svg { fill: #e8eaee; }
-.tool-mark img { opacity: 0; }
-/* hover swaps to the real logo colours; nothing moves */
 .tool-grid li:hover { color: #fff; }
-.tool-grid li:hover .tool-mark svg { opacity: 0; }
-.tool-grid li:hover .tool-mark img { opacity: 1; }
+.tool-grid li:hover .tool-logo { filter: none; }
+.tool-grid li.tool--white:hover .tool-logo { filter: brightness(0) invert(0.62); }
 
 @media (max-width: 760px) {
   .tools { padding: 64px 0 70px; margin-bottom: 80px; }
   .tool-group { grid-template-columns: 1fr; padding: 14px 0; gap: 8px; }
   .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px; }
   .tool-grid li { padding: 8px 2px; gap: 6px; font-size: 11.5px; }
-  .tool-mark { width: 26px; height: 26px; }
+  .tool-logo { width: 26px; height: 26px; }
 }
 
 /* ---------- Education ---------- */
@@ -705,9 +700,10 @@ main section { scroll-margin-top: 24px; }
 }
 .award-list .mono { color: var(--blue-ink); font-weight: 700; }
 
+/* 8 logos: one row of 8 on wide screens, two rows of 4 below that, so rows are always full. */
 .award-logos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   align-items: center;
   justify-items: center;
   gap: 28px 24px;
@@ -715,9 +711,12 @@ main section { scroll-margin-top: 24px; }
   padding: 0;
   list-style: none;
 }
+@media (max-width: 1000px) {
+  .award-logos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
 .award-logos img {
   width: auto;
-  height: 40px;
+  height: 34px;
   max-width: 100%;
   object-fit: contain;
   filter: grayscale(1);

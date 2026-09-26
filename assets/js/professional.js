@@ -69,11 +69,17 @@
   });
 })();
 
-/* ---------- Volunteering carousel buttons ---------- */
+/* ---------- Volunteering carousel: arrows, and it advances on its own ---------- */
 (() => {
   const track = document.getElementById("carousel");
   if (!track) return;
   const [prev, next] = document.querySelectorAll(".carousel-btn");
+  const INTERVAL = 4500;
+  let timer = null;
+  let paused = false;
+  let visible = false;
+
+  const atEnd = () => track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
 
   function step(dir) {
     const card = track.firstElementChild;
@@ -82,11 +88,33 @@
   }
   function sync() {
     prev.disabled = track.scrollLeft < 8;
-    next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
+    next.disabled = atEnd();
   }
-  prev.addEventListener("click", () => step(-1));
-  next.addEventListener("click", () => step(1));
+  // Wraps back to the first card after the last one.
+  function advance() {
+    if (paused || !visible || document.hidden) return;
+    if (atEnd()) track.scrollTo({ left: 0, behavior: "smooth" });
+    else step(1);
+  }
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(advance, INTERVAL);
+  }
+
+  prev.addEventListener("click", () => { step(-1); restart(); });
+  next.addEventListener("click", () => { step(1); restart(); });
   track.addEventListener("scroll", sync, { passive: true });
   window.addEventListener("resize", sync);
+
+  // Hold still while someone is reading or swiping.
+  track.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") paused = true; });
+  track.addEventListener("pointerleave", () => { paused = false; });
+  track.addEventListener("pointerdown", () => { paused = true; });
+  track.addEventListener("pointerup", (e) => { if (e.pointerType !== "mouse") { paused = false; restart(); } });
+  track.addEventListener("focusin", () => { paused = true; });
+  track.addEventListener("focusout", () => { paused = false; });
+  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: 0.4 }).observe(track);
+
   sync();
+  restart();
 })();

@@ -1,7 +1,6 @@
-// Builds the tool logos for the professional page.
-//   assets/img/icons.svg       monochrome sprite (Simple Icons, CC0), shown at rest
-//   assets/img/tools/<id>.svg  full-colour logos (Iconify "logos" set, CC0/MIT; Devicon for
-//                              scikit-learn), cross-faded in on hover
+// Builds the tool logos for the professional page: assets/img/tools/<id>.svg, full-colour logos
+// from the Iconify "logos" set (CC0/MIT), Devicon for scikit-learn, and a layered BigQuery mark
+// from Simple Icons. The page shows them as white silhouettes at rest and in colour on hover.
 // Brand marks that are black get their light "on dark" variant, since they sit on a dark band.
 // Usage: npm install && npm run icons
 
@@ -15,30 +14,26 @@ const require = createRequire(import.meta.url);
 const logos = require("@iconify-json/logos/icons.json");
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 
-// [id used in the HTML, Simple Icons slug, colour source, colour swaps for a dark background]
+// [id used in the HTML, colour source, colour swaps for a dark background, default fill]
 const ICONS = [
-  ["python", "python", "logos:python"],
-  ["snowflake", "snowflake", "logos:snowflake-icon"],
-  ["apacheairflow", "apacheairflow", "logos:airflow-icon", { "#4a4848": "#e8e8e8" }],
-  ["googlebigquery", "googlebigquery", "bigquery"],
-  ["apachespark", "apachespark", "logos:apache-spark", { "#3c3a3e": "#ffffff" }],
-  ["pandas", "pandas", "logos:pandas-icon", { "#130754": "#ffffff" }],
-  ["scikitlearn", "scikitlearn", "devicon:scikitlearn/scikitlearn-original.svg", { "#010101": "#ffffff" }],
-  ["tensorflow", "tensorflow", "logos:tensorflow"],
-  ["jupyter", "jupyter", "logos:jupyter", { "#4e4e4e": "#b5b5b5" }],
-  ["tableau", "tableau", "logos:tableau-icon"],
-  ["looker", "looker", "logos:looker-icon"],
-  ["streamlit", "streamlit", "logos:streamlit"],
-  ["claude", "claude", "logos:claude-icon"],
-  ["openai", "openai", "logos:openai-icon", {}, "#ffffff"],
-  ["cursor", "cursor", "logos:cursor-icon", { "#26251e": "#ffffff" }],
-  ["modelcontextprotocol", "modelcontextprotocol", "logos:model-context-protocol-icon", {}, "#ffffff"],
-  ["github", "github", "logos:github-icon", { "#161614": "#ffffff" }],
-  ["amazonwebservices", "amazonwebservices", "logos:aws", { "#252f3e": "#ffffff" }],
-  ["discord", "discord", null],
-  ["mongodb", "mongodb", null],
-  ["raspberrypi", "raspberrypi", null],
-  ["autodesk", "autodesk", null],
+  ["python", "logos:python"],
+  ["snowflake", "logos:snowflake-icon"],
+  ["apacheairflow", "logos:airflow-icon", { "#4a4848": "#e8e8e8" }],
+  ["googlebigquery", "bigquery"],
+  ["apachespark", "logos:apache-spark", { "#3c3a3e": "#ffffff" }],
+  ["pandas", "logos:pandas-icon", { "#130754": "#ffffff" }],
+  ["scikitlearn", "devicon:scikitlearn/scikitlearn-original.svg", { "#010101": "#ffffff" }],
+  ["tensorflow", "logos:tensorflow"],
+  ["jupyter", "logos:jupyter", { "#4e4e4e": "#b5b5b5" }],
+  ["tableau", "logos:tableau-icon"],
+  ["looker", "logos:looker-icon"],
+  ["streamlit", "logos:streamlit"],
+  ["claude", "logos:claude-icon"],
+  ["openai", "logos:openai-icon", {}, "#ffffff"],
+  ["cursor", "logos:cursor-icon", { "#26251e": "#ffffff" }],
+  ["modelcontextprotocol", "logos:model-context-protocol-icon", {}, "#ffffff"],
+  ["github", "logos:github-icon", { "#161614": "#ffffff" }],
+  ["amazonwebservices", "logos:aws", { "#252f3e": "#ffffff" }],
 ];
 
 function simpleIcon(slug) {
@@ -69,12 +64,8 @@ async function colourSvg(source, swaps = {}, defaultFill) {
   return svg;
 }
 
-const symbols = [];
 await mkdir(path.join(ROOT, "assets/img/tools"), { recursive: true });
-for (const [id, slug, source, swaps, defaultFill] of ICONS) {
-  const icon = simpleIcon(slug);
-  symbols.push(`  <symbol id="${id}" viewBox="0 0 24 24"><title>${icon.title}</title><path d="${icon.path}"/></symbol>`);
-  if (source) await writeFile(path.join(ROOT, `assets/img/tools/${id}.svg`), `${await colourSvg(source, swaps, defaultFill)}\n`);
+for (const [id, source, swaps, defaultFill] of ICONS) {
+  await writeFile(path.join(ROOT, `assets/img/tools/${id}.svg`), `${await colourSvg(source, swaps, defaultFill)}\n`);
 }
-await writeFile(path.join(ROOT, "assets/img/icons.svg"), `<svg xmlns="http://www.w3.org/2000/svg">\n${symbols.join("\n")}\n</svg>\n`);
-console.log(`icons: ${ICONS.length} mono, ${ICONS.filter((i) => i[2]).length} colour`);
+console.log(`tool logos: ${ICONS.length}`);
