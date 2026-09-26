@@ -1,638 +1,147 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>David Gallo — Data Scientist at Coinbase</title>
-  <meta name="description" content="David Gallo is a data scientist on Coinbase's International Data Science team, leading experimentation, machine learning, and analytics for Canada and Brazil.">
-  <link rel="canonical" href="https://monkeydg.com/">
-  <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)">
+    <title>David Gallo / Monkeydg</title>
+    <meta name="description" content="Data scientist at Coinbase, turning experiments and models into decisions  |  Musician, maker, and part-time programmer that loves to tinker"/>
+    <link rel="icon" href="assets/css/images/shared/favicon.ico"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://monkeydg.com/">
-  <meta property="og:title" content="David Gallo — Data Scientist at Coinbase">
-  <meta property="og:description" content="Experimentation, machine learning, and AI-native analytics for Canada and Brazil.">
-  <meta property="og:image" content="https://monkeydg.com/assets/img/og-card.png">
-  <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" type="text/css" href="assets/css/shared.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/header-footer.css">
 
-  <link rel="icon" href="assets/img/brand/monkey-64.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/brand/monkey-180.png">
-  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css">
-
-  <script>
-    // Apply the saved theme before first paint to avoid a flash.
-    document.documentElement.classList.add("js");
-    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
-  <script src="assets/js/site.js" defer></script>
-  <script src="assets/js/experiment.js" defer></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "David Gallo",
-    "url": "https://monkeydg.com/",
-    "image": "https://monkeydg.com/assets/img/profile-800.webp",
-    "jobTitle": "Data Scientist, International",
-    "worksFor": { "@type": "Organization", "name": "Coinbase" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Montreal", "addressCountry": "CA" },
-    "alumniOf": ["Toulouse Business School", "University of Ottawa"],
-    "knowsLanguage": ["English", "French", "Italian"],
-    "sameAs": ["https://www.linkedin.com/in/davidgallo747", "https://github.com/monkeydg"]
-  }
-  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+    <script type="text/javascript">
+        document.documentElement.className = 'js';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
 </head>
-<body>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
-      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
-      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
-      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
-      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></symbol>
-      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
-      <symbol id="i-lang" viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M11 5c-1 4-4 7-7 8.5M6 9c1.3 2 3.2 3.6 5.5 4.5M13 21l4-9 4 9M14.5 18h5"/></symbol>
-      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2 9 2 12 0v-5M22 9v6"/></symbol>
-      <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 9V3M7 15h10"/></symbol>
-      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 4.9 4.9 1.8-4.9 1.8L12 16.4l-1.8-4.9-4.9-1.8 4.9-1.8zM19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
-      <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-4 3 3 6-6M16 8h4v4"/></symbol>
-      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
-      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
-      <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
-      <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
-      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></symbol>
-      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.46-1.1-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></symbol>
-      <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
-    </defs>
-  </svg>
 
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="nav" data-nav>
-    <div class="container nav__inner">
-      <a class="brand" href="./" aria-label="David Gallo, home">
-        <img src="assets/img/brand/monkey-64.png" width="30" height="30" alt="">
-        <span>David Gallo</span><span class="brand__slash">/</span><span class="brand__handle">monkeydg</span>
-      </a>
-      <nav aria-label="Primary">
-        <ul class="nav__links" id="nav-links">
-          <li><a class="nav__link" href="#coinbase" data-spy>Coinbase</a></li>
-          <li><a class="nav__link" href="#experience" data-spy>Experience</a></li>
-          <li><a class="nav__link" href="#toolkit" data-spy>Toolkit</a></li>
-          <li><a class="nav__link" href="#education" data-spy>Education</a></li>
-          <li><a class="nav__link" href="#leadership" data-spy>Leadership</a></li>
-          <li><a class="nav__link" href="creative.html">Workshop</a></li>
-          <li><a class="nav__link" href="#contact" data-spy>Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav__actions">
-        <a class="btn btn--ghost btn--sm nav__cv" href="assets/docs/David_Gallo_CV.pdf" target="_blank" rel="noopener">
-          CV <svg class="i arrow-down" aria-hidden="true"><use href="#i-download"/></svg>
-        </a>
-        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
-          <svg class="i icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
-          <svg class="i icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
-        </button>
-        <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">
-          <span class="bar"></span><span class="bar"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- Hero ------------------------------------------------------------ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <a class="status" href="#coinbase">
-            <span class="pulse" aria-hidden="true"></span>
-            <span>Now at <strong>Coinbase</strong> · International Data Science</span>
-          </a>
-          <h1 class="hero__title" id="hero-title">Helping teams ship fast, and <em>know</em> it&nbsp;worked.</h1>
-          <p class="hero__lead">
-            I'm David Gallo, a data scientist at <strong>Coinbase</strong>, where I lead data science for
-            <strong>Canada and Brazil</strong>. I design experiments, build machine learning models, and
-            build AI-native tools that turn data into decisions senior executives can trust.
-          </p>
-          <div class="hero__cta">
-            <a class="btn" href="#coinbase">What I do at Coinbase <svg class="i arrow-down" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
-            <a class="btn btn--ghost" href="#contact">Get in touch</a>
-          </div>
-          <ul class="hero__facts">
-            <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Montreal, Canada</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg>MSc AI &amp; Business Analytics</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-lang"/></svg>English · Français · Italiano</li>
-          </ul>
+<body id="body" class="clearfix" onload="animate_buttons_mobile()">
+    <main style="height: 100vh; overflow:hidden">
+        <header id="header">
+            <div class="header-row">
+                <div class="col-12">
+                    <a id="logo" class="logo" href="index.html">David Gallo</a>
+                    <div class="icon-nav">navigation</div>
+                    <nav>
+                        <ul id="nav">
+                            <li><a href="professional.html">professional</a></li>
+                            <li><a href="creative.html">creative</a></li>
+                            <li><a href="contact.html">contact</a></li>
+                            <li>
+                                <ul class="social">
+                                    <li class="github"><a href="https://www.github.com/monkeydg" title="Check out my Github" target="_blank">github</a></li>
+                                    <li class="linkedin"><a href="https://linkedin.com/in/davidgallo747" title="Connect with me on Linkedin" target="_blank">linkedin</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>  
+        </header>
+        <div class="mobile typewriter-bg"><h1 id="typewriter-mobile" class="typewriter center-all"></h1></div>
+        <div class="mobile-buttons">
+            <a href="creative.html"><button id="creative-btn-mobile" class="mobile btn2 professional-btn animate-left">Creative Portfolio</button></a>
+            <a href="professional.html"><button id="professional-btn-mobile" class="mobile btn2 creative-btn animate-right">Professional Portfolio</button></a>
+        </div>     
+        <div class="wrapper">
+            <div id="content" class="clearfix home desktop">
+                <h1 id="typewriter-desktop" class="typewriter center-all"></h1>
+                <section id="section" class="nopad-t nopad-b">
+                    <div class="row">
+                        <div class="col-full">
+                            <div id="face" class="face">
+                                <a href="professional.html">
+                                    <div id="creative" class="creative">
+                                        <div id="creative-desc" class="description">
+                                            <h1 class="subtitle">professional portfolio</h1>
+                                            <p><mark>Data scientist at Coinbase, turning experiments and models into decisions</mark></p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="creative.html">
+                                    <div id="professional" class="professional">
+                                        <div id="professional-desc" class="description">
+                                            <h1 class="subtitle">creative portfolio</h1>
+                                            <p><mark>Musician, maker, and part-time programmer that loves to tinker</mark></p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div id="creative-img" class="creative-img"></div>
+                                <div id="professional-img" class="professional-img"></div>
+                                <div id="professional-bg" class="professional-bg"></div>
+                                <div id="creative-bg" class="creative-bg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-
-        <div class="hero__viz">
-          <figure class="exp card" data-experiment aria-labelledby="exp-title">
-            <div class="exp__head">
-              <div>
-                <p class="exp__title" id="exp-title">A/B test, simulated live</p>
-                <p class="exp__sub">Posterior conversion rate per arm · Beta-Binomial</p>
-              </div>
-              <button class="icon-btn" type="button" data-exp-rerun aria-label="Run a new simulated experiment" title="Run a new experiment">
-                <svg class="i" aria-hidden="true"><use href="#i-refresh"/></svg>
-              </button>
-            </div>
-            <div class="exp__legend" aria-hidden="true">
-              <span><i class="swatch"></i>Control</span>
-              <span><i class="swatch swatch--b"></i>Variant</span>
-            </div>
-            <div class="exp__chart" data-exp-chart>
-              <svg viewBox="0 0 460 210" role="img" aria-label="Posterior distributions of conversion rate for control and variant"></svg>
-              <div class="exp__tip" data-exp-tip></div>
-            </div>
-            <dl class="exp__stats">
-              <div class="exp__stat"><dt>Visitors / arm</dt><dd data-stat="n">0</dd></div>
-              <div class="exp__stat"><dt>Lift · 95% CrI</dt><dd data-stat="lift">—<small>[—, —]</small></dd></div>
-              <div class="exp__stat"><dt>P(variant &gt; ctrl)</dt><dd data-stat="prob">—</dd></div>
-            </dl>
-            <svg class="exp__spark" data-exp-spark viewBox="0 0 460 34" preserveAspectRatio="none" aria-hidden="true"></svg>
-            <div class="exp__spark-label" aria-hidden="true"><span>P(variant &gt; ctrl) over time</span><span>95% threshold</span></div>
-            <div class="exp__foot">
-              <p class="exp__verdict" data-exp-verdict data-state="idle" aria-live="polite"><i class="dot"></i><span>Waiting to start…</span></p>
-            </div>
-            <figcaption class="exp__note">Synthetic data, regenerated on every run. Hover the chart to inspect the densities.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Career strip ---------------------------------------------------- -->
-    <div class="strip">
-      <div class="container">
-        <div class="strip__inner">
-        <span class="strip__label">Previously</span>
-        <ul class="strip__list">
-          <li>Zinnia</li>
-          <li>Delivery Hero</li>
-          <li>Deloitte</li>
-          <li>CIRA</li>
-          <li>Government of Canada</li>
-        </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Coinbase feature ------------------------------------------------ -->
-    <section class="section" id="coinbase" aria-labelledby="coinbase-title">
-      <div class="container">
-        <article class="cb card" data-reveal>
-          <div class="cb__top">
-            <div class="cb__id">
-              <p class="kicker">Current role · 2025 — Present</p>
-              <h2 class="cb__name" id="coinbase-title"><span class="cb__wordmark">Coinbase</span></h2>
-              <p class="cb__role">Data Scientist, <strong>International Data Science</strong></p>
-            </div>
-            <div class="cb__markets" aria-label="Markets I lead data science for">
-              <div class="market">
-                <span class="market__code">CA</span>
-                <span><b>Canada</b><small>Data science lead</small></span>
-              </div>
-              <div class="market">
-                <span class="market__code">BR</span>
-                <span><b>Brazil</b><small>Data science lead · LATAM</small></span>
-              </div>
-            </div>
-          </div>
-
-          <p class="cb__summary">
-            I have <strong>full ownership of data science, experimentation, machine learning, and analytics</strong>
-            for Canada and LATAM at one of the world's leading crypto platforms. When country leadership needs evidence
-            behind a decision, that's where I come in.
-          </p>
-
-          <div class="pillars">
-            <div class="pillar card">
-              <span class="pillar__icon"><svg class="i" aria-hidden="true"><use href="#i-flask"/></svg></span>
-              <h3>Experimentation &amp; ML</h3>
-              <p>I build ML models, run and analyze A/B/n tests with complex statistical inference, maintain data pipelines, and turn the results into insight.</p>
-            </div>
-            <div class="pillar card">
-              <span class="pillar__icon"><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></span>
-              <h3>AI-native tooling</h3>
-              <p>I build AI-native tools, workflows, and analyses for my stakeholders, from custom harnesses and skills to connectors and automations, and I stay close to the frontier of LLM platforms.</p>
-            </div>
-            <div class="pillar card">
-              <span class="pillar__icon"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span>
-              <h3>Executive decision support</h3>
-              <p>I give senior country executives the strategic insight to make educated decisions, ship quickly, and track results with statistical rigor.</p>
-            </div>
-          </div>
-
-          <div class="cb__stack">
-            <span class="mono">Daily stack</span>
-            <ul class="tags">
-              <li class="chip">Python</li>
-              <li class="chip">Snowflake SQL</li>
-              <li class="chip">Airflow</li>
-              <li class="chip">Claude Code</li>
-              <li class="chip">Codex</li>
-              <li class="chip">Cursor</li>
-              <li class="chip">MCP servers</li>
-              <li class="chip">Agents</li>
+    </main>
+    <footer class="footer">
+        <a id="logo" class="logo-white logo-footer-fix" href="index.html">David Gallo</a>
+        <nav>
+            <ul id="nav">
+                <li><a href="professional.html">professional</a></li>
+                <li><a href="creative.html">creative</a></li>
+                <li><a href="contact.html">contact</a></li>
             </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- About ----------------------------------------------------------- -->
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container about">
-        <div class="portrait" data-reveal>
-          <div class="portrait__frame">
-            <img src="assets/img/profile-800.webp" srcset="assets/img/profile-480.webp 480w, assets/img/profile-800.webp 800w" sizes="(max-width: 980px) 420px, 38vw" width="800" height="886" alt="Portrait of David Gallo" loading="lazy" decoding="async">
-          </div>
-          <div class="portrait__caption"><span>David Gallo</span><span>Montreal, QC</span></div>
-        </div>
-
-        <div class="about__body">
-          <header class="section-head" data-reveal>
-            <p class="kicker">About</p>
-            <h2 class="section-title" id="about-title">A data scientist with a <em>business</em> brain.</h2>
-          </header>
-          <div class="about__text prose" data-reveal>
-            <p>I sit at the intersection of statistics, engineering, and strategy, and I'm happiest when a rigorous analysis changes what a team actually does next.</p>
-            <p>Before Coinbase I led P&amp;C insurance analytics at Zinnia, ran large-scale A/B/n experiments on customer logistics at Delivery Hero in Berlin, and delivered data and AI transformation projects as a consultant at Deloitte. I started out building ML pipelines for a DNS firewall at CIRA and working with data across the Government of Canada.</p>
-            <p>I hold an MSc in Artificial Intelligence and Business Analytics from Toulouse Business School and a BCom from the University of Ottawa, and I work in English, French, and Italian.</p>
-          </div>
-          <div class="stats" data-reveal>
-            <div class="stat card"><p class="stat__value"><span data-count="7">7</span>+</p><p class="stat__label">years in data science &amp; analytics</p></div>
-            <div class="stat card"><p class="stat__value"><span data-count="15">15</span>%</p><p class="stat__label">better delivery-time estimates, globally, at Delivery Hero</p></div>
-            <div class="stat card"><p class="stat__value"><span data-count="2">2</span></p><p class="stat__label">countries whose data science I lead at Coinbase</p></div>
-            <div class="stat card"><p class="stat__value">$<span data-count="250">250</span>K</p><p class="stat__label">raised for CHEO as CASCO's musical director</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience ------------------------------------------------------ -->
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <p class="kicker">Experience</p>
-          <h2 class="section-title" id="experience-title">Nine years of turning data into <em>decisions</em>.</h2>
-        </header>
-
-        <ol class="timeline" data-timeline>
-          <li class="timeline__progress" aria-hidden="true"></li>
-
-          <li class="role role--current" data-reveal>
-            <div class="role__meta"><span class="role__dates">2025 — Now</span><span>Montreal</span></div>
-            <div class="role__body">
-              <div class="role__head">
-                <h3 class="role__org">Coinbase</h3>
-                <p class="role__title">Data Scientist, International Data Science</p>
-              </div>
-              <p class="role__summary">Leading data science for Canada and Brazil: experimentation, machine learning, analytics, and AI-native tooling for senior country leadership. <a class="link" href="#coinbase">More above</a>.</p>
-              <ul class="tags"><li class="chip">Python</li><li class="chip">Snowflake SQL</li><li class="chip">Airflow</li><li class="chip">A/B/n testing</li><li class="chip">LLM agents &amp; MCP</li></ul>
-            </div>
-          </li>
-
-          <li class="role" data-reveal>
-            <div class="role__meta"><span class="role__dates">2024 — 2025</span><span>Montreal</span></div>
-            <div class="role__body">
-              <div class="role__head">
-                <h3 class="role__org">Zinnia</h3>
-                <p class="role__title">Senior Data Analyst</p>
-              </div>
-              <p class="role__summary">Brought on to help build Zinnia's Canadian presence, I led data analytics for the Property &amp; Casualty insurance business following the acquisition of Policygenius.</p>
-              <ul class="role__points">
-                <li>Advised executive leaders on the <strong>profitability of the home and auto insurance vertical</strong>.</li>
-                <li>Backed every recommendation with data exploration, A/B/n experiments, and long-term reporting initiatives.</li>
-              </ul>
-              <ul class="tags"><li class="chip">BigQuery</li><li class="chip">Python</li><li class="chip">Tableau</li><li class="chip">Experimentation</li></ul>
-            </div>
-          </li>
-
-          <li class="role" data-reveal>
-            <div class="role__meta"><span class="role__dates">2022 — 2024</span><span>Berlin</span></div>
-            <div class="role__body">
-              <div class="role__head">
-                <h3 class="role__org">Delivery Hero</h3>
-                <p class="role__title">Senior Product Analyst, Customer Logistics</p>
-              </div>
-              <p class="role__summary">Led customer logistics analytics at the world's largest food delivery company by global sales, as a strategic advisor to product managers and engineering squads.</p>
-              <ul class="role__points">
-                <li><strong>Improved delivery-time estimates by 15% globally</strong> by training and deploying a density-based clustering model that found delivery zones with problematic overlaps.</li>
-                <li>Designed and analyzed complex A/B/n experiments, combining supervised and unsupervised ML with statistics on big data to guide feature development.</li>
-                <li>Built and maintained data science product features and curated pipelines; embedded data-driven processes in product development.</li>
-              </ul>
-              <ul class="tags"><li class="chip">A/B/n testing</li><li class="chip">HDBSCAN</li><li class="chip">BigQuery</li><li class="chip">Airflow</li><li class="chip">Tableau</li><li class="chip">Looker</li><li class="chip">Streamlit</li></ul>
-            </div>
-          </li>
-
-          <li class="role" data-reveal>
-            <div class="role__meta"><span class="role__dates">2021 — 2022</span><span>Ottawa</span></div>
-            <div class="role__body">
-              <div class="role__head">
-                <h3 class="role__org">Deloitte</h3>
-                <p class="role__title">Consultant, Deloitte Digital</p>
-              </div>
-              <p class="role__summary">Delivered technology transformation projects from strategy through implementation, leading small teams and acting as stream lead on large engagements.</p>
-              <ul class="role__points">
-                <li>Led QA and the data analytics stream for a large-scale federal cloud platform used by <strong>400K+ new Canadian migrants every year</strong>.</li>
-                <li>Led analytics for an NLP-driven market research product at a fintech, classifying customer data with statistical and unsupervised ML models.</li>
-                <li>Recognized with the Deloitte Green Dot (2021) and Silver Dot (2022).</li>
-              </ul>
-              <ul class="tags"><li class="chip">NLP</li><li class="chip">Cloud migration</li><li class="chip">Data governance</li><li class="chip">AWS</li></ul>
-            </div>
-          </li>
-
-          <li class="role" data-reveal>
-            <div class="role__meta"><span class="role__dates">2020</span><span>Ottawa</span></div>
-            <div class="role__body">
-              <div class="role__head">
-                <h3 class="role__org">CIRA</h3>
-                <p class="role__title">Cybersecurity ML Engineer / Data Scientist</p>
-              </div>
-              <p class="role__summary">Lead data scientist for a new DNS firewall product at the Canadian Internet Registration Authority, working in an agile team.</p>
-              <ul class="role__points">
-                <li>Built a real-time ML workflow with Logstash, Elasticsearch, MySQL, Python, and Kibana, in an integrated AWS environment.</li>
-                <li>Applied <strong>hierarchical density-based clustering to millions of daily DNS requests</strong> to shape new product features.</li>
-              </ul>
-              <ul class="tags"><li class="chip">Elasticsearch</li><li class="chip">Python</li><li class="chip">Clustering</li><li class="chip">AWS</li></ul>
-            </div>
-          </li>
-
-          <li class="role" data-reveal>
-            <div class="role__meta"><span class="role__dates">2017 — 2020</span><span>Ottawa</span></div>
-            <div class="role__body">
-              <div class="role__head">
-                <h3 class="role__org">Where it started</h3>
-                <p class="role__title">Public sector &amp; consulting co-ops</p>
-              </div>
-              <ul class="earlier">
-                <li><span class="yr">2020</span><p><b>Department of National Defence</b> · Database Administrator<br><span>Built a SQL database and GUI for accommodations tracking, and a plan to migrate business assets to SharePoint.</span></p></li>
-                <li><span class="yr">2019</span><p><b>MNP</b> · Developer / Analyst<br><span>My first foray into AI: cloud-based ML for a large oil and gas client, transformation proposals, and a records-management operating model.</span></p></li>
-                <li><span class="yr">2019</span><p><b>Fisheries and Oceans Canada</b> · Correspondence Officer, Legal Services<br><span>Managed time-critical requests for legal input and overhauled an integral JetSQL database.</span></p></li>
-                <li><span class="yr">2017</span><p><b>Department of National Defence</b> · Records Management<br><span>Managed the accessibility and security of large volumes of data in OpenText, and scripted automation tools.</span></p></li>
-              </ul>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Toolkit --------------------------------------------------------- -->
-    <section class="section" id="toolkit" aria-labelledby="toolkit-title">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <p class="kicker">Toolkit</p>
-          <h2 class="section-title" id="toolkit-title">The tools behind the <em>work</em>.</h2>
-          <p class="section-lead">Grouped by the job they do, not by how shiny they are.</p>
-        </header>
-
-        <div class="toolkit" data-glow>
-          <div class="tool-group tool-group--featured card" data-reveal>
-            <div class="tool-group__head"><h3>AI-native workflows</h3><span class="count">06</span></div>
-            <p>I build with LLMs every day, from analyses and internal tools to custom harnesses, skills, connectors, and automations for stakeholders.</p>
-            <ul><li class="chip">Claude Code</li><li class="chip">Codex</li><li class="chip">Cursor</li><li class="chip">MCP servers &amp; connectors</li><li class="chip">Agents &amp; custom harnesses</li><li class="chip">Skills &amp; automations</li></ul>
-          </div>
-          <div class="tool-group card" data-reveal style="--i:1">
-            <div class="tool-group__head"><h3>Experimentation</h3><span class="count">05</span></div>
-            <ul><li class="chip">A/B/n test design</li><li class="chip">Statistical inference</li><li class="chip">Hypothesis testing</li><li class="chip">KPI design</li><li class="chip">Exploratory analysis</li></ul>
-          </div>
-          <div class="tool-group card" data-reveal>
-            <div class="tool-group__head"><h3>Machine learning</h3><span class="count">06</span></div>
-            <ul><li class="chip">Supervised learning</li><li class="chip">Clustering (HDBSCAN)</li><li class="chip">Deep RL</li><li class="chip">NLP &amp; sentiment</li><li class="chip">scikit-learn</li><li class="chip">TensorFlow / Keras</li></ul>
-          </div>
-          <div class="tool-group card" data-reveal style="--i:1">
-            <div class="tool-group__head"><h3>Data &amp; cloud</h3><span class="count">10</span></div>
-            <ul><li class="chip">Python</li><li class="chip">Snowflake SQL</li><li class="chip">BigQuery</li><li class="chip">Airflow</li><li class="chip">Spark</li><li class="chip">Elasticsearch</li><li class="chip">MongoDB</li><li class="chip">AWS</li><li class="chip">Google Cloud</li><li class="chip">Azure</li></ul>
-          </div>
-          <div class="tool-group card" data-reveal style="--i:2">
-            <div class="tool-group__head"><h3>Visualization &amp; BI</h3><span class="count">05</span></div>
-            <ul><li class="chip">Tableau</li><li class="chip">Looker</li><li class="chip">Streamlit</li><li class="chip">Seaborn</li><li class="chip">Kibana</li></ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education ------------------------------------------------------- -->
-    <section class="section" id="education" aria-labelledby="education-title">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <p class="kicker">Education</p>
-          <h2 class="section-title" id="education-title">Trained in both the <em>math</em> and the business.</h2>
-        </header>
-
-        <div class="edu">
-          <article class="degree card" data-reveal>
-            <div class="degree__top"><span>2021 — 2022</span><span>Toulouse, France</span></div>
-            <h3>MSc, Artificial Intelligence &amp; Business Analytics</h3>
-            <p class="degree__school">Toulouse Business School</p>
-            <p>A triple-accredited program in applying AI and analytics to drive business value, with a deep applied grounding in statistics, machine learning and deep learning, data mining, and stochastic processes.</p>
-            <ul class="tags"><li class="chip">9.6 / 10 GPA</li><li class="chip">Dean's Honour List</li><li class="chip">Top 5% of class</li><li class="chip">Datathon 1st place</li></ul>
-            <a class="thesis" href="assets/docs/David_Gallo_MSc_Thesis.pdf" target="_blank" rel="noopener">
-              <span>Thesis · PDF</span>
-              <b>Algorithmic Cryptocurrency Trading using Sentiment Analysis and Dueling Double Deep Q-Networks</b>
-            </a>
-          </article>
-
-          <article class="degree card" data-reveal style="--i:1">
-            <div class="degree__top"><span>2016 — 2021</span><span>Ottawa, Canada</span></div>
-            <h3>Honours BCom, Business Technology Management</h3>
-            <p class="degree__school">University of Ottawa · Telfer School of Management</p>
-            <p>A 4.5-year honours co-op degree in French immersion, pairing technology and data analytics with accounting, finance, marketing, and management fundamentals.</p>
-            <ul class="tags"><li class="chip">Summa Cum Laude</li><li class="chip">9.4 / 10 GPA</li><li class="chip">Management Consulting Program</li><li class="chip">International Certificate (Honours)</li></ul>
-          </article>
-        </div>
-
-        <div class="certs">
-          <div class="cert card" data-reveal>
-            <img src="assets/img/certs/azure-dp100-240.webp" width="56" height="56" alt="" loading="lazy">
-            <div><b>Azure Data Scientist Associate</b><span>Microsoft Certified</span></div>
-          </div>
-          <div class="cert card" data-reveal style="--i:1">
-            <img src="assets/img/certs/dell-data-science-240.webp" width="56" height="56" alt="" loading="lazy">
-            <div><b>Data Science Associate</b><span>Dell Technologies Proven Professional</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Recognition ----------------------------------------------------- -->
-    <section class="section" id="recognition" aria-labelledby="recognition-title">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <p class="kicker">Recognition</p>
-          <h2 class="section-title" id="recognition-title">Awards &amp; <em>scholarships</em>.</h2>
-        </header>
-        <ul class="awards" data-reveal>
-          <li class="award"><span class="yr">2022</span><p><b>Silver Dot</b><span>Deloitte</span></p></li>
-          <li class="award"><span class="yr">2022</span><p><b>Datathon, 1st place</b><span>Toulouse Business School</span></p></li>
-          <li class="award"><span class="yr">2022</span><p><b>Coach of the Year</b><span>Jeux du Commerce</span></p></li>
-          <li class="award"><span class="yr">2021</span><p><b>Green Dot</b><span>Deloitte</span></p></li>
-          <li class="award"><span class="yr">2020</span><p><b>Accenture Scholarship Fund</b><span>Accenture</span></p></li>
-          <li class="award"><span class="yr">2016—20</span><p><b>Merit Scholarship</b><span>University of Ottawa</span></p></li>
-          <li class="award"><span class="yr">2019</span><p><b>2nd place &amp; Academic VIP</b><span>Jeux du Commerce</span></p></li>
-          <li class="award"><span class="yr">2018</span><p><b>3rd place overall</b><span>Lazaridis International Case Conference</span></p></li>
-          <li class="award"><span class="yr">2016</span><p><b>Craig Cameron Memorial Scholarship</b><span>Broadview</span></p></li>
-          <li class="award"><span class="yr">2016</span><p><b>AP Scholar Award</b><span>College Board</span></p></li>
-          <li class="award"><span class="yr">2015</span><p><b>Computer &amp; Information Systems Award</b><span>High school</span></p></li>
-          <li class="award"><span class="yr">—</span><p><b>Award for Student Leadership</b><span>Ontario Principals' Council</span></p></li>
+        </nav>
+        <ul class="social">
+            <li class="github-white"><a href="https://www.github.com/monkeydg" title="Check out my Github" target="_blank">github</a></li>
+            <li class="linkedin-white"><a href="https://linkedin.com/in/davidgallo747" title="Connect with me on Linkedin" target="_blank">linkedin</a></li>
         </ul>
-      </div>
-    </section>
+        <p class="copyright">© 2024 David Gallo</p>
+    </footer>
+    <script src="https://ajax.microsoft.com/ajax/jquery/jquery-1.7.2.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script type="text/javascript">
+    // Call functions when dom is ready
+    $(document).ready(function() {
 
-    <!-- Leadership ------------------------------------------------------ -->
-    <section class="section" id="leadership" aria-labelledby="leadership-title">
-      <div class="container carousel" data-carousel>
-        <div class="carousel__head">
-          <header class="section-head" data-reveal>
-            <p class="kicker">Leadership &amp; volunteering</p>
-            <h2 class="section-title" id="leadership-title">Outside the <em>org chart</em>.</h2>
-          </header>
-          <div class="carousel__controls">
-            <button class="icon-btn" type="button" data-carousel-prev aria-label="Previous"><svg class="i" aria-hidden="true"><use href="#i-left"/></svg></button>
-            <button class="icon-btn" type="button" data-carousel-next aria-label="Next"><svg class="i" aria-hidden="true"><use href="#i-right"/></svg></button>
-          </div>
-        </div>
+        // Hide browser top bar in mobiles
+        $('body').scrollTop(1);
 
-        <ul class="carousel__track" data-carousel-track tabindex="0" aria-label="Leadership and volunteering roles">
-          <li class="lead-card card">
-            <div class="lead-card__img"><img src="assets/img/leadership/space-concordia-800.webp" width="800" height="524" alt="Satellite hardware being assembled in a clean room" loading="lazy" decoding="async"></div>
-            <div class="lead-card__body"><p class="lead-card__role">Project Manager</p><h3>Space Concordia</h3><p>Led 80+ engineering students and managed over $450,000 in grant funding to build a satellite with the Canadian Space Agency.</p></div>
-          </li>
-          <li class="lead-card card">
-            <div class="lead-card__img"><img src="assets/img/leadership/casco-800.webp" width="800" height="573" alt="David drumming on stage at the CASCO gala" loading="lazy" decoding="async"></div>
-            <div class="lead-card__body"><p class="lead-card__role">Musical Director</p><h3>CASCO Charity Organization</h3><p>Helped raise over $250,000 for the Children's Hospital of Eastern Ontario through four years of annual musical galas.</p></div>
-          </li>
-          <li class="lead-card card">
-            <div class="lead-card__img"><img src="assets/img/leadership/jdc-800.webp" width="800" height="573" alt="Jeux du Commerce team on stage" loading="lazy" decoding="async"></div>
-            <div class="lead-card__body"><p class="lead-card__role">Competitor</p><h3>Jeux du Commerce</h3><p>Competed twice at Eastern Canada's largest business competition, earning Academic VIP twice and 2nd place overall.</p></div>
-          </li>
-          <li class="lead-card card">
-            <div class="lead-card__img"><img src="assets/img/leadership/coach-800.webp" width="800" height="532" alt="Jeux du Commerce team photo in the snow" loading="lazy" decoding="async"></div>
-            <div class="lead-card__body"><p class="lead-card__role">Coach</p><h3>Jeux du Commerce</h3><p>Coached new teams every year after graduating, and won the 2022 Coach of the Year trophy with a 1st-place team.</p></div>
-          </li>
-          <li class="lead-card card">
-            <div class="lead-card__img"><img src="assets/img/leadership/lazicc-800.webp" width="800" height="573" alt="LAZICC case competition team" loading="lazy" decoding="async"></div>
-            <div class="lead-card__body"><p class="lead-card__role">Competitor</p><h3>Lazaridis International Case Conference</h3><p>Represented Ottawa in Waterloo, placing 1st in the five-hour case crack and 3rd overall.</p></div>
-          </li>
-          <li class="lead-card card">
-            <div class="lead-card__img"><img src="assets/img/leadership/senate-800.webp" width="800" height="573" alt="University of Ottawa Tabaret Hall" loading="lazy" decoding="async"></div>
-            <div class="lead-card__body"><p class="lead-card__role">Elected Senator</p><h3>uOttawa Senate &amp; Faculty Council</h3><p>Elected to three annual terms on the university's highest governance body, alongside deans, directors, VPs, and the Chancellor.</p></div>
-          </li>
-          <li class="lead-card card">
-            <div class="lead-card__img"><img src="assets/img/leadership/hra-800.webp" width="800" height="573" alt="Telfer Human Resources Association executive team" loading="lazy" decoding="async"></div>
-            <div class="lead-card__body"><p class="lead-card__role">VP Internal · Director of Sponsorship</p><h3>Telfer Human Resources Association</h3><p>Managed relations with the university, students, and alumni, and built sponsorship relationships with local firms.</p></div>
-          </li>
-          <li class="lead-card card">
-            <div class="lead-card__img"><img src="assets/img/leadership/rcm-800.webp" width="800" height="744" alt="Close-up of piano keys" loading="lazy" decoding="async"></div>
-            <div class="lead-card__body"><p class="lead-card__role">Musician</p><h3>Royal Conservatory of Music</h3><p>Alongside drumming, completed Grade 8 Piano and Advanced Rudiments after 16 years of practice and performance.</p></div>
-          </li>
-        </ul>
-        <div class="carousel__progress" aria-hidden="true"><span data-carousel-bar></span></div>
-      </div>
-    </section>
+        // Toggle Navigation for mobile devices
+        $('.icon-nav').on('click', function(){
+            $('header nav').slideToggle();
+            $('header').toggleClass('grey-bg');
+            $(this).toggleClass('active');
+        });
 
-    <!-- Beyond work ----------------------------------------------------- -->
-    <section class="section" id="beyond" aria-labelledby="beyond-title">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <p class="kicker">Off the clock</p>
-          <h2 class="section-title" id="beyond-title">I also like to <em>build things</em>.</h2>
-          <p class="section-lead">Drums, 3D printers, water-cooled PCs, and props from video games. The workshop has the full tour.</p>
-        </header>
-        <div class="beyond" data-reveal>
-          <a class="tile" href="creative.html#avra">
-            <img src="assets/img/work/avra-900.webp" width="900" height="600" alt="David drumming on stage with AVRA" loading="lazy" decoding="async">
-            <span class="tile__arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
-            <span class="tile__text"><b>AVRA</b><span>Ottawa rock band, from Bluesfest to chip-truck rallies</span></span>
-          </a>
-          <a class="tile" href="creative.html#voron">
-            <img src="assets/img/work/voron-900.webp" width="900" height="459" alt="Inside a Voron 3D printer" loading="lazy" decoding="async">
-            <span class="tile__arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
-            <span class="tile__text"><b>Voron 2.4 XL</b><span>A self-built 3D printer</span></span>
-          </a>
-          <a class="tile" href="creative.html#pog">
-            <img src="assets/img/work/pog-900.webp" width="900" height="506" alt="Planetside Open Games match dashboard" loading="lazy" decoding="async">
-            <span class="tile__arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
-            <span class="tile__text"><b>POG bot</b><span>5,000+ matches run</span></span>
-          </a>
-          <a class="tile" href="creative.html#gallery">
-            <img src="assets/img/work/props-900.webp" width="900" height="384" alt="Collage of prop-building projects" loading="lazy" decoding="async">
-            <span class="tile__arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
-            <span class="tile__text"><b>Props &amp; builds</b><span>A gallery of works in progress</span></span>
-          </a>
-        </div>
-        <div class="beyond__cta">
-          <a class="btn btn--ghost" href="creative.html">Visit the workshop <svg class="i arrow-right" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-        </div>
-      </div>
-    </section>
+        // Function to scroll to top
+        $('a[href=#top]').click(function(){
+            $('html, body').animate({scrollTop:0}, 1000, 'easeInOutQuad');
+            return false;
+        });
 
-    <!-- Contact --------------------------------------------------------- -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="container contact">
-        <div class="contact__intro" data-reveal>
-          <p class="kicker">Contact</p>
-          <h2 class="contact__title" id="contact-title">Let's talk <em>data</em>.</h2>
-          <p class="section-lead">Whether it's experimentation, ML, AI tooling, or a band that needs a drummer, my inbox is open.</p>
-          <ul class="contact__links">
-            <li>
-              <span class="label">Email</span>
-              <a href="mailto:david.gallo747@gmail.com">david.gallo747@gmail.com</a>
-              <button class="copy-btn" type="button" data-copy="david.gallo747@gmail.com" aria-label="Copy email address">
-                <svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span>
-              </button>
-            </li>
-            <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/davidgallo747" target="_blank" rel="noopener">in/davidgallo747</a></li>
-            <li><span class="label">GitHub</span><a href="https://github.com/monkeydg" target="_blank" rel="noopener">github.com/monkeydg</a></li>
-            <li><span class="label">Phone</span><a href="tel:+16132653551">+1 613-265-3551</a></li>
-          </ul>
-        </div>
+        // Function to fade in image sprites
+        $('.sprite').fadeSprite();
 
-        <form class="form card" data-contact-form action="https://cw6u5cl22b.execute-api.us-east-2.amazonaws.com/default/SES-email-sending-func" method="post" novalidate data-reveal style="--i:1">
-          <div class="field">
-            <label for="f-name">Name</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
-            <p class="field__error" aria-live="polite"></p>
-          </div>
-          <div class="field">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required>
-            <p class="field__error" aria-live="polite"></p>
-          </div>
-          <div class="field field--full">
-            <label for="f-phone">Phone <span class="opt">(optional)</span></label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 555 5555">
-          </div>
-          <div class="field field--full">
-            <label for="f-message">Message</label>
-            <textarea id="f-message" name="message" placeholder="What are you working on?" required></textarea>
-            <p class="field__error" aria-live="polite"></p>
-          </div>
-          <div class="form__foot">
-            <p class="form__status" data-form-status role="status"></p>
-            <button class="btn" type="submit">Send message <svg class="i arrow-right" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
+        // Function to animate when leaving page
+        $('.transition, #nav .page_item a, #logo, #face a').leavePage();
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span data-year>2026</span> David Gallo. Designed and hand-coded in Montreal.</p>
-      <ul class="footer__links">
-        <li><a href="https://www.linkedin.com/in/davidgallo747" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/monkeydg" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://github.com/monkeydg/monkeydg.com" target="_blank" rel="noopener">Source</a></li>
-        <li><a href="assets/docs/David_Gallo_CV.pdf" target="_blank" rel="noopener">CV</a></li>
-      </ul>
-    </div>
-  </footer>
+        // Animate the header on first
+        $('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
+
+        // Preload the page with jPreLoader
+        $('body').jpreLoader({
+            showSplash: true
+        }, function() {
+            // Show the page once images are loaded
+                $('#face').animateHome();
+                $('#face').resizeFace();
+        });
+    });
+    </script>
 </body>
 </html>
