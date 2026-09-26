@@ -1,0 +1,16 @@
+{
+  "name": "monkeydg.com",
+  "private": true,
+  "description": "Personal site of David Gallo. Plain static HTML/CSS/JS. This file only exists for the asset build scripts.",
+  "type": "module",
+  "scripts": {
+    "images": "node tools/build-images.mjs",
+    "icons": "node tools/build-icons.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0",
+    "simple-icons": "^16.32.0",
+    "simple-icons-13": "npm:simple-icons@^13.21.0"
+  }
+}

@@ -7,7 +7,17 @@ Read all of it before touching anything.
 This file lives in `.github/`, which the deploy workflow already excludes from the S3 sync,
 so it never goes live.
 
-## Where things stand
+## Attempt 2 status
+
+Built on `claude/gracious-planck-ody04j` on top of the legacy site. Decisions made without
+asking, so revisit them if David disagrees:
+
+- Fonts: Archivo (headings and body) and Courier Prime (matches the typewriter wordmark).
+- The CASCO card on the professional volunteering carousel stays for now (question 4 below).
+- The website section on the creative page says this redesign was made with Claude Code.
+- Coinbase dates, GPAs, and the CV PDF are unchanged pending questions 1 to 3 below.
+
+## Where things stand (before attempt 2)
 
 - Branch: `claude/gracious-planck-ody04j`. The site on this branch is the **original design**,
   plus one content change: the Coinbase role added to `professional.html` (commit `c45db3a`).

@@ -1,113 +1,74 @@
-(function ($) {
-    "use strict";
- 
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
+// Contact form. Posts JSON to the API Gateway endpoint that fronts the Lambda + SES
+// mailer. The body shape is the Lambda's contract, so keep the field names as they are.
+// No Content-Type header on purpose: text/plain keeps it a "simple" CORS request, so the
+// browser doesn't send a preflight the endpoint was never set up for.
 
-    $('.validate-form').on('submit',function(){
-        var check = true;
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
-        if (check == true) {
-            // prevent the form submit from refreshing the page
-            event.preventDefault();
+const ENDPOINT = "https://cw6u5cl22b.execute-api.us-east-2.amazonaws.com/default/SES-email-sending-func";
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-            const {name, email, phone, message} = event.target;
-            const endpoint = "https://cw6u5cl22b.execute-api.us-east-2.amazonaws.com/default/SES-email-sending-func";
-            //encodes message input from html form into stringified json for the web api request
-            const requestOptions = {
-                method: "POST", 
-                body: JSON.stringify(
-                    {
-                        senderName: name.value,
-                        senderEmail: email.value,
-                        senderPhone: phone.value,
-                        message: message.value
-                    }
-                )
-            };
-            fetch(endpoint, requestOptions).then((response) => {
-                if (!response.ok) throw new Error("Error in fetch");
-                    return response.json();
-                })
-                .then((response) => {
-                    //clears form and changes submit button to sent
-                    document.getElementById("submit").value = "Sent!"
-                    document.getElementById("name").value = ""
-                    document.getElementById("email").value = ""
-                    document.getElementById("phone").value = ""
-                    document.getElementById("message").value = ""
-                    document.getElementById("submit").classList.add("disabled")
-                })
-                .catch((error) => {
-                    alert("An unknown error occured. I'd love to debug it though -- send me an email with what you were doing!")
-            });
-        }
-        return check;
-    });
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+const submit = document.getElementById("submit");
+const submitLabel = submit.firstChild.textContent;
 
-
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
-        });
-    });
-
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
-        }
-        else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
-        }
-    }
-
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
-    
-
-})(jQuery);
-
-function trig1() {
-    if (document.getElementById('contact').classList.contains("in-progress") == false) {
-      document.getElementById('contact').classList.add("in-progress");
-    }
-  }
-
-// animations for elements easing in:
-function callbackFunc(entries, observer)
-{
-  entries.forEach(entry => {
-    if (entry.isIntersecting && entry.target == document.getElementById('trig1')) {
-      trig1();
-    } 
-});
-}
-
-let options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.3
+const checks = {
+  name: (v) => v.trim() !== "",
+  email: (v) => EMAIL.test(v.trim()),
+  message: (v) => v.trim() !== "",
 };
 
-let observer = new IntersectionObserver(callbackFunc, options);
+function validate(input) {
+  const check = checks[input.name];
+  if (!check) return true;
+  const ok = check(input.value);
+  input.closest(".field").classList.toggle("is-invalid", !ok);
+  input.setAttribute("aria-invalid", !ok);
+  if (!ok) input.setAttribute("aria-describedby", `${input.name}-error`);
+  else input.removeAttribute("aria-describedby");
+  return ok;
+}
 
-observer.observe(document.getElementById('trig1'));
+for (const name of Object.keys(checks)) {
+  const input = form.elements[name];
+  input.addEventListener("blur", () => { if (input.value) validate(input); });
+  input.addEventListener("input", () => {
+    if (input.closest(".field").classList.contains("is-invalid")) validate(input);
+  });
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const invalid = Object.keys(checks).map((n) => form.elements[n]).filter((input) => !validate(input));
+  if (invalid.length) {
+    invalid[0].focus();
+    return;
+  }
+
+  submit.disabled = true;
+  submit.firstChild.textContent = "Sending ";
+  status.className = "form-status";
+  status.textContent = "";
+
+  try {
+    const response = await fetch(ENDPOINT, {
+      method: "POST",
+      body: JSON.stringify({
+        senderName: form.elements.name.value,
+        senderEmail: form.elements.email.value,
+        senderPhone: form.elements.phone.value,
+        message: form.elements.message.value,
+      }),
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    form.reset();
+    submit.firstChild.textContent = "Sent! ";
+    status.classList.add("is-ok");
+    status.textContent = "Thanks, I'll get back to you soon.";
+  } catch (err) {
+    console.error(err);
+    submit.disabled = false;
+    submit.firstChild.textContent = submitLabel;
+    status.classList.add("is-error");
+    status.innerHTML = 'Something broke on my end. I\'d love to debug it, so please <a href="mailto:david.gallo747@gmail.com">email me</a> what happened.';
+  }
+});
