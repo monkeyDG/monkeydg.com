@@ -144,6 +144,8 @@
   position: absolute;
   bottom: 7%;
   left: 12px;
+  /* slides from the right of the seam to the left of it, so it never leaves the portrait */
+  translate: calc(var(--split) * (-100% - 24px)) 0;
   padding: 4px 8px;
   background: var(--ink);
   color: #fff;
@@ -221,6 +223,7 @@
   .stage-code { display: none; }
   .stage-paint { left: 50%; width: 80vw; bottom: 4%; translate: -50% 0; opacity: 0.35; }
   .seam-tag { font-size: 12px; }
+  .seam-handle { display: none; }
 }
 
 .mobile-sides { display: none; }
@@ -240,14 +243,16 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    padding: 14px 16px;
-    background: var(--ink);
-    color: #fff;
+    padding: 12px 14px;
+    border: 2px solid var(--ink);
+    color: var(--ink);
     text-decoration: none;
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: -0.03em;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.02em;
     line-height: 1.1;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
     animation: rise 0.9s var(--ease-out) both;
   }
   .mobile-sides a:last-child { animation-delay: 0.1s; }
@@ -256,8 +261,7 @@
     font-weight: 400;
     font-size: 13px;
     letter-spacing: 0;
-    color: var(--night-muted);
+    color: var(--ink-2);
   }
-  .mobile-sides a.is-active { background: var(--blue); color: var(--ink); }
-  .mobile-sides a.is-active small { color: var(--ink-2); }
+  .mobile-sides a.is-active { background: var(--blue); border-color: var(--blue); }
 }

@@ -1,6 +1,6 @@
 // Home page: the split face follows the mouse. The side you're on takes over the portrait,
 // so hovering left shows the photo (professional) and hovering right shows the illustration
-// (creative). Clicking either half opens that portfolio. On phones you drag the seam instead.
+// (creative). Clicking either half opens that portfolio. On phones, touching a side does the same.
 
 const stage = document.getElementById("stage");
 const readout = document.getElementById("seam-value");
@@ -13,6 +13,7 @@ let target = 0.5;     // where it's heading
 let running = false;
 let touched = false;  // the visitor has taken over from the intro / idle sway
 let swayStart = 0;
+let activeSide = null; // "1" = professional, "0" = creative
 
 const clamp = (v) => Math.min(1, Math.max(0, v));
 
@@ -26,8 +27,12 @@ function frame(now) {
 
   stage.style.setProperty("--split", split.toFixed(4));
   readout.textContent = split.toFixed(2);
-  for (const a of sideLinks) {
-    a.classList.toggle("is-active", a.dataset.side === "1" ? split > 0.6 : split < 0.4);
+  // Nothing is highlighted while the intro or idle sway is driving the seam. Once the visitor
+  // takes over, exactly one side is lit, with a little hysteresis so it doesn't flicker.
+  const next = !touched ? null : split > 0.53 ? "1" : split < 0.47 ? "0" : activeSide ?? (split >= 0.5 ? "1" : "0");
+  if (next !== activeSide) {
+    activeSide = next;
+    for (const a of sideLinks) a.classList.toggle("is-active", a.dataset.side === activeSide);
   }
 
   running = split !== target || (!touched && small.matches && !calm);
@@ -56,11 +61,13 @@ window.addEventListener("pointermove", (e) => {
   aim((0.78 - t) / 0.56);
 });
 
-// Phones and tablets: drag the seam across the face.
+// Phones and tablets: same idea as the mouse. Touch or drag on a side and that side takes over,
+// and the matching button below lights up.
 const face = document.getElementById("face");
 function dragTo(e) {
   const box = face.getBoundingClientRect();
-  aim((e.clientX - box.left) / box.width);
+  const t = (e.clientX - box.left) / box.width;
+  aim((0.8 - t) / 0.6);
 }
 stage.addEventListener("pointerdown", (e) => {
   if (e.pointerType === "mouse" && !small.matches) return;

@@ -137,3 +137,14 @@
   .contact-grid { grid-template-columns: 1fr; }
   .postcard { display: none; }
 }
+
+@media (max-width: 760px) {
+  .contact-bg {
+    background:
+      linear-gradient(180deg, rgb(15 18 22 / 0.94), rgb(15 18 22 / 0.8)),
+      url(../img/contact/aerial-960.webp) center / cover;
+  }
+  .contact-info h1 { font-size: 44px; }
+  .contact-card h2 { font-size: 28px; margin-bottom: 20px; }
+  .contact-facts div { grid-template-columns: 88px minmax(0, 1fr); font-size: 16px; }
+}

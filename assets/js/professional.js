@@ -84,6 +84,14 @@
   window.addEventListener("scroll", request, { passive: true });
   window.addEventListener("resize", request);
   update();
+
+  // On phones the older roles start folded away (see professional.css).
+  const more = document.querySelector(".timeline-more");
+  more?.addEventListener("click", () => {
+    timeline.classList.remove("is-collapsed");
+    more.hidden = true;
+    request();
+  });
 })();
 
 /* ---------- Volunteering carousel buttons ---------- */

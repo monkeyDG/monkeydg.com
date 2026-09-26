@@ -145,6 +145,14 @@ button { font: inherit; color: inherit; }
 
 .mono { font-family: var(--mono); }
 
+/* Phones: same hierarchy, less weight. */
+@media (max-width: 760px) {
+  h1, h2, h3, h4 { font-weight: 750; letter-spacing: -0.035em; }
+  .section-title { font-size: clamp(30px, 8.6vw, 38px); margin-bottom: 12px; }
+  .lede { font-size: 17px; }
+  .kicker { font-size: 13px; margin-bottom: 8px; }
+}
+
 /* ---------- Buttons ---------- */
 
 .btn {
@@ -185,6 +193,10 @@ button { font: inherit; color: inherit; }
 .btn--blue { --btn-bg: var(--blue); --btn-fg: var(--ink); }
 .btn--blue::before { background: var(--ink); }
 .btn--blue:hover { color: #fff; }
+
+@media (max-width: 760px) {
+  .btn { padding: 11px 16px; font-size: 14.5px; }
+}
 
 .btn--ghost {
   --btn-bg: transparent;

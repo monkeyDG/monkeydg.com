@@ -591,3 +591,53 @@ main section { scroll-margin-top: 0; }
   .lightbox-stage { padding: 64px 8px 8px; }
   .lightbox-nav { top: auto !important; bottom: 12px; translate: none !important; }
 }
+
+/* ---------- Phones: lighter type, tighter spacing, fewer things at once ---------- */
+
+.gallery-more { display: none; }
+
+@media (max-width: 760px) {
+  .slide-title { font-size: 34px; }
+  .slide-link { font-size: 14px; margin-top: 18px; gap: 12px; }
+  .slide-link::before { width: 24px; }
+
+  .tracklist { padding: 52px 0; gap: 28px; }
+  .tracks { font-size: 15.5px; }
+
+  .project { padding: 56px 0; }
+  .project h2 { font-size: 32px; margin-bottom: 18px; }
+  .project-title { gap: 14px; margin-bottom: 18px; }
+  .project-title img { width: 56px; }
+  .project-title h2 { font-size: 28px; }
+  .project-copy p { font-size: 16.5px; }
+  .project-media img { box-shadow: none; }
+  .track-no { font-size: 13px; padding: 1px 8px; margin-bottom: 14px; border-width: 1.5px; }
+  .avra-logo { width: 130px; margin-bottom: 20px; }
+  .voron-logo { width: 170px; margin-bottom: 20px; }
+  .yt-play { width: 64px; height: 64px; }
+  .yt-play svg { width: 28px; height: 28px; }
+
+  .side-b { padding: 44px 0; }
+  .side-b h2 { font-size: 44px; margin-bottom: 16px; }
+  .side-b-quip { font-size: 17.5px; }
+
+  .stats { gap: 6px 22px; margin: 20px 0 18px; }
+  .stats dd { font-size: 28px; }
+  .stats dt { font-size: 12.5px; }
+  .specs { font-size: 14px; }
+  .specs div { grid-template-columns: 110px minmax(0, 1fr); }
+
+  .discord { margin-top: 44px; }
+  .discord-frame { height: 440px; }
+
+  .pc-head { margin-bottom: 24px; }
+  .pc-head p { font-size: 16.5px; }
+
+  .gallery-section { padding: 56px 0; }
+  .gallery-head { margin-bottom: 24px; gap: 18px; }
+  .gallery-head h2 { font-size: 32px; }
+  .gallery-head p { font-size: 16.5px; }
+  .filters button { padding: 5px 11px; font-size: 13.5px; border-width: 1.5px; }
+  .js .gallery.is-collapsed li:nth-child(n + 13) { display: none; }
+  .js .gallery.is-collapsed ~ .gallery-more { display: inline-flex; margin-top: 18px; }
+}

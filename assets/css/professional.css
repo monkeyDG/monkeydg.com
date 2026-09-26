@@ -741,3 +741,57 @@ main section { scroll-margin-top: 24px; }
   20%, 60% { transform: translateX(-6px); }
   40%, 80% { transform: translateX(6px); }
 }
+
+/* ---------- Phones: lighter type, tighter spacing, fewer things at once ---------- */
+
+.timeline-more { display: none; }
+
+@media (max-width: 760px) {
+  .intro { padding: 44px 0 52px; }
+  .intro p { font-size: 21px; font-weight: 500; line-height: 1.35; letter-spacing: -0.015em; }
+
+  .profile { gap: 20px; padding: 18px; }
+  .profile-photo { max-width: 180px; }
+  .profile-photo::after { inset: 8px -8px -8px 8px; border-width: 2px; }
+  .profile-name { font-size: 40px; }
+  .profile-role { font-size: 16.5px; }
+
+  .skills, .lab, .awards { padding-bottom: 56px; }
+  .experience, .tools, .leadership, .lab { padding-block: 56px; }
+  .education { padding-top: 56px; }
+  .forest { padding: 16px; }
+  .forest-label { font-weight: 500; }
+
+  .timeline { gap: 16px; }
+  .job-card { padding: 18px 18px 20px; box-shadow: 0 1px 2px rgb(0 0 0 / 0.06); }
+  .job-logo { height: 32px; margin-bottom: 10px; }
+  .job-card .job-company--coinbase { font-size: 30px; }
+  .job-title { font-size: 19px; }
+  .job-card p { font-size: 15px; }
+  .chips li { font-size: 12.5px; padding: 2px 7px; }
+  .js .timeline.is-collapsed .job:nth-child(n + 5) { display: none; }
+  .js .timeline.is-collapsed ~ .timeline-more { display: inline-flex; margin: 20px 0 0 40px; }
+
+  .exp { padding: 16px; }
+  .exp-stats dd { font-size: 22px; }
+  .exp-verdict { font-size: 16px; min-height: 0; }
+
+  .tool-group { padding: 16px 0; gap: 10px; }
+  .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+  .tool-grid li { border-color: transparent; padding: 10px 2px 8px; gap: 6px; font-size: 11.5px; }
+  .tool-grid svg { width: 26px; height: 26px; }
+
+  .edu { padding: 20px; box-shadow: 0 1px 2px rgb(0 0 0 / 0.06); }
+  .edu h3 { font-size: 21px; }
+  .edu-top img { height: 38px; }
+  .edu-points { font-size: 15px; }
+  .cert img { width: 64px; }
+
+  .award-list li { padding: 9px 0; font-size: 15.5px; font-weight: 400; grid-template-columns: 70px minmax(0, 1fr); gap: 8px; }
+  .award-list .mono { font-size: 13.5px; }
+  .award-logos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 14px; }
+  .award-logos img { height: 26px; }
+
+  .lead-card h3 { font-size: 19px; margin: 16px 18px 8px; }
+  .lead-card p { margin: 0 18px 18px; font-size: 15px; }
+}

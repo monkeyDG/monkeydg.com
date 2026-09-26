@@ -156,10 +156,19 @@ document.querySelectorAll("[data-yt]").forEach((button) => {
   if (!grid) return;
   const items = [...grid.children];
   const filterButtons = [...document.querySelectorAll("[data-filter]")];
+  const more = document.querySelector(".gallery-more");
+
+  // On phones only the first dozen photos show until asked (see creative.css).
+  function expand() {
+    grid.classList.remove("is-collapsed");
+    if (more) more.hidden = true;
+  }
+  more?.addEventListener("click", expand);
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const cat = button.dataset.filter;
+      if (cat !== "all") expand();
       filterButtons.forEach((b) => b.setAttribute("aria-pressed", b === button));
       items.forEach((li) => {
         li.hidden = cat !== "all" && li.dataset.cat !== cat;
@@ -204,7 +213,7 @@ document.querySelectorAll("[data-yt]").forEach((button) => {
     const link = e.target.closest("a");
     if (!link) return;
     e.preventDefault();
-    list = items.filter((li) => !li.hidden).map((li) => li.querySelector("a"));
+    list = items.filter((li) => li.offsetParent !== null).map((li) => li.querySelector("a"));
     box.showModal();
     show(list.indexOf(link));
   });
