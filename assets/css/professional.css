@@ -86,7 +86,7 @@ main section { scroll-margin-top: 24px; }
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr);
   gap: 36px 56px;
-  padding: 52px 56px 48px;
+  padding: 52px 56px 31px;
   background: var(--card);
   border-radius: 3px;
   box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.3);
@@ -864,7 +864,7 @@ main section { scroll-margin-top: 24px; }
   .skills, .experience, .lab, .education, .certs, .awards { padding-bottom: 80px; }
 
   .pro-hero { padding-top: calc(var(--header-h) + 28px); }
-  .profile { grid-template-columns: 1fr; gap: 26px; padding: 28px 22px 30px; }
+  .profile { grid-template-columns: 1fr; gap: 26px; padding: 28px 22px 25px; }
   .profile-photo { max-width: 220px; }
   .profile-name { font-size: 34px; }
   .profile-role { font-size: 16px; }
