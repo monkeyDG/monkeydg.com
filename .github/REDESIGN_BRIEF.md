@@ -14,8 +14,9 @@ asking, so revisit them if David disagrees:
 
 - Fonts: Archivo (headings and body) and Courier Prime (matches the typewriter wordmark).
 - The CASCO card on the professional volunteering carousel stays for now (question 4 below).
-- The website section on the creative page says this redesign was made with Claude Code.
+- The pre-AI quip now sits as a small note in the POG section (the Side B divider was removed).
 - Coinbase dates, GPAs, and the CV PDF are unchanged pending questions 1 to 3 below.
+- Certification numbers come from the June 2024 CV.
 
 ## Where things stand (before attempt 2)
 

@@ -39,7 +39,7 @@
       r.ci.style.left = `${lo * 100}%`;
       r.ci.style.width = `${(hi - lo) * 100}%`;
       r.dot.style.left = `${r.est * 100}%`;
-      r.num.innerHTML = `<b>${r.est.toFixed(2)}</b> [${lo.toFixed(2)}, ${hi.toFixed(2)}]`;
+      r.num.innerHTML = `<b>${r.est.toFixed(2)}</b> <span class="forest-range">[${lo.toFixed(2)}, ${hi.toFixed(2)}]</span>`;
     }
     forest.querySelector(".forest-note").textContent = notes[n] ?? `n = ${n}.`;
   }

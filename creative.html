@@ -49,6 +49,7 @@
     </div>
   </header>
   <main id="main">
+    <h1 class="sr-only">Creative projects</h1>
     <!-- Hero slideshow. Each slide links down to its section. -->
     <section class="show on-dark" id="show" aria-roledescription="carousel" aria-label="Projects">
       <div class="show-slides">
@@ -106,30 +107,11 @@
       </div>
     </section>
 
-    <section class="tracklist wrap reveal" aria-labelledby="tracklist-title">
-      <div class="tracklist-intro">
-        <span class="kicker">liner notes</span>
-        <h1 class="section-title" id="tracklist-title">Things I make</h1>
-        <p class="lede">Some of them make noise, some of them run code, and a few are foam and resin props from video games. Here's the tracklist.</p>
-      </div>
-      <ol class="tracks mono">
-        <li class="tracks-side">Side A</li>
-        <li><a href="#avra"><span>A1</span> AVRA <i>rock band</i></a></li>
-        <li class="tracks-side">Side B</li>
-        <li><a href="#pog"><span>B1</span> Planetside Open Games <i>discord bot</i></a></li>
-        <li><a href="#voron"><span>B2</span> Voron 2.4 XL <i>3D printer</i></a></li>
-        <li><a href="#pc"><span>B3</span> Custom PC builds <i>hardware</i></a></li>
-        <li><a href="#website"><span>B4</span> This website <i>AWS</i></a></li>
-        <li class="tracks-side">Bonus tracks</li>
-        <li><a href="#gallery"><span>+</span> Props and other projects <i>gallery</i></a></li>
-      </ol>
-    </section>
 
-    <!-- A1: AVRA -->
+    <!-- AVRA -->
     <section class="project avra on-dark" id="avra">
       <div class="wrap project-grid">
         <div class="project-copy reveal">
-          <span class="track-no mono">A1</span>
           <img class="avra-logo" src="assets/img/creative/avra-logo.webp" alt="AVRA" width="400" height="248" loading="lazy">
           <p>AVRA is an Ottawa-based 5-piece rock band, drawing inspiration from Led Zeppelin, U2, and The Black Keys. I'm on drums.</p>
           <p>We've played all over Ottawa, from Petrie Island Beach on Canada Day, to RBC Bluesfest 2017, to an out-of-the-way chip truck rally with 15 people that our guitarist promised would be our big break (...it wasn't).</p>
@@ -144,21 +126,13 @@
       </div>
     </section>
 
-    <!-- Side B divider -->
-    <section class="side-b reveal" aria-label="Side B">
-      <div class="wrap">
-        <p class="side-b-label mono">Side B</p>
-        <h2>The technical stuff</h2>
-        <p class="side-b-quip">Everything on this side was built the old-fashioned way, before AI could write the code for me. Every bug in here is handmade.</p>
-      </div>
-    </section>
 
-    <!-- B1: POG -->
+    <!-- POG -->
     <section class="project pog" id="pog">
       <div class="wrap">
         <div class="project-grid">
           <div class="project-copy reveal">
-            <span class="track-no mono">B1</span>
+            <p class="pre-ai mono">Built before AI could write the code for me. Every bug in here is handmade.</p>
             <div class="project-title">
               <img src="assets/img/creative/pog-logo.webp" alt="" width="338" height="338" loading="lazy">
               <h2>Planetside Open Games</h2>
@@ -190,11 +164,10 @@
       </div>
     </section>
 
-    <!-- B2: Voron -->
+    <!-- Voron -->
     <section class="project voron on-dark" id="voron">
       <div class="wrap project-grid project-grid--flip">
         <div class="project-copy reveal">
-          <span class="track-no mono">B2</span>
           <img class="voron-logo" src="assets/img/creative/voron-logo.webp" alt="Voron Design" width="520" height="164" loading="lazy">
           <p>The Voron 2.4 is a community-developed 3D printer. It uses a CoreXY motion system with a belted gantry, and dual MCUs controlled by a Raspberry Pi running Klipper.</p>
           <p>I forked the project to design and build the Voron 2.4 XL. I modified the motion system, added dual linear rails, doubled the extrusion thickness, and reconfigured the firmware to handle the bigger volume.</p>
@@ -213,11 +186,10 @@
       </div>
     </section>
 
-    <!-- B3: PC builds -->
+    <!-- PC builds -->
     <section class="project pc" id="pc">
       <div class="wrap">
         <header class="pc-head reveal">
-          <span class="track-no mono">B3</span>
           <h2>Custom PC builds</h2>
           <p>My watercooled workstations. Nothing teaches patience like leak-testing a custom loop.</p>
         </header>
@@ -232,14 +204,13 @@
       </ul>
     </section>
 
-    <!-- B4: this website -->
+    <!-- this website -->
     <section class="project website on-dark" id="website">
       <div class="wrap project-grid">
         <div class="project-copy reveal">
-          <span class="track-no mono">B4</span>
           <h2>DGallo.ca / Monkeydg.com</h2>
-          <p>I designed, built, and deployed the site you're on. The first version was hand-written HTML, CSS, and jQuery, back when that was the only way to do it. This redesign I made with Claude Code, which felt fair given my day job.</p>
-          <p>It's a static site in S3, with DNS on Route 53, CloudFront as the CDN, and the contact form running on Lambda and SES. GitHub Actions deploys it on every push.</p>
+          <p>I designed, built, and deployed the site you're on. The first version was hand-written HTML, CSS, and jQuery.</p>
+          <p>It's a static site in S3, with DNS on Route 53, CloudFront as the CDN, and the contact form running on Lambda and SES. It gets deployed automatically with GitHub Actions after PRs are merged.</p>
           <a class="btn btn--blue" href="https://github.com/monkeydg/monkeydg.com" target="_blank" rel="noopener">See the code on GitHub <span class="arrow" aria-hidden="true">→</span></a>
         </div>
         <figure class="project-media reveal" style="--delay: 0.1s">
@@ -249,12 +220,11 @@
       </div>
     </section>
 
-    <!-- Bonus tracks: gallery -->
+    <!-- Gallery -->
     <section class="gallery-section" id="gallery">
       <div class="wrap">
         <header class="gallery-head reveal">
           <div>
-            <span class="track-no mono">+</span>
             <h2>A small gallery of WIP projects</h2>
             <p>Mostly props from Planetside 2, plus some woodwork, music gear, and whatever else I got obsessed with that month.</p>
           </div>

@@ -3,14 +3,15 @@
 // Each arm's conversion rate gets a Beta(1 + conversions, 1 + misses) posterior. Traffic
 // arrives on a fixed schedule up to a planned sample size (80k per arm, about 80% power
 // for a 5% relative lift on a ~4.5% baseline). It's a fixed-horizon test, so the verdict
-// is only read at the end, and the "peek" button gets a lecture instead of an answer.
+// is only read at the end. The "peek" button explains why, and what setup would allow it.
 (() => {
   const widget = document.querySelector("[data-experiment]");
   if (!widget) return;
 
   const SVG = "http://www.w3.org/2000/svg";
-  const W = 720;
-  const H = 250;
+  // The chart's drawing size. Narrower on phones so the axis labels stay readable.
+  let W = 720;
+  let H = 250;
   const PAD = { top: 30, right: 10, bottom: 30, left: 10 };
   const SAMPLES = 160;
   const TICK_MS = 55;
@@ -121,7 +122,7 @@
 
   const grid = el("g");
   const axis = el("g", { class: "axis" });
-  el("line", { x1: PAD.left, x2: W - PAD.right, y1: H - PAD.bottom, y2: H - PAD.bottom }, axis);
+  const baseline = el("line", {}, axis);
   const ticks = el("g", {}, axis);
   const areaA = el("path", { class: "area-a" });
   const areaB = el("path", { class: "area-b" });
@@ -138,7 +139,19 @@
   let truth, step, arms, finished, timer = null, visible = false, hoverX = null;
   let view = { lo: 0, hi: 0.12, ymax: 1 };
 
+  function size() {
+    const narrow = chartBox.clientWidth < 520;
+    W = narrow ? 380 : 720;
+    H = narrow ? 230 : 250;
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    for (const [k, v] of Object.entries({ x1: PAD.left, x2: W - PAD.right, y1: H - PAD.bottom, y2: H - PAD.bottom })) {
+      baseline.setAttribute(k, v);
+    }
+    cross.setAttribute("y2", H - PAD.bottom);
+  }
+
   function reset() {
+    size();
     truth = scenario();
     step = 0;
     arms = { n: 0, cA: 0, cB: 0 };
@@ -328,10 +341,7 @@
   widget.querySelector("[data-exp-rerun]").addEventListener("click", start);
 
   peek.addEventListener("click", () => {
-    verdict.innerHTML = "<b>No peeking.</b> Calling a test the moment it looks good inflates the false positive rate. We wait for the planned sample size, like adults.";
-    widget.classList.remove("is-scolding");
-    void widget.offsetWidth;
-    widget.classList.add("is-scolding");
+    verdict.innerHTML = "<b>This one's a fixed-horizon test.</b> Checking it early and stopping when it looks good inflates the false positive rate. If you want to peek, set it up as a sequential test instead (an mSPRT with always-valid confidence intervals, for example), which lets you check the results as often as you like.";
   });
 
   svg.addEventListener("pointermove", (e) => {

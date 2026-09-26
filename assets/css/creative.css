@@ -144,54 +144,6 @@ main section { scroll-margin-top: 0; }
   .show-arrows { display: none; }
 }
 
-/* ---------- Tracklist ---------- */
-
-.tracklist {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
-  gap: 40px 64px;
-  align-items: center;
-  padding: clamp(64px, 9vw, 112px) 0;
-}
-
-.tracks {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 17px;
-}
-.tracks-side {
-  padding: 18px 0 6px;
-  font-weight: 700;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-}
-.tracks-side:first-child { padding-top: 0; }
-.tracks a {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  padding: 8px 4px;
-  border-bottom: 1px dashed var(--line);
-  text-decoration: none;
-  transition: background 0.2s, padding 0.3s var(--ease-out);
-}
-.tracks span { width: 26px; color: var(--blue-ink); font-weight: 700; }
-.tracks i {
-  margin-left: auto;
-  font-style: normal;
-  font-size: 14px;
-  color: var(--muted);
-}
-.tracks a:hover { background: var(--blue); padding-left: 12px; }
-.tracks a:hover span, .tracks a:hover i { color: var(--ink); }
-
-@media (max-width: 860px) {
-  .tracklist { grid-template-columns: 1fr; }
-}
-
 /* ---------- Project sections ---------- */
 
 .project { padding: clamp(80px, 11vw, 140px) 0; }
@@ -212,16 +164,6 @@ main section { scroll-margin-top: 0; }
 .project-copy p { font-size: 18px; max-width: 36em; }
 .project.on-dark .project-copy p { color: #cfd3da; }
 .project-copy .btn { margin-top: 14px; }
-
-.track-no {
-  display: inline-block;
-  margin-bottom: 18px;
-  padding: 2px 10px;
-  border: 2px solid currentColor;
-  font-weight: 700;
-  font-size: 15px;
-}
-.on-dark .track-no { color: var(--blue); }
 
 .project-media { margin: 0; }
 .project-media img { width: 100%; box-shadow: var(--shadow); }
@@ -286,35 +228,16 @@ main section { scroll-margin-top: 0; }
 }
 .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-/* Side B divider */
-.side-b {
-  padding: clamp(64px, 9vw, 112px) 0;
-  background: var(--blue);
-  color: var(--ink);
-  overflow: hidden;
-}
-.side-b .wrap { position: relative; }
-.side-b-label {
-  margin: 0 0 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-.side-b h2 {
-  font-size: clamp(48px, 9vw, 132px);
-  font-variation-settings: "wdth" 112;
-  line-height: 0.9;
-  margin-bottom: 26px;
-}
-.side-b-quip {
-  max-width: 34em;
-  margin: 0;
-  font-size: clamp(19px, 2vw, 24px);
-  line-height: 1.4;
-  font-weight: 500;
-}
-
 /* POG */
+.pre-ai {
+  display: inline-block;
+  margin: 0 0 22px;
+  padding: 4px 10px;
+  border: 1.5px dashed var(--muted);
+  font-size: 14px;
+  color: var(--ink-2);
+  transform: rotate(-1.5deg);
+}
 .project-title {
   display: flex;
   align-items: center;
@@ -601,8 +524,6 @@ main section { scroll-margin-top: 0; }
   .slide-link { font-size: 14px; margin-top: 18px; gap: 12px; }
   .slide-link::before { width: 24px; }
 
-  .tracklist { padding: 52px 0; gap: 28px; }
-  .tracks { font-size: 15.5px; }
 
   .project { padding: 56px 0; }
   .project h2 { font-size: 32px; margin-bottom: 18px; }
@@ -611,15 +532,11 @@ main section { scroll-margin-top: 0; }
   .project-title h2 { font-size: 28px; }
   .project-copy p { font-size: 16.5px; }
   .project-media img { box-shadow: none; }
-  .track-no { font-size: 13px; padding: 1px 8px; margin-bottom: 14px; border-width: 1.5px; }
   .avra-logo { width: 130px; margin-bottom: 20px; }
   .voron-logo { width: 170px; margin-bottom: 20px; }
   .yt-play { width: 64px; height: 64px; }
   .yt-play svg { width: 28px; height: 28px; }
 
-  .side-b { padding: 44px 0; }
-  .side-b h2 { font-size: 44px; margin-bottom: 16px; }
-  .side-b-quip { font-size: 17.5px; }
 
   .stats { gap: 6px 22px; margin: 20px 0 18px; }
   .stats dd { font-size: 28px; }
