@@ -16,21 +16,7 @@
   overflow: hidden;
 }
 
-/* The home page keeps the original's type, using the same font files the original site
-   loaded: an early JetBrains Mono for the headings and Open Sans for the blurbs. */
-@font-face {
-  font-family: "JetBrains Mono Original";
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/jetbrains-mono-original.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Open Sans Original";
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/open-sans-original.woff2") format("woff2");
-}
-
+/* The home page keeps the original's type: JetBrains Mono headings, Open Sans for the blurbs. */
 .hello,
 .side-title {
   font-family: "JetBrains Mono Original", var(--mono);

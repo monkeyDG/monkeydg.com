@@ -1,5 +1,20 @@
 /* Shared styles for every page: tokens, type, header, footer, buttons, reveals. */
 
+/* The same font files the original site loaded, kept for the home page headings and the
+   name on the professional page. Browsers only download them where they're used. */
+@font-face {
+  font-family: "JetBrains Mono Original";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-original.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sans Original";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/open-sans-original.woff2") format("woff2");
+}
+
 :root {
   --blue: #66d6ff;
   --blue-ink: #0b7fae;        /* readable blue for text on light backgrounds */
