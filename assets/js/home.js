@@ -6,7 +6,6 @@ const stage = document.getElementById("stage");
 const readout = document.getElementById("seam-value");
 const sideLinks = [...document.querySelectorAll("[data-side]")];
 const small = window.matchMedia("(max-width: 900px)");
-const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let split = 0.5;      // what's drawn
 let target = 0.5;     // where it's heading
@@ -18,7 +17,7 @@ let activeSide = null; // "1" = professional, "0" = creative
 const clamp = (v) => Math.min(1, Math.max(0, v));
 
 function frame(now) {
-  if (!touched && small.matches && !calm) {
+  if (!touched && small.matches) {
     // Idle sway on phones so it's obvious the portrait does something.
     target = 0.5 + 0.28 * Math.sin((now - swayStart) / 900);
   }
@@ -35,7 +34,7 @@ function frame(now) {
     for (const a of sideLinks) a.classList.toggle("is-active", a.dataset.side === activeSide);
   }
 
-  running = split !== target || (!touched && small.matches && !calm);
+  running = split !== target || (!touched && small.matches);
   if (running) requestAnimationFrame(frame);
 }
 
@@ -87,7 +86,6 @@ for (const a of sideLinks) {
 // Intro: once the portrait has loaded, sweep the seam across once so the trick is obvious.
 function intro() {
   stage.classList.add("is-live");
-  if (calm) return;
   if (small.matches) {
     swayStart = performance.now();
     aim(0.5);

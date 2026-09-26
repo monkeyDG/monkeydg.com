@@ -1,91 +1,72 @@
-// Creative page: hero slideshow, YouTube facade, lazy Discord embed, PC photo strip,
-// gallery filters and lightbox.
-
-const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Creative page: the hero slideshow, YouTube facade, the lazy Discord embed, the PC photo
+// carousel, and the gallery lightbox.
 
 /* ---------- Hero slideshow ---------- */
+// Same mechanics as the original: the current slide gets .is-current and its neighbours get
+// .is-prev / .is-next, and CSS does the slide-past-and-zoom transition between them.
 (() => {
   const show = document.getElementById("show");
   if (!show) return;
   const slides = [...show.querySelectorAll(".slide")];
-  const count = show.querySelector(".show-count b");
-  const barsBox = show.querySelector(".show-bars");
-  const DURATION = 7000;
+  const dotsBox = show.querySelector(".show-dots");
+  const DURATION = 7500;
+  const LOCK = 1200; // matches the CSS transition, so clicks can't pile up
+  let current = 0;
+  let busy = false;
+  let timer = null;
 
-  const bars = slides.map((_, i) => {
+  const dots = slides.map((_, i) => {
     const b = document.createElement("button");
     b.type = "button";
     b.setAttribute("role", "tab");
     b.setAttribute("aria-label", `Slide ${i + 1}`);
     b.addEventListener("click", () => go(i));
-    barsBox.append(b);
+    dotsBox.append(b);
     return b;
   });
 
-  let current = 0;
-  let elapsed = 0;
-  let last = performance.now();
-  let paused = false;
-  let visible = true;
-
-  function go(i) {
-    slides[current].classList.remove("is-current");
+  function go(i, force = false) {
+    if (busy && !force) return;
+    busy = true;
+    setTimeout(() => { busy = false; }, LOCK);
     current = (i + slides.length) % slides.length;
-    const slide = slides[current];
-    slide.querySelector("img").loading = "eager";
-    // restart the slow zoom
-    slide.classList.remove("is-current");
-    void slide.offsetWidth;
-    slide.classList.add("is-current");
-    count.textContent = String(current + 1).padStart(2, "0");
-    bars.forEach((b, j) => {
-      b.style.setProperty("--fill", j < current ? 1 : 0);
-      b.setAttribute("aria-selected", j === current);
+    const prev = (current - 1 + slides.length) % slides.length;
+    const next = (current + 1) % slides.length;
+    slides.forEach((s, j) => {
+      s.classList.toggle("is-current", j === current);
+      s.classList.toggle("is-prev", j === prev);
+      s.classList.toggle("is-next", j === next && j !== prev);
+      if (j === current || j === next) s.querySelector("img").loading = "eager";
     });
-    // warm up the next image so it's ready when we get there
-    slides[(current + 1) % slides.length].querySelector("img").loading = "eager";
-    elapsed = 0;
+    dots.forEach((d, j) => d.setAttribute("aria-selected", j === current));
+    restart();
   }
-
-  function frame(now) {
-    const dt = now - last;
-    last = now;
-    if (!paused && visible && !document.hidden && !calm) {
-      elapsed += dt;
-      bars[current].style.setProperty("--fill", Math.min(1, elapsed / DURATION));
-      if (elapsed >= DURATION) go(current + 1);
-    }
-    requestAnimationFrame(frame);
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(() => { if (!document.hidden) go(current + 1); }, DURATION);
   }
 
   show.querySelectorAll("[data-step]").forEach((b) =>
     b.addEventListener("click", () => go(current + Number(b.dataset.step))));
 
-  show.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") paused = true; });
-  show.addEventListener("pointerleave", () => { paused = false; });
-  show.addEventListener("focusin", () => { paused = true; });
-  show.addEventListener("focusout", () => { paused = false; });
-
   document.addEventListener("keydown", (e) => {
-    if (!visible || e.target.closest("input, textarea, dialog")) return;
+    if (e.target.closest("input, textarea, dialog")) return;
+    const box = show.getBoundingClientRect();
+    if (box.bottom < 0 || box.top > innerHeight) return;
     if (e.key === "ArrowRight") go(current + 1);
     if (e.key === "ArrowLeft") go(current - 1);
   });
 
-  // swipe
-  let startX = null;
-  show.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") startX = e.clientX; });
+  let x0 = null;
+  show.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") x0 = e.clientX; });
   show.addEventListener("pointerup", (e) => {
-    if (startX === null) return;
-    const dx = e.clientX - startX;
-    startX = null;
+    if (x0 === null) return;
+    const dx = e.clientX - x0;
+    x0 = null;
     if (Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
   });
 
-  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(show);
-
-  go(0);
-  requestAnimationFrame(frame);
+  go(0, true);
 })();
 
 /* ---------- YouTube: load the player only when someone asks for it ---------- */
@@ -125,60 +106,52 @@ document.querySelectorAll("[data-yt]").forEach((button) => {
   io.observe(box);
 })();
 
-/* ---------- PC strip: drag to scroll with a mouse ---------- */
+/* ---------- PC builds: one photo per screen, arrows, swipe, or drag ---------- */
 (() => {
-  const strip = document.querySelector(".pc-strip");
-  if (!strip) return;
+  const track = document.getElementById("pc-track");
+  if (!track) return;
+  const bar = document.querySelector(".pc-bar");
+  const count = track.children.length;
+  const index = () => Math.round(track.scrollLeft / track.clientWidth);
+  const goTo = (i) => track.scrollTo({ left: ((i + count) % count) * track.clientWidth, behavior: "smooth" });
+
+  document.querySelectorAll(".pc-arrow").forEach((b) =>
+    b.addEventListener("click", () => goTo(index() + Number(b.dataset.dir))));
+  track.addEventListener("scroll", () => bar.style.setProperty("--i", index()), { passive: true });
+
+  // mouse drag
   let x0 = null;
   let left0 = 0;
-  strip.addEventListener("pointerdown", (e) => {
+  track.addEventListener("pointerdown", (e) => {
     if (e.pointerType !== "mouse") return;
     x0 = e.clientX;
-    left0 = strip.scrollLeft;
-    strip.setPointerCapture(e.pointerId);
-    strip.classList.add("is-dragging");
+    left0 = track.scrollLeft;
+    track.style.scrollSnapType = "none";
+    track.setPointerCapture(e.pointerId);
   });
-  strip.addEventListener("pointermove", (e) => {
-    if (x0 !== null) strip.scrollLeft = left0 - (e.clientX - x0);
+  track.addEventListener("pointermove", (e) => {
+    if (x0 !== null) track.scrollLeft = left0 - (e.clientX - x0);
   });
-  const stop = () => {
+  const drop = (e) => {
     if (x0 === null) return;
+    const dx = e.clientX - x0;
     x0 = null;
-    strip.classList.remove("is-dragging");
+    track.style.scrollSnapType = "";
+    const from = Math.round(left0 / track.clientWidth);
+    goTo(Math.abs(dx) > 60 ? from + (dx < 0 ? 1 : -1) : from);
   };
-  strip.addEventListener("pointerup", stop);
-  strip.addEventListener("pointercancel", stop);
+  track.addEventListener("pointerup", drop);
+  track.addEventListener("pointercancel", drop);
 })();
 
-/* ---------- Gallery: filters and lightbox ---------- */
+/* ---------- Gallery: "show all" on phones, and the lightbox ---------- */
 (() => {
   const grid = document.getElementById("gallery-grid");
   if (!grid) return;
-  const items = [...grid.children];
-  const filterButtons = [...document.querySelectorAll("[data-filter]")];
   const more = document.querySelector(".gallery-more");
-
-  // On phones only the first dozen photos show until asked (see creative.css).
-  function expand() {
+  more?.addEventListener("click", () => {
     grid.classList.remove("is-collapsed");
-    if (more) more.hidden = true;
-  }
-  more?.addEventListener("click", expand);
-
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const cat = button.dataset.filter;
-      if (cat !== "all") expand();
-      filterButtons.forEach((b) => b.setAttribute("aria-pressed", b === button));
-      items.forEach((li) => {
-        li.hidden = cat !== "all" && li.dataset.cat !== cat;
-        if (!li.hidden && !calm) {
-          li.style.animation = "none";
-          void li.offsetWidth;
-          li.style.animation = "";
-        }
-      });
-    });
+    more.hidden = true;
   });
 
   const box = document.getElementById("lightbox");
@@ -213,7 +186,7 @@ document.querySelectorAll("[data-yt]").forEach((button) => {
     const link = e.target.closest("a");
     if (!link) return;
     e.preventDefault();
-    list = items.filter((li) => li.offsetParent !== null).map((li) => li.querySelector("a"));
+    list = [...grid.querySelectorAll("a")].filter((a) => a.offsetParent !== null);
     box.showModal();
     show(list.indexOf(link));
   });
@@ -228,12 +201,12 @@ document.querySelectorAll("[data-yt]").forEach((button) => {
     if (e.key === "ArrowLeft") show(index - 1);
   });
 
-  let startX = null;
-  stage.addEventListener("pointerdown", (e) => { startX = e.clientX; });
+  let x0 = null;
+  stage.addEventListener("pointerdown", (e) => { x0 = e.clientX; });
   stage.addEventListener("pointerup", (e) => {
-    if (startX === null) return;
-    const dx = e.clientX - startX;
-    startX = null;
+    if (x0 === null) return;
+    const dx = e.clientX - x0;
+    x0 = null;
     if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
   });
 })();

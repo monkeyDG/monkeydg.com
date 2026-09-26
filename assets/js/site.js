@@ -1,7 +1,5 @@
 // Shared behaviour for every page: mobile nav, scroll reveals, the typewriter, footer year.
 
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 // Mobile navigation
 const header = document.querySelector(".site-header");
 const toggle = header?.querySelector(".nav-toggle");
@@ -22,17 +20,13 @@ const revealObserver = new IntersectionObserver((entries) => {
     revealObserver.unobserve(entry.target);
   }
 }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-zoom").forEach((el) => revealObserver.observe(el));
 
 // Types a list of chunks into an element, pausing after each chunk.
 // chunks: [["Hi!", 800], [" My name's David."]]
 function typewrite(el, chunks, { startDelay = 600, speed = 70 } = {}) {
   const text = chunks.map(([t]) => t).join("");
   el.setAttribute("aria-label", text);
-  if (reducedMotion) {
-    el.textContent = text;
-    return Promise.resolve();
-  }
   const out = document.createElement("span");
   out.setAttribute("aria-hidden", "true");
   const caret = document.createElement("span");

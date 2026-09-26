@@ -52,66 +52,75 @@
     draw();
     if (n >= MAX_N) {
       more.disabled = true;
-      more.firstChild.textContent = "Out of data ";
+      more.textContent = "out of data";
     }
   });
 
   draw();
 })();
 
-/* ---------- Timeline: fill the line and light the dots as you scroll ---------- */
+/* ---------- Timeline: on phones the older roles start folded away (see professional.css) ---------- */
 (() => {
   const timeline = document.getElementById("timeline");
-  if (!timeline) return;
-  const jobs = [...timeline.children];
-  let queued = false;
-
-  function update() {
-    queued = false;
-    const box = timeline.getBoundingClientRect();
-    const line = window.innerHeight * 0.6 - box.top;
-    timeline.style.setProperty("--progress", Math.min(1, Math.max(0, line / box.height)).toFixed(4));
-    for (const job of jobs) {
-      job.classList.toggle("is-lit", job.offsetTop + 43 < line);
-    }
-  }
-  const request = () => {
-    if (!queued) {
-      queued = true;
-      requestAnimationFrame(update);
-    }
-  };
-  window.addEventListener("scroll", request, { passive: true });
-  window.addEventListener("resize", request);
-  update();
-
-  // On phones the older roles start folded away (see professional.css).
   const more = document.querySelector(".timeline-more");
   more?.addEventListener("click", () => {
     timeline.classList.remove("is-collapsed");
     more.hidden = true;
-    request();
   });
 })();
 
-/* ---------- Volunteering carousel buttons ---------- */
+/* ---------- Volunteering slideshow, like the original: advances on its own, dots to jump ---------- */
 (() => {
-  const track = document.getElementById("carousel");
-  if (!track) return;
-  const [prev, next] = document.querySelectorAll(".carousel-btn");
+  const stage = document.getElementById("vol");
+  if (!stage) return;
+  const slides = [...stage.querySelectorAll(".vol-slide")];
+  const dotsBox = document.querySelector(".vol-dots");
+  const INTERVAL = 8000;
+  let current = 0;
+  let timer = null;
 
-  function step(dir) {
-    const card = track.firstElementChild;
-    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    track.scrollBy({ left: dir * (card.offsetWidth + gap), behavior: "smooth" });
+  const dots = slides.map((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-label", `Slide ${i + 1}`);
+    b.addEventListener("click", () => { go(i); restart(); });
+    dotsBox.append(b);
+    return b;
+  });
+
+  function go(i) {
+    slides[current].classList.remove("is-current");
+    current = (i + slides.length) % slides.length;
+    slides[current].querySelector("img").loading = "eager";
+    slides[current].classList.add("is-current");
+    dots.forEach((d, j) => d.setAttribute("aria-selected", j === current));
+    slides[(current + 1) % slides.length].querySelector("img").loading = "eager";
   }
-  function sync() {
-    prev.disabled = track.scrollLeft < 8;
-    next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(() => go(current + 1), INTERVAL);
   }
-  prev.addEventListener("click", () => step(-1));
-  next.addEventListener("click", () => step(1));
-  track.addEventListener("scroll", sync, { passive: true });
-  window.addEventListener("resize", sync);
-  sync();
+
+  // Swipe on phones.
+  let x0 = null;
+  stage.addEventListener("pointerdown", (e) => { x0 = e.clientX; });
+  stage.addEventListener("pointerup", (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 50) { go(current + (dx < 0 ? 1 : -1)); restart(); }
+  });
+  stage.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") clearInterval(timer); });
+  stage.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") restart(); });
+
+  // The first slide animates in when the band scrolls into view.
+  slides[0].classList.remove("is-current");
+  const io = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    io.disconnect();
+    go(0);
+    restart();
+  }, { threshold: 0.3 });
+  io.observe(stage);
 })();

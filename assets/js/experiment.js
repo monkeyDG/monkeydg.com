@@ -16,7 +16,6 @@
   const SAMPLES = 160;
   const TICK_MS = 55;
   const PLANNED = 80000;
-  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const TESTS = [
     'checkout button: "Buy" vs "Buy now"',
@@ -322,13 +321,6 @@
     clearTimeout(timer);
     timer = null;
     reset();
-    if (calm) {
-      while (step < SCHEDULE.length) advance();
-      const s = summarize();
-      render(s, false);
-      finish(s);
-      return;
-    }
     tick();
   }
 
@@ -358,7 +350,7 @@
     visible = entries.at(-1).isIntersecting;
     if (visible && !started) {
       started = true;
-      setTimeout(start, calm ? 0 : 500);
+      setTimeout(start, 500);
     } else {
       resume();
     }

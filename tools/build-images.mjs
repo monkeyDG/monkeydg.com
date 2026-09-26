@@ -15,6 +15,7 @@ const OUT = path.join(ROOT, "assets/img");
 const PHOTOS = [
   ["professional/profile-pic.jpg", "pro/profile", [400, 800]],
   ["professional/header-bg.jpg", "pro/dashboard", [1350]],
+  ["professional/tech-bg.jpg", "pro/tech", [1600]],
   ["professional/space-concordia.jpg", "pro/space-concordia", [640]],
   ["professional/casco.jpg", "pro/casco", [640]],
   ["professional/jdc.jpg", "pro/jdc", [640]],
@@ -32,7 +33,6 @@ const PHOTOS = [
   ["creative/prop.jpg", "creative/props", [960, 1920]],
   ["creative/avra-full-band.jpg", "creative/avra-band", [1100]],
   ["creative/voron-cad.png", "creative/voron-cad", [1100]],
-  ["creative/pog-architecture.png", "creative/pog-architecture", [1200]],
   ["creative/aws-architecture.png", "creative/aws-architecture", [1200]],
   ["creative/PDN and raws/pc-1.jpg", "creative/pc-1", [900, 1800]],
   ["creative/PDN and raws/pc-2.jpg", "creative/pc-2", [900, 1800]],
@@ -48,6 +48,7 @@ const PHOTOS = [
 // Logos and anything else with transparency. Sized by width, kept lossless-ish.
 const GRAPHICS = [
   ["creative/pog-logo.png", "creative/pog-logo", 360],
+  ["creative/monkeydg-dot-com.png", "creative/monkeydg-dot-com", 600],
   ["creative/voron-logo.png", "creative/voron-logo", 520],
   ["creative/avra-logo.png", "creative/avra-logo", 400],
   ["professional/dell-cert.png", "pro/cert-dell", 300],

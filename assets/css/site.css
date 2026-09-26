@@ -154,54 +154,40 @@ button { font: inherit; color: inherit; }
 }
 
 /* ---------- Buttons ---------- */
+/* Like the original site: a flat fill, and a soft drop shadow on hover. Nothing moves. */
 
 .btn {
-  --btn-bg: var(--ink);
-  --btn-fg: #fff;
-  position: relative;
+  --btn-bg: var(--blue);
+  --btn-fg: var(--ink);
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 22px;
-  border: 0;
+  padding: 13px 22px;
+  border: 1px solid transparent;
+  border-radius: 2px;
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-family: var(--mono);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
-  isolation: isolate;
-  overflow: hidden;
-  transition: color 0.3s;
+  box-shadow: 0 0 5px rgb(0 0 0 / 0.12), 0 2px 5px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease-out, opacity 0.3s ease-out;
 }
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.45s var(--ease-out);
+.btn:hover,
+.btn:focus-visible {
+  opacity: 0.95;
+  box-shadow: 0 5px 11px rgb(0 0 0 / 0.18), 0 4px 15px rgb(0 0 0 / 0.15);
 }
-.btn:hover { color: var(--ink); }
-.btn:hover::before { transform: scaleX(1); }
-.btn .arrow { transition: transform 0.3s var(--ease-out); }
-.btn:hover .arrow { transform: translateX(4px); }
+.btn:active { box-shadow: 0 1px 3px rgb(0 0 0 / 0.2); }
 
-.btn--blue { --btn-bg: var(--blue); --btn-fg: var(--ink); }
-.btn--blue::before { background: var(--ink); }
-.btn--blue:hover { color: #fff; }
+.btn--light { --btn-bg: #fff; --btn-fg: var(--ink); border-color: var(--line); }
+.btn--small { padding: 7px 12px; font-size: 13px; font-weight: 400; }
 
 @media (max-width: 760px) {
-  .btn { padding: 11px 16px; font-size: 14.5px; }
-}
-
-.btn--ghost {
-  --btn-bg: transparent;
-  --btn-fg: currentColor;
-  box-shadow: inset 0 0 0 2px currentColor;
+  .btn { padding: 11px 16px; font-size: 14px; }
 }
 
 /* ---------- Header ---------- */
@@ -268,9 +254,9 @@ button { font: inherit; color: inherit; }
   place-items: center;
   width: 32px;
   height: 32px;
-  transition: color 0.2s, transform 0.2s var(--ease-out);
+  transition: color 0.2s;
 }
-.social a:hover { color: var(--blue); transform: translateY(-2px); }
+.social a:hover { color: var(--blue); }
 .site-header:not(.site-header--dark) .social a:hover { color: var(--blue-ink); }
 .social svg { width: 26px; height: 26px; fill: currentColor; }
 
@@ -365,14 +351,26 @@ button { font: inherit; color: inherit; }
 }
 
 /* ---------- Reveal on scroll ---------- */
+/* Things fade and fly in as they scroll into view, the way the original site did it. */
 
-.js .reveal {
+.js .reveal,
+.js .reveal-left,
+.js .reveal-right,
+.js .reveal-zoom {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  transition: opacity 0.95s ease-out, transform 0.95s var(--ease-out);
   transition-delay: var(--delay, 0s);
 }
-.js .reveal.is-in { opacity: 1; transform: none; }
+.js .reveal { transform: translateY(90px); }
+.js .reveal-left { transform: translateX(-140px); }
+.js .reveal-right { transform: translateX(140px); }
+.js .reveal-zoom { transform: scale(0.9); }
+.js .is-in { opacity: 1 !important; transform: none !important; }
+
+@media (max-width: 760px) {
+  .js .reveal-left { transform: translateX(-60px); }
+  .js .reveal-right { transform: translateX(60px); }
+}
 
 /* ---------- Typewriter caret ---------- */
 
@@ -389,10 +387,4 @@ button { font: inherit; color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    transition-delay: 0s !important;
-  }
 }
