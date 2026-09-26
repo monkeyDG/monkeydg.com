@@ -16,11 +16,35 @@
   overflow: hidden;
 }
 
+/* The home page keeps the original's type, using the same font files the original site
+   loaded: an early JetBrains Mono for the headings and Open Sans for the blurbs. */
+@font-face {
+  font-family: "JetBrains Mono Original";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-original.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sans Original";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/open-sans-original.woff2") format("woff2");
+}
+
+.hello,
+.side-title {
+  font-family: "JetBrains Mono Original", var(--mono);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  color: #222;
+}
+
 .hello {
-  min-height: 1.1em;
+  min-height: 1.2em;
   margin: clamp(8px, 3vh, 36px) var(--gutter) 0;
   text-align: center;
-  font-size: clamp(40px, 5.2vw, 80px);
+  font-size: clamp(34px, calc(1vw + 29px), 82px);
+  line-height: 1.2;
 }
 
 .stage {
@@ -45,7 +69,7 @@
   right: calc(50% + 40px);
   width: 460px;
   color: #b9b9b4;
-  opacity: calc(0.25 + var(--split) * 0.75);
+  opacity: min(1, var(--split) * 2);
   transform: translateX(calc((var(--split) - 0.5) * 30px));
 }
 .stage-code pre {
@@ -70,7 +94,7 @@
   left: calc(50% + 60px);
   width: min(520px, 38vw);
   margin: 0;
-  opacity: calc(0.2 + (1 - var(--split)) * 0.8);
+  opacity: min(1, (1 - var(--split)) * 2);
   transform: translateX(calc((var(--split) - 0.5) * 30px));
 }
 
@@ -174,23 +198,21 @@
 .side--creative { right: 0; align-items: flex-start; padding-left: clamp(210px, 21vw, 300px); }
 
 .side-title {
-  font-size: clamp(32px, 3.4vw, 58px);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  transition: color 0.3s;
+  font-size: clamp(32px, calc(1vw + 26px), 62px);
+  line-height: 1.2;
 }
 .side-desc {
   max-width: 17em;
-  font-size: clamp(17px, 1.35vw, 22px);
-  line-height: 1.45;
+  font-family: "Open Sans Original", var(--sans);
+  font-size: clamp(16px, calc(1vw + 7px), 32px);
+  line-height: 1.4;
 }
-.side .hl { transition: background-size 0.5s var(--ease-out), opacity 0.3s; background-size: 0% 100%; }
-.side--pro .hl { background-position: 100% 0; }
+.side .hl { padding: 0 0.1em; }
 
-.side--pro { opacity: calc(0.3 + var(--split) * 0.7); }
-.side--creative { opacity: calc(0.3 + (1 - var(--split)) * 0.7); }
-.side.is-active .hl { background-size: 100% 100%; }
+/* Both sides are fully visible while the face is split down the middle, and the side you
+   move away from fades out completely, along with its background. */
+.side--pro { opacity: min(1, var(--split) * 2); }
+.side--creative { opacity: min(1, (1 - var(--split)) * 2); }
 .side:focus-visible { outline-offset: -8px; }
 
 .side,
@@ -247,8 +269,9 @@
     border: 2px solid var(--ink);
     color: var(--ink);
     text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
+    font-family: "JetBrains Mono Original", var(--mono);
+    font-weight: 400;
+    font-size: 17px;
     letter-spacing: -0.02em;
     line-height: 1.1;
     -webkit-tap-highlight-color: transparent;
@@ -257,7 +280,7 @@
   }
   .mobile-sides a:last-child { animation-delay: 0.1s; }
   .mobile-sides small {
-    font-family: var(--mono);
+    font-family: "Open Sans Original", var(--sans);
     font-weight: 400;
     font-size: 13px;
     letter-spacing: 0;
