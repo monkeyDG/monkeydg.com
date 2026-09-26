@@ -81,10 +81,31 @@
 
   const atEnd = () => track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
 
-  function step(dir) {
-    const card = track.firstElementChild;
+  // Our own eased scroll instead of scrollBy({ behavior: "smooth" }): Safari tends to jump
+  // straight to the end on snap-scrolling rows, and the native one is quick anyway.
+  let anim = null;
+  function glide(to, ms = 750) {
+    cancelAnimationFrame(anim);
+    const from = track.scrollLeft;
+    const max = track.scrollWidth - track.clientWidth;
+    to = Math.max(0, Math.min(max, to));
+    const t0 = performance.now();
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
+    track.style.scrollSnapType = "none";
+    (function frame(now) {
+      const t = Math.min(1, (now - t0) / ms);
+      track.scrollLeft = from + (to - from) * ease(t);
+      if (t < 1) anim = requestAnimationFrame(frame);
+      else track.style.scrollSnapType = "";
+    })(t0);
+  }
+  function cardWidth() {
     const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    track.scrollBy({ left: dir * (card.offsetWidth + gap), behavior: "smooth" });
+    return track.firstElementChild.offsetWidth + gap;
+  }
+  function step(dir) {
+    const w = cardWidth();
+    glide((Math.round(track.scrollLeft / w) + dir) * w);
   }
   function sync() {
     prev.disabled = track.scrollLeft < 8;
@@ -93,7 +114,7 @@
   // Wraps back to the first card after the last one.
   function advance() {
     if (paused || !visible || document.hidden) return;
-    if (atEnd()) track.scrollTo({ left: 0, behavior: "smooth" });
+    if (atEnd()) glide(0, 1100);
     else step(1);
   }
   function restart() {
