@@ -271,7 +271,6 @@ button { font: inherit; color: inherit; }
   transition: color 0.2s;
 }
 .social a:hover { color: var(--blue); }
-.site-header:not(.site-header--dark) .social a:hover { color: var(--blue-ink); }
 .social svg { width: 26px; height: 26px; fill: currentColor; }
 
 .nav-toggle {
