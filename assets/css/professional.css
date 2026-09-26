@@ -69,7 +69,7 @@ main section { scroll-margin-top: 24px; }
 
 .pro-hero {
   position: relative;
-  padding: calc(var(--header-h) + 20px) 0 0;
+  padding: calc(var(--header-h) + 64px) 0 0;
   isolation: isolate;
 }
 .pro-hero-bg {
@@ -84,9 +84,9 @@ main section { scroll-margin-top: 24px; }
 
 .profile {
   display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  gap: 18px 40px;
-  padding: 32px 36px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 36px 56px;
+  padding: 52px 56px 48px;
   background: var(--card);
   border-radius: 3px;
   box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.3);
@@ -98,20 +98,24 @@ main section { scroll-margin-top: 24px; }
   object-fit: cover;
 }
 .profile-info { align-self: center; }
-.profile-hi { margin: 0 0 22px; }
+.profile-hi { margin: 0 0 26px; }
+/* the name keeps the original site's JetBrains Mono */
 .profile-name {
-  margin-bottom: 10px;
-  font-size: clamp(34px, 4vw, 44px);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  font-family: "JetBrains Mono Original", var(--mono);
+  font-size: clamp(34px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.07em;
+  color: #3d4451;
 }
-.profile-name span { font-weight: 300; }
+.profile-name span { font-weight: 400; }
 .profile-role {
-  margin-bottom: 18px;
-  padding-bottom: 18px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
   border-bottom: 1px solid var(--line);
-  font-size: 15.5px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.6;
   color: var(--ink-2);
 }
 .profile-at {
@@ -130,16 +134,16 @@ main section { scroll-margin-top: 24px; }
   vertical-align: -0.02em;
 }
 
-.profile-facts { display: grid; gap: 6px; margin: 0; }
+.profile-facts { display: grid; gap: 11px; margin: 0; }
 .profile-facts div {
   display: grid;
-  grid-template-columns: 100px minmax(0, 1fr);
+  grid-template-columns: 120px minmax(0, 1fr);
   gap: 12px;
-  font-size: 14px;
+  font-size: 15.5px;
 }
 .profile-facts dt {
   font-weight: 700;
-  font-size: 11.5px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--ink);
@@ -149,11 +153,15 @@ main section { scroll-margin-top: 24px; }
 .profile-facts a { text-decoration: none; transition: color 0.2s; }
 .profile-facts a:hover { color: var(--blue-ink); text-decoration: underline; }
 
+/* the buttons sit on their own row under the photo and details, centred in the card */
 .profile-actions {
+  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
 }
 .profile-actions .btn:hover,
 .profile-actions .btn:focus-visible { box-shadow: 0 2px 6px rgb(0 0 0 / 0.1); }
@@ -855,9 +863,14 @@ main section { scroll-margin-top: 24px; }
   .intro-stats dd { font-size: 12px; }
   .skills, .experience, .lab, .education, .certs, .awards { padding-bottom: 80px; }
 
-  .profile { grid-template-columns: 1fr; padding: 22px 20px 24px; }
-  .profile-photo { max-width: 200px; }
-  .profile-facts div { grid-template-columns: 88px minmax(0, 1fr); }
+  .pro-hero { padding-top: calc(var(--header-h) + 28px); }
+  .profile { grid-template-columns: 1fr; gap: 26px; padding: 28px 22px 30px; }
+  .profile-photo { max-width: 220px; }
+  .profile-name { font-size: 34px; }
+  .profile-role { font-size: 16px; }
+  .profile-facts { gap: 9px; }
+  .profile-facts div { grid-template-columns: 92px minmax(0, 1fr); font-size: 15px; }
+  .profile-actions { padding-top: 24px; }
 
   .edu-grid { grid-template-columns: 1fr; }
   .edu:nth-child(2) { margin-top: 0; }
