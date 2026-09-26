@@ -14,7 +14,7 @@
   let H = 250;
   const PAD = { top: 30, right: 10, bottom: 30, left: 10 };
   const SAMPLES = 160;
-  const TICK_MS = 55;
+  const TICK_MS = 85;
   const PLANNED = 80000;
 
   const TESTS = [
@@ -107,6 +107,7 @@
   const progress = widget.querySelector("[data-exp-progress]");
   const verdict = widget.querySelector("[data-exp-verdict]");
   const peek = widget.querySelector("[data-exp-peek]");
+  const note = widget.querySelector("[data-exp-note]");
   const stat = (name) => widget.querySelector(`[data-stat="${name}"]`);
   const nOut = stat("n");
   const liftOut = stat("lift");
@@ -119,14 +120,19 @@
     return node;
   };
 
+  // Everything drawn is clipped to the plot area.
+  const defs = el("defs");
+  const clip = el("clipPath", { id: "exp-clip" }, defs);
+  const clipRect = el("rect", {}, clip);
   const grid = el("g");
   const axis = el("g", { class: "axis" });
   const baseline = el("line", {}, axis);
   const ticks = el("g", {}, axis);
-  const areaA = el("path", { class: "area-a" });
-  const areaB = el("path", { class: "area-b" });
-  const lineA = el("path", { class: "line-a" });
-  const lineB = el("path", { class: "line-b" });
+  const plot = el("g", { "clip-path": "url(#exp-clip)" });
+  const areaA = el("path", { class: "area-a" }, plot);
+  const areaB = el("path", { class: "area-b" }, plot);
+  const lineA = el("path", { class: "line-a" }, plot);
+  const lineB = el("path", { class: "line-b" }, plot);
   const labelA = el("text", { class: "label label-a", "text-anchor": "middle", visibility: "hidden" });
   const labelB = el("text", { class: "label label-b", "text-anchor": "middle", visibility: "hidden" });
   labelA.textContent = "control";
@@ -147,6 +153,7 @@
       baseline.setAttribute(k, v);
     }
     cross.setAttribute("y2", H - PAD.bottom);
+    for (const [k, v] of Object.entries({ x: 0, y: 0, width: W, height: H - PAD.bottom + 1 })) clipRect.setAttribute(k, v);
   }
 
   function reset() {
@@ -161,6 +168,7 @@
     status.dataset.state = "running";
     status.textContent = "running";
     peek.hidden = false;
+    note.hidden = true;
     verdict.textContent = "Collecting data. The verdict gets read when the planned sample is in.";
   }
 
@@ -216,7 +224,9 @@
     const k = ease ? 0.22 : 1;
     view.lo += (lo - view.lo) * k;
     view.hi += (hi - view.hi) * k;
-    view.ymax += (ymax - view.ymax) * k;
+    // Peaks only get taller as data comes in, so never let the axis lag behind them:
+    // the curves must always fit inside the chart.
+    view.ymax = Math.max(ymax, view.ymax + (ymax - view.ymax) * k);
 
     const cA = curve(s.A);
     const cB = curve(s.B);
@@ -333,8 +343,9 @@
   widget.querySelector("[data-exp-rerun]").addEventListener("click", start);
 
   peek.addEventListener("click", () => {
-    verdict.innerHTML = "<b>This one's a fixed-horizon test.</b> Checking it early and stopping when it looks good inflates the false positive rate. If you want to peek, set it up as a sequential test instead (an mSPRT with always-valid confidence intervals, for example), which lets you check the results as often as you like.";
+    note.hidden = false;
   });
+
 
   svg.addEventListener("pointermove", (e) => {
     if (!truth) return;

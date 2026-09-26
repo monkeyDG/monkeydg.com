@@ -9,6 +9,8 @@
     "serve": "python3 -m http.server 8080"
   },
   "devDependencies": {
+    "@iconify-json/logos": "^1.2.14",
+    "devicon": "^2.17.0",
     "sharp": "^0.34.0",
     "simple-icons": "^16.32.0",
     "simple-icons-13": "npm:simple-icons@^13.21.0"

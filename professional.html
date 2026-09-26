@@ -66,10 +66,10 @@
               <div><dt>Phone</dt><dd><a href="tel:+16132653551">+1 613-265-3551</a></dd></div>
               <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/davidgallo747" target="_blank" rel="noopener">linkedin.com/in/davidgallo747</a></dd></div>
             </dl>
-          </div>
-          <div class="profile-actions">
-            <a class="btn" href="assets/docs/David_Gallo_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-            <a class="btn btn--light" href="contact.html">Say hi</a>
+            <div class="profile-actions">
+              <a class="btn" href="assets/docs/David_Gallo_CV.pdf" target="_blank" rel="noopener"><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Download CV</a>
+              <a class="btn btn--light" href="contact.html">Get in touch</a>
+            </div>
           </div>
         </article>
       </div>
@@ -196,7 +196,7 @@
         <div class="exp-progress" aria-hidden="true"><span data-exp-progress></span></div>
         <dl class="exp-stats">
           <div><dt>visitors per arm</dt><dd data-stat="n">0</dd></div>
-          <div><dt>lift, 95% interval</dt><dd data-stat="lift">-</dd></div>
+          <div><dt>lift, 95% interval</dt><dd data-stat="lift">-<small>&nbsp;</small></dd></div>
           <div><dt>P(variant &gt; control)</dt><dd data-stat="prob">-</dd></div>
         </dl>
         <p class="exp-verdict" data-exp-verdict aria-live="polite">Scroll here to start the test.</p>
@@ -204,6 +204,7 @@
           <button class="btn" type="button" data-exp-rerun>Run another test</button>
           <button class="btn btn--light" type="button" data-exp-peek>Peek at the results early</button>
         </div>
+        <p class="exp-note" data-exp-note hidden><b>This one's a fixed-horizon test.</b> Checking it early and stopping when it looks good inflates the false positive rate. If you want to peek, set it up as a sequential test instead (an mSPRT with always-valid confidence intervals, for example), which lets you check the results as often as you like.</p>
       </div>
     </section>
 
@@ -217,39 +218,39 @@
           <div class="tool-group reveal">
             <h3 class="mono">data and pipelines</h3>
             <ul class="tool-grid">
-              <li style="--c:#ffd43b"><svg aria-hidden="true"><use href="assets/img/icons.svg#python"/></svg>Python</li>
-              <li style="--c:#29b5e8"><svg aria-hidden="true"><use href="assets/img/icons.svg#snowflake"/></svg>Snowflake</li>
-              <li style="--c:#4fa3ff"><svg aria-hidden="true"><use href="assets/img/icons.svg#apacheairflow"/></svg>Airflow</li>
-              <li style="--c:#669df6"><svg aria-hidden="true"><use href="assets/img/icons.svg#googlebigquery"/></svg>BigQuery</li>
-              <li style="--c:#e25a1c"><svg aria-hidden="true"><use href="assets/img/icons.svg#apachespark"/></svg>Spark</li>
-              <li style="--c:#e70488"><svg aria-hidden="true"><use href="assets/img/icons.svg#pandas"/></svg>pandas</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#python"/></svg><img src="assets/img/tools/python.svg" alt="" loading="lazy"></span>Python</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#snowflake"/></svg><img src="assets/img/tools/snowflake.svg" alt="" loading="lazy"></span>Snowflake</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#apacheairflow"/></svg><img src="assets/img/tools/apacheairflow.svg" alt="" loading="lazy"></span>Airflow</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#googlebigquery"/></svg><img src="assets/img/tools/googlebigquery.svg" alt="" loading="lazy"></span>BigQuery</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#apachespark"/></svg><img src="assets/img/tools/apachespark.svg" alt="" loading="lazy"></span>Spark</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#pandas"/></svg><img src="assets/img/tools/pandas.svg" alt="" loading="lazy"></span>pandas</li>
             </ul>
           </div>
           <div class="tool-group reveal" style="--delay: 0.08s">
             <h3 class="mono">models and stats</h3>
             <ul class="tool-grid">
-              <li style="--c:#f7931e"><svg aria-hidden="true"><use href="assets/img/icons.svg#scikitlearn"/></svg>scikit-learn</li>
-              <li style="--c:#ff6f00"><svg aria-hidden="true"><use href="assets/img/icons.svg#tensorflow"/></svg>TensorFlow</li>
-              <li style="--c:#f37626"><svg aria-hidden="true"><use href="assets/img/icons.svg#jupyter"/></svg>Jupyter</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#scikitlearn"/></svg><img src="assets/img/tools/scikitlearn.svg" alt="" loading="lazy"></span>scikit-learn</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#tensorflow"/></svg><img src="assets/img/tools/tensorflow.svg" alt="" loading="lazy"></span>TensorFlow</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#jupyter"/></svg><img src="assets/img/tools/jupyter.svg" alt="" loading="lazy"></span>Jupyter</li>
             </ul>
           </div>
           <div class="tool-group reveal" style="--delay: 0.16s">
             <h3 class="mono">AI tooling</h3>
             <ul class="tool-grid">
-              <li style="--c:#d97757"><svg aria-hidden="true"><use href="assets/img/icons.svg#claude"/></svg>Claude Code</li>
-              <li style="--c:#ffffff"><svg aria-hidden="true"><use href="assets/img/icons.svg#openai"/></svg>Codex</li>
-              <li style="--c:#ffffff"><svg aria-hidden="true"><use href="assets/img/icons.svg#cursor"/></svg>Cursor</li>
-              <li style="--c:#ffffff"><svg aria-hidden="true"><use href="assets/img/icons.svg#modelcontextprotocol"/></svg>MCP</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#claude"/></svg><img src="assets/img/tools/claude.svg" alt="" loading="lazy"></span>Claude Code</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#openai"/></svg><img src="assets/img/tools/openai.svg" alt="" loading="lazy"></span>Codex</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#cursor"/></svg><img src="assets/img/tools/cursor.svg" alt="" loading="lazy"></span>Cursor</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#modelcontextprotocol"/></svg><img src="assets/img/tools/modelcontextprotocol.svg" alt="" loading="lazy"></span>MCP</li>
             </ul>
           </div>
           <div class="tool-group reveal" style="--delay: 0.24s">
             <h3 class="mono">dashboards and shipping</h3>
             <ul class="tool-grid">
-              <li style="--c:#e97627"><svg aria-hidden="true"><use href="assets/img/icons.svg#tableau"/></svg>Tableau</li>
-              <li style="--c:#4285f4"><svg aria-hidden="true"><use href="assets/img/icons.svg#looker"/></svg>Looker</li>
-              <li style="--c:#ff4b4b"><svg aria-hidden="true"><use href="assets/img/icons.svg#streamlit"/></svg>Streamlit</li>
-              <li style="--c:#ff9900"><svg aria-hidden="true"><use href="assets/img/icons.svg#amazonwebservices"/></svg>AWS</li>
-              <li style="--c:#ffffff"><svg aria-hidden="true"><use href="assets/img/icons.svg#github"/></svg>GitHub</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#tableau"/></svg><img src="assets/img/tools/tableau.svg" alt="" loading="lazy"></span>Tableau</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#looker"/></svg><img src="assets/img/tools/looker.svg" alt="" loading="lazy"></span>Looker</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#streamlit"/></svg><img src="assets/img/tools/streamlit.svg" alt="" loading="lazy"></span>Streamlit</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#amazonwebservices"/></svg><img src="assets/img/tools/amazonwebservices.svg" alt="" loading="lazy"></span>AWS</li>
+              <li><span class="tool-mark" aria-hidden="true"><svg><use href="assets/img/icons.svg#github"/></svg><img src="assets/img/tools/github.svg" alt="" loading="lazy"></span>GitHub</li>
             </ul>
           </div>
         </div>
@@ -297,14 +298,8 @@
         <h2 class="section-title">Certifications</h2>
       </header>
       <div class="cert-grid">
-        <figure class="cert reveal-left">
-          <img src="assets/img/pro/cert-dell.webp" alt="" width="300" height="300" loading="lazy">
-          <figcaption><strong>Data Science Certified Associate</strong><br>Dell Technologies<br><span class="cert-id">Certification number 0T96TYPRG2E1143C</span></figcaption>
-        </figure>
-        <figure class="cert reveal-right">
-          <img src="assets/img/pro/cert-dp100.webp" alt="" width="300" height="300" loading="lazy">
-          <figcaption><strong>Azure Data Scientist Associate</strong><br>Microsoft (DP-100)<br><span class="cert-id">Certification number 993120317</span></figcaption>
-        </figure>
+        <img class="cert reveal-left" src="assets/img/pro/cert-dell.webp" alt="Dell Technologies Data Science Certified Associate" width="300" height="300" loading="lazy">
+        <img class="cert reveal-right" src="assets/img/pro/cert-dp100.webp" alt="Microsoft Certified Azure Data Scientist Associate" width="300" height="300" loading="lazy">
       </div>
     </section>
 
@@ -313,101 +308,88 @@
         <span class="kicker">awards.sort_values("year")</span>
         <h2 class="section-title">Scholarships &amp; Awards</h2>
       </header>
-      <div class="awards-card reveal">
-        <ul class="award-logos" aria-label="Awarding organizations">
-          <li><img src="assets/img/logos/accenture.webp" alt="Accenture" width="300" height="79" loading="lazy"></li>
-          <li><img src="assets/img/logos/uottawa.webp" alt="University of Ottawa" width="300" height="96" loading="lazy"></li>
-          <li><img src="assets/img/logos/jdc.webp" alt="Jeux du Commerce" width="400" height="113" loading="lazy"></li>
-          <li><img src="assets/img/logos/lazicc.webp" alt="Lazaridis International Case Conference" width="300" height="65" loading="lazy"></li>
-          <li><img src="assets/img/logos/ap.webp" alt="AP College Board" width="400" height="114" loading="lazy"></li>
-          <li><img src="assets/img/logos/deloitte.webp" alt="Deloitte" width="400" height="107" loading="lazy"></li>
-          <li><img src="assets/img/logos/telfer.webp" alt="Telfer School of Management" width="300" height="98" loading="lazy"></li>
-          <li><img src="assets/img/logos/opc.webp" alt="Ontario Principals' Council" width="300" height="96" loading="lazy"></li>
-        </ul>
-        <ol class="award-list">
-          <li><span>2022</span>TBS Datathon, 1st place</li>
-          <li><span>2022</span>Jeux du Commerce Coach of the Year</li>
-          <li><span>2022</span>Deloitte Silver Dot</li>
-          <li><span>2021</span>Deloitte Green Dot</li>
-          <li><span>2020</span>Accenture Scholarship Fund</li>
-          <li><span>2016-20</span>University of Ottawa Merit Scholarship</li>
-          <li><span>2018-19</span>Jeux du Commerce MIS 2nd place and Academic VIP</li>
-          <li><span>2018</span>Lazaridis International Case Conference, 3rd place</li>
-          <li><span>2016</span>Craig Cameron Memorial Scholarship</li>
-          <li><span>2016</span>AP Scholar Award</li>
-          <li><span>2015</span>BHS Computer and IS Award</li>
-          <li><span title="High school. I lost track of the year.">NaN</span>Broadview Musicianship Award</li>
-          <li><span title="Also high school.">NaN</span>OPC Award for Student Leadership</li>
-        </ol>
-      </div>
+      <ol class="award-list reveal">
+        <li><span class="mono">2022</span>TBS Datathon, 1st place</li>
+        <li><span class="mono">2022</span>Jeux du Commerce Coach of the Year</li>
+        <li><span class="mono">2022</span>Deloitte Silver Dot</li>
+        <li><span class="mono">2021</span>Deloitte Green Dot</li>
+        <li><span class="mono">2020</span>Accenture Scholarship Fund</li>
+        <li><span class="mono">2016-20</span>University of Ottawa Merit Scholarship</li>
+        <li><span class="mono">2018-19</span>Jeux du Commerce MIS 2nd place and Academic VIP</li>
+        <li><span class="mono">2018</span>Lazaridis International Case Conference, 3rd place</li>
+        <li><span class="mono">2016</span>Craig Cameron Memorial Scholarship</li>
+        <li><span class="mono">2016</span>AP Scholar Award</li>
+        <li><span class="mono">2015</span>BHS Computer and IS Award</li>
+        <li><span class="mono" title="High school. I lost track of the year.">NaN</span>Broadview Musicianship Award</li>
+        <li><span class="mono" title="Also high school.">NaN</span>OPC Award for Student Leadership</li>
+      </ol>
+      <ul class="award-logos reveal" aria-label="Awarding organizations">
+        <li><img src="assets/img/logos/accenture.webp" alt="Accenture" width="300" height="79" loading="lazy"></li>
+        <li><img src="assets/img/logos/deloitte.webp" alt="Deloitte" width="400" height="107" loading="lazy"></li>
+        <li><img src="assets/img/logos/uottawa.webp" alt="University of Ottawa" width="300" height="96" loading="lazy"></li>
+        <li><img src="assets/img/logos/jdc.webp" alt="Jeux du Commerce" width="400" height="113" loading="lazy"></li>
+        <li><img src="assets/img/logos/lazicc.webp" alt="Lazaridis International Case Conference" width="300" height="65" loading="lazy"></li>
+        <li><img src="assets/img/logos/ap.webp" alt="AP College Board" width="400" height="114" loading="lazy"></li>
+        <li><img src="assets/img/logos/telfer.webp" alt="Telfer School of Management" width="300" height="98" loading="lazy"></li>
+        <li><img src="assets/img/logos/opc.webp" alt="Ontario Principals' Council" width="300" height="96" loading="lazy"></li>
+      </ul>
     </section>
 
-    <section class="vol" id="leadership" aria-roledescription="carousel" aria-label="Volunteering and leadership">
-      <header class="section-head pro-wrap reveal">
-        <span class="kicker">off the clock</span>
-        <h2 class="section-title">Volunteering &amp; Leadership</h2>
-      </header>
-      <div class="vol-band">
-        <div class="pro-wrap vol-stage" id="vol">
-          <article class="vol-slide is-current" aria-roledescription="slide" aria-label="1 of 8">
-            <figure class="vol-media">
-              <img src="assets/img/pro/space-concordia-640.webp" alt="Space Concordia team" width="640" height="420" loading="eager">
-              <h3>Space Concordia</h3>
-            </figure>
-            <p>As project manager, I led over 80 engineering students and managed more than $450,000 in grant funding to build a satellite with the Canadian Space Agency.</p>
-          </article>
-          <article class="vol-slide" aria-roledescription="slide" aria-label="2 of 8">
-            <figure class="vol-media">
-              <img src="assets/img/pro/casco-640.webp" alt="CASCO Gala on stage" width="640" height="458" loading="lazy">
-              <h3>CASCO Charity Organization</h3>
-            </figure>
-            <p>As a musician and musical director for the annual CASCO Gala, I helped raise over $250,000 for the Children's Hospital of Eastern Ontario over 4 years.</p>
-          </article>
-          <article class="vol-slide" aria-roledescription="slide" aria-label="3 of 8">
-            <figure class="vol-media">
-              <img src="assets/img/pro/jdc-640.webp" alt="Jeux du Commerce team" width="640" height="458" loading="lazy">
-              <h3>Jeux du Commerce</h3>
-            </figure>
-            <p>I competed twice in JDC, the largest business competition in Eastern Canada. I earned Academic VIP twice and 2nd place overall.</p>
-          </article>
-          <article class="vol-slide" aria-roledescription="slide" aria-label="4 of 8">
-            <figure class="vol-media">
-              <img src="assets/img/pro/coach-640.webp" alt="Coaching a Jeux du Commerce team" width="640" height="425" loading="lazy">
-              <h3>Jeux du Commerce Coach</h3>
-            </figure>
-            <p>After graduating, I kept coaching new JDC teams every year, and won the Coach of the Year trophy in 2022 with a 1st-place team.</p>
-          </article>
-          <article class="vol-slide" aria-roledescription="slide" aria-label="5 of 8">
-            <figure class="vol-media">
-              <img src="assets/img/pro/lazicc-640.webp" alt="LAZICC case competition team" width="640" height="458" loading="lazy">
-              <h3>Lazaridis International Case Conference</h3>
-            </figure>
-            <p>I represented my city at LAZICC in Waterloo, where my team took 1st place in the five-hour case crack and 3rd place overall.</p>
-          </article>
-          <article class="vol-slide" aria-roledescription="slide" aria-label="6 of 8">
-            <figure class="vol-media">
-              <img src="assets/img/pro/senate-640.webp" alt="University of Ottawa Senate" width="640" height="458" loading="lazy">
-              <h3>uOttawa Senate &amp; Faculty Council</h3>
-            </figure>
-            <p>I was elected to the Senate for 3 annual terms. It's the university's highest governance body, made up of faculty reps, Deans, Directors, VPs, and the Chancellor.</p>
-          </article>
-          <article class="vol-slide" aria-roledescription="slide" aria-label="7 of 8">
-            <figure class="vol-media">
-              <img src="assets/img/pro/hra-640.webp" alt="Telfer Human Resources Association" width="640" height="458" loading="lazy">
-              <h3>Telfer Human Resources Association</h3>
-            </figure>
-            <p>As VP Internal, I looked after relations with the university, students, and alumni. As Director of Sponsorship, I built relationships with local firms.</p>
-          </article>
-          <article class="vol-slide" aria-roledescription="slide" aria-label="8 of 8">
-            <figure class="vol-media">
-              <img src="assets/img/pro/rcm-640.webp" alt="Playing piano" width="640" height="595" loading="lazy">
-              <h3>Royal Conservatory of Music</h3>
-            </figure>
-            <p>Alongside drumming, I completed Grade 8 Piano and Advanced Rudiments with the RCM, after 16 years of practice and performance.</p>
-          </article>
-        </div>
-        <div class="vol-dots" role="tablist" aria-label="Choose a slide"></div>
+    <section class="leadership" id="leadership">
+      <div class="pro-wrap">
+        <header class="section-head section-head--row reveal">
+          <div>
+            <span class="kicker">off the clock</span>
+            <h2 class="section-title">Volunteering &amp; Leadership</h2>
+          </div>
+          <div class="carousel-nav">
+            <button type="button" class="carousel-btn" data-dir="-1" aria-label="Previous">←</button>
+            <button type="button" class="carousel-btn" data-dir="1" aria-label="Next">→</button>
+          </div>
+        </header>
       </div>
+      <ul class="carousel reveal" id="carousel">
+        <li class="lead-card">
+          <img src="assets/img/pro/space-concordia-640.webp" alt="Space Concordia team" width="640" height="420" loading="lazy">
+          <h3>Space Concordia</h3>
+          <p>As project manager, I led over 80 engineering students and managed more than $450,000 in grant funding to build a satellite with the Canadian Space Agency.</p>
+        </li>
+        <li class="lead-card">
+          <img src="assets/img/pro/casco-640.webp" alt="CASCO Gala on stage" width="640" height="458" loading="lazy">
+          <h3>CASCO Charity Organization</h3>
+          <p>As a musician and musical director for the annual CASCO Gala, I helped raise over $250,000 for the Children's Hospital of Eastern Ontario over 4 years.</p>
+        </li>
+        <li class="lead-card">
+          <img src="assets/img/pro/jdc-640.webp" alt="Jeux du Commerce team" width="640" height="458" loading="lazy">
+          <h3>Jeux du Commerce</h3>
+          <p>I competed twice in JDC, the largest business competition in Eastern Canada. I earned Academic VIP twice and 2nd place overall.</p>
+        </li>
+        <li class="lead-card">
+          <img src="assets/img/pro/coach-640.webp" alt="Coaching a Jeux du Commerce team" width="640" height="425" loading="lazy">
+          <h3>Jeux du Commerce Coach</h3>
+          <p>After graduating, I kept coaching new JDC teams every year, and won the Coach of the Year trophy in 2022 with a 1st-place team.</p>
+        </li>
+        <li class="lead-card">
+          <img src="assets/img/pro/lazicc-640.webp" alt="LAZICC case competition team" width="640" height="458" loading="lazy">
+          <h3>Lazaridis International Case Conference</h3>
+          <p>I represented my city at LAZICC in Waterloo, where my team took 1st place in the five-hour case crack and 3rd place overall.</p>
+        </li>
+        <li class="lead-card">
+          <img src="assets/img/pro/senate-640.webp" alt="University of Ottawa Senate" width="640" height="458" loading="lazy">
+          <h3>uOttawa Senate &amp; Faculty Council</h3>
+          <p>I was elected to the Senate for 3 annual terms. It's the university's highest governance body, made up of faculty reps, Deans, Directors, VPs, and the Chancellor.</p>
+        </li>
+        <li class="lead-card">
+          <img src="assets/img/pro/hra-640.webp" alt="Telfer Human Resources Association" width="640" height="458" loading="lazy">
+          <h3>Telfer Human Resources Association</h3>
+          <p>As VP Internal, I looked after relations with the university, students, and alumni. As Director of Sponsorship, I built relationships with local firms.</p>
+        </li>
+        <li class="lead-card">
+          <img src="assets/img/pro/rcm-640.webp" alt="Playing piano" width="640" height="595" loading="lazy">
+          <h3>Royal Conservatory of Music</h3>
+          <p>Alongside drumming, I completed Grade 8 Piano and Advanced Rudiments with the RCM, after 16 years of practice and performance.</p>
+        </li>
+      </ul>
     </section>
   </main>
 

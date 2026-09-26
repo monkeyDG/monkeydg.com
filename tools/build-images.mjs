@@ -41,7 +41,6 @@ const PHOTOS = [
   ["creative/PDN and raws/pc-5.jpg", "creative/pc-5", [900, 1800]],
   ["creative/PDN and raws/pc-6.jpg", "creative/pc-6", [900, 1800]],
 
-  ["contact/bg-01.jpg", "contact/ottawa", [560]],
   ["contact/bg-02.jpg", "contact/aerial", [960, 1920]],
 ];
 

@@ -154,17 +154,21 @@ button { font: inherit; color: inherit; }
 }
 
 /* ---------- Buttons ---------- */
-/* Like the original site: a flat fill, and a soft drop shadow on hover. Nothing moves. */
+/* Like the original site: a flat fill and a soft drop shadow on hover. The fill darkens a step
+   on hover and another on press. Borders, padding and weight never change, so the text never moves. */
 
 .btn {
   --btn-bg: var(--blue);
+  --btn-bg-hover: #4fcdfb;
+  --btn-bg-active: #36c1f2;
   --btn-fg: var(--ink);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 13px 22px;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 22px;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 3px;
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-family: var(--mono);
@@ -173,18 +177,28 @@ button { font: inherit; color: inherit; }
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 0 5px rgb(0 0 0 / 0.12), 0 2px 5px rgb(0 0 0 / 0.1);
-  transition: box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.12);
+  transition: background-color 0.2s ease-out, box-shadow 0.25s ease-out;
+  -webkit-tap-highlight-color: transparent;
 }
 .btn:hover,
 .btn:focus-visible {
-  opacity: 0.95;
-  box-shadow: 0 5px 11px rgb(0 0 0 / 0.18), 0 4px 15px rgb(0 0 0 / 0.15);
+  background: var(--btn-bg-hover);
+  box-shadow: 0 5px 11px rgb(0 0 0 / 0.16), 0 3px 12px rgb(0 0 0 / 0.1);
 }
-.btn:active { box-shadow: 0 1px 3px rgb(0 0 0 / 0.2); }
+.btn:active {
+  background: var(--btn-bg-active);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.16);
+}
 
-.btn--light { --btn-bg: #fff; --btn-fg: var(--ink); border-color: var(--line); }
+.btn--light {
+  --btn-bg: #fff;
+  --btn-bg-hover: #f3f4f5;
+  --btn-bg-active: #e7e9eb;
+  border-color: #d5d7da;
+}
 .btn--small { padding: 7px 12px; font-size: 13px; font-weight: 400; }
+.btn:disabled { opacity: 0.6; cursor: default; }
 
 @media (max-width: 760px) {
   .btn { padding: 11px 16px; font-size: 14px; }
