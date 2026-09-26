@@ -58,15 +58,9 @@ The contact form posts JSON to an API Gateway + Lambda function that sends mail 
 
 ## Rolling back the 2026 redesign
 
-The previous design is tagged `legacy-site` (it already includes the Coinbase role).
-To go back, either revert the redesign commit on `master`:
+The redesign is a single commit on top of `c45db3a` ("Add Coinbase role to professional page"),
+which is the previous design with the Coinbase role already added. To go back:
 
 ```sh
-git revert <redesign-commit>
-```
-
-or restore the old tree wholesale:
-
-```sh
-git checkout legacy-site -- . && git commit -m "Restore legacy site"
+git revert <redesign-commit>      # keeps history; the old design redeploys on push to master
 ```
