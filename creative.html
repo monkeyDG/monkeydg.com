@@ -179,9 +179,13 @@
           <li><img src="assets/img/creative/pc-5-1800.webp" srcset="assets/img/creative/pc-5-900.webp 900w, assets/img/creative/pc-5-1800.webp 1800w" sizes="100vw" alt="Watercooled PC build, photo 5 of 6" width="1800" height="1350" loading="lazy"></li>
           <li><img src="assets/img/creative/pc-6-1800.webp" srcset="assets/img/creative/pc-6-900.webp 900w, assets/img/creative/pc-6-1800.webp 1800w" sizes="100vw" alt="Watercooled PC build, photo 6 of 6" width="1800" height="1350" loading="lazy"></li>
       </ul>
-      <button class="pc-arrow pc-arrow--prev" type="button" data-dir="-1" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <button class="pc-arrow pc-arrow--next" type="button" data-dir="1" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-      <div class="pc-bar"><span></span></div>
+      <div class="show-controls">
+        <div class="show-arrows">
+          <button type="button" data-dir="-1" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="show-dots" role="tablist" aria-label="Choose a photo"></div>
+      </div>
     </section>
 
     <!-- This website -->

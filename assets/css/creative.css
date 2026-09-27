@@ -126,7 +126,7 @@
 }
 .show-arrows button + button { border-left: 0; }
 .show-arrows button:hover { background: rgb(255 255 255 / 0.12); }
-.show-arrows svg, .pc-arrow svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.show-arrows svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .show-dots { display: flex; gap: 6px; }
 .show-dots button {
   width: 9px;
@@ -305,27 +305,6 @@
 .pc-track::-webkit-scrollbar { display: none; }
 .pc-track li { scroll-snap-align: start; }
 .pc-track img { width: 100%; height: 100%; object-fit: cover; }
-.pc-arrow {
-  position: absolute;
-  top: 50%;
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  translate: 0 -50%;
-  border: 0;
-  background: transparent;
-  color: var(--blue);
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.pc-arrow svg { width: 36px; height: 36px; }
-.pc-arrow:hover { color: #fff; }
-.pc-arrow--prev { left: calc((100% - var(--frame)) / 2 + 10px); }
-.pc-arrow--next { right: calc((100% - var(--frame)) / 2 + 10px); }
-.pc-bar { position: absolute; left: calc((100% - var(--frame)) / 2 + var(--frame) * 0.2); right: calc((100% - var(--frame)) / 2 + var(--frame) * 0.2); bottom: 24px; height: 3px; background: rgb(255 255 255 / 0.25); }
-.pc-bar span { display: block; height: 100%; width: calc(100% / 6); background: #fff; box-shadow: 0 0 5px #fff; translate: calc(var(--i, 0) * 100%) 0; transition: translate 0.4s var(--ease-out); }
-
 /* ---------- Gallery ---------- */
 
 .gallery-section {
@@ -496,5 +475,4 @@
   .gallery img { aspect-ratio: 1; }
   .js .gallery.is-collapsed li:nth-child(n + 13) { display: none; }
   .js .gallery.is-collapsed ~ .gallery-more { display: inline-flex; margin-top: 18px; }
-  .pc-arrow { display: none; }
 }
