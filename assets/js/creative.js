@@ -106,18 +106,31 @@ document.querySelectorAll("[data-yt]").forEach((button) => {
   io.observe(box);
 })();
 
-/* ---------- PC builds: one photo per screen, arrows, swipe, or drag ---------- */
+/* ---------- PC builds: one photo per screen, with the same arrows and squares as the slideshow ---------- */
 (() => {
   const track = document.getElementById("pc-track");
   if (!track) return;
-  const bar = document.querySelector(".pc-bar");
+  const section = track.closest(".pc");
   const count = track.children.length;
   const index = () => Math.round(track.scrollLeft / track.clientWidth);
   const goTo = (i) => track.scrollTo({ left: ((i + count) % count) * track.clientWidth, behavior: "smooth" });
 
-  document.querySelectorAll(".pc-arrow").forEach((b) =>
+  section.querySelectorAll(".show-arrows button").forEach((b) =>
     b.addEventListener("click", () => goTo(index() + Number(b.dataset.dir))));
-  track.addEventListener("scroll", () => bar.style.setProperty("--i", index()), { passive: true });
+
+  const dotsBox = section.querySelector(".show-dots");
+  const dots = [...track.children].map((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-label", `Photo ${i + 1}`);
+    b.addEventListener("click", () => goTo(i));
+    dotsBox.append(b);
+    return b;
+  });
+  const sync = () => { const i = index(); dots.forEach((d, j) => d.setAttribute("aria-selected", j === i)); };
+  track.addEventListener("scroll", sync, { passive: true });
+  sync();
 
   // mouse drag
   let x0 = null;
