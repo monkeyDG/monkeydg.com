@@ -1,18 +1,12 @@
 /* Shared styles for every page: tokens, type, header, footer, buttons, reveals. */
 
-/* The same font files the original site loaded, kept for the home page headings and the
-   name on the professional page. Browsers only download them where they're used. */
+/* Type follows the original site: JetBrains Mono (the same 2020 file the original loaded) for
+   headings, buttons and small code-style labels, and Open Sans for everything else. */
 @font-face {
   font-family: "JetBrains Mono Original";
   font-weight: 400;
   font-display: swap;
   src: url("../fonts/jetbrains-mono-original.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Open Sans Original";
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/open-sans-original.woff2") format("woff2");
 }
 
 :root {
@@ -30,8 +24,8 @@
   --night-line: #2b313b;
   --night-muted: #9aa2af;
 
-  --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --mono: "Courier Prime", "Courier New", Courier, monospace;
+  --sans: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono Original", "Courier New", monospace;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 12px 32px -12px rgb(0 0 0 / 0.22);
@@ -57,7 +51,6 @@ body {
   font-family: var(--sans);
   font-size: 17px;
   line-height: 1.6;
-  font-variation-settings: "wdth" 100;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
@@ -67,12 +60,19 @@ img { height: auto; }
 
 a { color: inherit; }
 
-h1, h2, h3, h4 {
-  margin: 0;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.045em;
+h1, h2, h3, h4 { margin: 0; }
+h1, h2 {
+  font-family: var(--mono);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.07em;
+  color: #3d4451;
 }
+h3, h4 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+.on-dark h1, .on-dark h2 { color: inherit; }
 
 p { margin: 0 0 1em; }
 p:last-child { margin-bottom: 0; }
@@ -162,7 +162,6 @@ button { font: inherit; color: inherit; }
 
 /* Phones: same hierarchy, less weight. */
 @media (max-width: 760px) {
-  h1, h2, h3, h4 { font-weight: 750; letter-spacing: -0.035em; }
   .section-title { font-size: clamp(30px, 8.6vw, 38px); margin-bottom: 12px; }
   .lede { font-size: 17px; }
   .kicker { font-size: 13px; margin-bottom: 8px; }
@@ -260,8 +259,7 @@ button { font: inherit; color: inherit; }
 }
 
 .nav a {
-  font-family: var(--mono);
-  font-size: 17px;
+  font-size: 16px;
   text-decoration: none;
 }
 

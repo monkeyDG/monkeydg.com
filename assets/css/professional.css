@@ -19,8 +19,6 @@ main section { scroll-margin-top: 24px; }
 .section-head .kicker { margin-bottom: 8px; }
 .section-title {
   font-size: clamp(28px, 3.4vw, 38px);
-  font-weight: 600;
-  letter-spacing: -0.025em;
   margin-bottom: 0;
 }
 .section-head .lede {
@@ -208,9 +206,8 @@ main section { scroll-margin-top: 24px; }
 }
 .intro-quote p {
   margin: 0 0 0.9em;
-  font-size: 21px;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
+  font-size: 20px;
+  line-height: 1.65;
   color: var(--ink-2);
 }
 .intro-quote p:last-child { margin-bottom: 0; }
@@ -224,10 +221,11 @@ main section { scroll-margin-top: 24px; }
 }
 .intro-stats div { display: grid; }
 .intro-stats dt {
+  font-family: var(--mono);
   font-size: 46px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.07em;
   color: var(--ink);
 }
 .intro-stats dd {
@@ -559,9 +557,10 @@ main section { scroll-margin-top: 24px; }
 }
 .exp-stats dd {
   margin: 0;
+  font-family: var(--mono);
   font-size: clamp(22px, 2.8vw, 34px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.05em;
   font-variant-numeric: tabular-nums;
   line-height: 1.1;
 }
@@ -593,12 +592,13 @@ main section { scroll-margin-top: 24px; }
 
 /* ---------- Tools ---------- */
 
+/* Like the original, the photo stays put while the band scrolls over it. */
 .tools {
   padding: 90px 0 100px;
   margin-bottom: 110px;
   background:
     linear-gradient(rgb(15 18 22 / 0.82), rgb(15 18 22 / 0.88)),
-    url(../img/pro/tech-1600.webp) center / cover;
+    url(../img/pro/tech-1600.webp) center / cover fixed;
   color: #fff;
 }
 .tools .section-title { color: #fff; }
@@ -687,9 +687,8 @@ main section { scroll-margin-top: 24px; }
 .edu h3 {
   margin-bottom: 6px;
   font-size: 19px;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  line-height: 1.35;
   color: #414141;
 }
 .edu-honours { margin: 0 0 6px; font-style: italic; font-size: 16px; color: #414141; }
@@ -742,7 +741,6 @@ main section { scroll-margin-top: 24px; }
   padding: 11px 0;
   border-bottom: 1px solid var(--line);
   break-inside: avoid;
-  font-weight: 500;
 }
 .award-list .mono { color: var(--blue-ink); font-weight: 700; }
 
@@ -798,17 +796,23 @@ main section { scroll-margin-top: 24px; }
 .carousel-btn:hover { background: var(--ink); color: #fff; }
 .carousel-btn:disabled { opacity: 0.3; cursor: default; background: none; color: var(--ink); }
 
+/* The row is capped at 1440px and centred, so on wide screens it doesn't run off to the far
+   right. Cards fade out the same distance past the content column on both sides. */
 .carousel {
+  --edge: max(var(--gutter), (min(100%, 1440px) - 1040px) / 2);
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: min(360px, 82vw);
   gap: 20px;
-  margin: 0;
-  padding: 4px max(var(--gutter), (100% - 1040px) / 2) 24px;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 4px var(--edge) 24px;
   list-style: none;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-inline: max(var(--gutter), (100% - 1040px) / 2);
+  scroll-padding-inline: var(--edge);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--edge), #000 calc(100% - var(--edge)), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 var(--edge), #000 calc(100% - var(--edge)), transparent);
   scrollbar-width: thin;
   scrollbar-color: var(--ink) transparent;
 }
@@ -828,9 +832,8 @@ main section { scroll-margin-top: 24px; }
 .lead-card h3 {
   position: relative;
   margin: 20px 22px 10px;
-  font-size: 22px;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  font-size: 20px;
+  line-height: 1.25;
 }
 .lead-card p { margin: 0 22px 24px; font-size: 15.5px; color: var(--ink-2); }
 

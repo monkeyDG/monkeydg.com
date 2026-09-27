@@ -78,10 +78,9 @@
 
 .slide-title {
   max-width: 13em;
-  font-size: clamp(38px, 6vw, 90px);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.045em;
+  font-size: clamp(34px, 3.2vw, 60px);
+  font-weight: 400;
+  line-height: 1.25;
 }
 .slide-title .hl { padding: 0 0.12em; }
 .slide-link {
@@ -152,14 +151,14 @@
   isolation: isolate;
 }
 .panel-grid {
-  width: min(1280px, 100% - 2 * var(--gutter));
+  width: min(1280px * var(--scale), 100% - 2 * var(--gutter));
   margin-inline: auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(32px, 5vw, 72px);
+  gap: calc(clamp(32px, 5vw, 72px) * var(--scale));
   align-items: center;
 }
-.panel-copy { max-width: 520px; }
+.panel-copy { max-width: 520px; zoom: var(--scale); }
 .panel-copy p { font-size: 16px; line-height: 1.75; color: #e2e2e2; }
 .panel-copy--center { justify-self: center; text-align: left; }
 .panel-copy--center > img { display: block; margin-inline: auto; }
@@ -167,7 +166,13 @@
 .panel-copy--center .btn { display: flex; width: fit-content; margin: 18px auto 0; }
 .panel-media { margin: 0; }
 .panel-media img { width: 100%; }
-.panel-media figcaption { margin-top: 12px; text-align: center; font-style: italic; font-size: 14px; color: #cfcfcf; }
+.panel-media figcaption { margin-top: 12px; text-align: center; font-style: italic; font-size: calc(14px * var(--scale)); color: #cfcfcf; }
+
+/* Big screens: the panels and gallery grow with the screen, the way the original's did, instead
+   of sitting as a small block in the middle of an ultrawide monitor. */
+.page-creative { --scale: 1; }
+@media (min-width: 1800px) and (min-height: 1000px) { .page-creative { --scale: 1.25; } }
+@media (min-width: 2400px) and (min-height: 1300px) { .page-creative { --scale: 1.5; } }
 
 /* AVRA */
 .avra { background: #000; }
@@ -218,7 +223,7 @@
   top: 50%;
   left: 50%;
   z-index: -1;
-  width: 2400px;
+  width: max(2400px, 100%);
   max-width: none;
   height: auto;
   translate: -50% -50%;
@@ -233,7 +238,7 @@
 }
 .discord-frame {
   position: relative;
-  height: min(640px, 72svh);
+  height: min(640px * var(--scale), 72svh);
   background: #313338;
   border-radius: 4px;
   overflow: hidden;
@@ -317,14 +322,14 @@
 .gallery-title {
   margin-bottom: 36px;
   text-align: center;
-  font-size: clamp(28px, 3.4vw, 40px);
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-size: calc(clamp(28px, 3.4vw, 44px) * var(--scale));
+  font-weight: 400;
 }
+.gallery-section .wrap { width: min(1180px * var(--scale), 100% - 2 * var(--gutter)); }
 
 /* Justified rows: each item grows in proportion to its aspect ratio (--r). */
 .gallery {
-  --row: 220px;
+  --row: calc(220px * var(--scale));
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
