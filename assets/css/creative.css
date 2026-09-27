@@ -218,6 +218,11 @@
 
 /* POG */
 .pog { background: #111; }
+/* the Discord widget gets the wider column */
+.pog .panel-grid {
+  width: min(1400px * var(--scale), 100% - 2 * var(--gutter));
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+}
 .circuit {
   position: absolute;
   top: 50%;
@@ -274,19 +279,29 @@
 .aws { opacity: 0.9; }
 
 /* PC builds: one photo per screen, swipe or use the arrows */
-.pc { position: relative; height: 100svh; min-height: 480px; background: #000; }
+/* On ultrawide screens the slideshow shows each 4:3 photo whole in a centred frame, instead of
+   stretching it across the full width and cropping it to an oversized band. */
+.pc {
+  --frame: 100%;
+  position: relative;
+  height: 100svh;
+  min-height: 480px;
+  background: #000;
+}
 .pc-track {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 100%;
+  width: var(--frame);
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
+@media (min-aspect-ratio: 2/1) { .pc { --frame: calc(100svh * 4 / 3); } }
 .pc-track::-webkit-scrollbar { display: none; }
 .pc-track li { scroll-snap-align: start; }
 .pc-track img { width: 100%; height: 100%; object-fit: cover; }
@@ -306,9 +321,9 @@
 }
 .pc-arrow svg { width: 36px; height: 36px; }
 .pc-arrow:hover { color: #fff; }
-.pc-arrow--prev { left: 10px; }
-.pc-arrow--next { right: 10px; }
-.pc-bar { position: absolute; left: 20%; right: 20%; bottom: 24px; height: 3px; background: rgb(255 255 255 / 0.25); }
+.pc-arrow--prev { left: calc((100% - var(--frame)) / 2 + 10px); }
+.pc-arrow--next { right: calc((100% - var(--frame)) / 2 + 10px); }
+.pc-bar { position: absolute; left: calc((100% - var(--frame)) / 2 + var(--frame) * 0.2); right: calc((100% - var(--frame)) / 2 + var(--frame) * 0.2); bottom: 24px; height: 3px; background: rgb(255 255 255 / 0.25); }
 .pc-bar span { display: block; height: 100%; width: calc(100% / 6); background: #fff; box-shadow: 0 0 5px #fff; translate: calc(var(--i, 0) * 100%) 0; transition: translate 0.4s var(--ease-out); }
 
 /* ---------- Gallery ---------- */
@@ -462,7 +477,7 @@
 
 @media (max-width: 900px) {
   .panel { min-height: 0; padding: calc(var(--header-h) + 16px) 0 64px; }
-  .panel-grid, .avra .panel-grid { grid-template-columns: 1fr; }
+  .panel-grid, .avra .panel-grid, .pog .panel-grid { grid-template-columns: 1fr; }
   .panel-copy { max-width: none; }
   .circuit { width: 1600px; opacity: 0.8; }
   .discord-frame { height: 460px; }
