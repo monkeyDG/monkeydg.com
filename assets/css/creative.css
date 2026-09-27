@@ -105,19 +105,19 @@
 .show-controls {
   position: absolute;
   left: 50%;
-  bottom: clamp(20px, 5vh, 40px);
+  bottom: 30px;
   z-index: 2;
   display: grid;
   justify-items: center;
-  gap: 12px;
+  gap: 14px;
   translate: -50% 0;
 }
 .show-arrows { display: flex; }
 .show-arrows button {
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
+  width: 65px;
+  height: 65px;
   border: 1px solid rgb(255 255 255 / 0.55);
   background: transparent;
   color: #fff;
@@ -126,11 +126,11 @@
 }
 .show-arrows button + button { border-left: 0; }
 .show-arrows button:hover { background: rgb(255 255 255 / 0.12); }
-.show-arrows svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
-.show-dots { display: flex; gap: 6px; }
+.show-arrows svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.show-dots { display: flex; gap: 10px; }
 .show-dots button {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   padding: 0;
   border: 1px solid #fff;
   background: transparent;
