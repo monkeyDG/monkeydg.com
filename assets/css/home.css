@@ -180,20 +180,27 @@
   text-decoration: none;
   z-index: 2;
 }
-.side--pro { left: 0; align-items: flex-end; text-align: right; padding-right: clamp(210px, 21vw, 300px); }
-.side--creative { right: 0; align-items: flex-start; padding-left: clamp(210px, 21vw, 300px); }
+.side--pro { left: 0; align-items: flex-end; text-align: right; padding: 0 clamp(210px, 21vw, 300px) 12vh clamp(32px, 5vw, 96px); }
+.side--creative { right: 0; align-items: flex-start; padding: 0 clamp(32px, 5vw, 96px) 12vh clamp(210px, 21vw, 300px); }
 
 .side-title {
-  font-size: clamp(32px, calc(1vw + 26px), 62px);
+  font-size: clamp(30px, calc(0.9vw + 22px), 52px);
   line-height: 1.2;
 }
 .side-desc {
-  max-width: 17em;
-  font-family: "Open Sans Original", var(--sans);
-  font-size: clamp(16px, calc(1vw + 7px), 32px);
-  line-height: 1.4;
+  max-width: 19em;
+  font-family: var(--sans);
+  font-size: clamp(15px, calc(0.5vw + 10px), 21px);
+  line-height: 1.6;
 }
-.side .hl { padding: 0 0.1em; }
+/* The blurb gets the blue highlight only on the side you're on, sweeping in like the nav links. */
+.side .hl {
+  padding: 0 0.1em;
+  background-size: 0% 100%;
+  transition: background-size 0.5s var(--ease-out);
+}
+.side--pro .hl { background-position: 100% 0; }
+.side.is-active .hl { background-size: 100% 100%; }
 
 /* Both sides are fully visible while the face is split down the middle, and the side you
    move away from fades out completely, along with its background. */
@@ -266,7 +273,7 @@
   }
   .mobile-sides a:last-child { animation-delay: 0.1s; }
   .mobile-sides small {
-    font-family: "Open Sans Original", var(--sans);
+    font-family: var(--sans);
     font-weight: 400;
     font-size: 13px;
     letter-spacing: 0;

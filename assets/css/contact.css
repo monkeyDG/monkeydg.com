@@ -25,7 +25,8 @@
 }
 
 .contact-info h1 {
-  font-size: clamp(52px, 8vw, 112px);
+  font-size: clamp(44px, 4.6vw, 66px);
+  font-weight: 400;
   margin-bottom: 22px;
 }
 
@@ -66,15 +67,17 @@
 }
 .contact-card h2 {
   font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 400;
   margin-bottom: 26px;
 }
 
 .form { display: grid; gap: 18px; }
 .field { display: grid; gap: 6px; }
 .field label {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .field label span { color: var(--blue-ink); }
 .field .optional { font-weight: 400; color: var(--muted); }
