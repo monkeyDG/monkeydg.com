@@ -316,8 +316,9 @@
 .gallery-title {
   margin-bottom: 36px;
   text-align: center;
-  font-size: calc(clamp(28px, 3.4vw, 44px) * var(--scale));
+  font-size: calc(clamp(32px, 4vw, 60px) * var(--scale));
   font-weight: 400;
+  color: #fff;
 }
 .gallery-section .wrap { width: min(1180px * var(--scale), 100% - 2 * var(--gutter)); }
 
