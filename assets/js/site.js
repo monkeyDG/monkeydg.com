@@ -13,13 +13,15 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Reveal elements as they scroll into view. Anything with .reveal gets .is-in once.
+// Any sliver on screen counts, and the bottom margin makes up for the 90px the .reveal
+// elements start pushed down, so nothing already on screen (big monitors) stays hidden.
 const revealObserver = new IntersectionObserver((entries) => {
   for (const entry of entries) {
     if (!entry.isIntersecting) continue;
     entry.target.classList.add("is-in");
     revealObserver.unobserve(entry.target);
   }
-}, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+}, { rootMargin: "0px 0px 60px 0px", threshold: 0 });
 document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-zoom").forEach((el) => revealObserver.observe(el));
 
 // Types a list of chunks into an element, pausing after each chunk.
