@@ -92,7 +92,7 @@ main section { scroll-margin-top: 24px; }
 }
 .profile-photo img {
   width: 100%;
-  aspect-ratio: 800 / 886;
+  aspect-ratio: 1;
   object-fit: cover;
 }
 .profile-info { align-self: center; }
